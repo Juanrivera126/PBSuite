@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Documento Exportado</title>
+    <style>
+        :root { --bg-color: #f1f5f9; --text-color: #1e293b; --container-bg: #ffffff; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--bg-color); color: var(--text-color); line-height: 1.6; margin: 0; padding: 15px; display: flex; flex-direction: column; min-height: 100vh; }
+        .container { flex: 1; width: 100%; max-width: 1200px; margin: 0 auto; background: var(--container-bg); padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); box-sizing: border-box; }
+        img, video, iframe { max-width: 100%; height: auto; border-radius: 8px; }
+        .table-responsive-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 1.5rem; border-radius: 6px; box-shadow: 0 0 0 1px #e2e8f0; }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        pre { background: #f8fafc; padding: 15px; border-radius: 8px; overflow-x: auto; font-size: 0.9em; border: 1px solid #e2e8f0; }
+        
+        /* Footer Styles */
+        .custom-footer { text-align: center; margin-top: 40px; padding-top: 20px; color: #64748b; font-size: 0.875rem; border-top: 1px solid #e2e8f0; }
+
+        @media (min-width: 768px) {
+            body { padding: 40px; }
+            .container { padding: 50px; }
+            table { min-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chatbot PDF Interactivo Avanzado</h1>
+<p>Proyecto diseñado por Juan Guillermo Rivera Berrío, con la asistencia de la IA agéntica Antigravity y la tecnología Gemini 3.1 Pro. Ofrece una interfaz en el navegador para cargar uno o dos PDFs, chatear sobre su contenido con modelos de lenguaje y exportar la sesión o generar un <strong>chatbot HTML autónomo</strong> listo para compartir.</p>
+<h2>Características principales</h2>
+<h3>Aplicación principal (<code>index.html</code>)</h3>
+<ul>
+<li><strong>Visor de PDF</strong>: Carga un PDF local y ábrelo en un panel junto al chat.</li>
+<li><strong>Segundo PDF opcional</strong>: Tras cargar el primero, puedes añadir otro documento para combinar contexto en las preguntas.</li>
+<li><strong>Selector de modelos</strong>: Lista dinámica desde Pollinations (<code>context_length</code> ≥ 400000 tokens), con indicación de modelos de pago.</li>
+<li><strong>Matemáticas y formato</strong>: MathJax para fórmulas y Marked para Markdown en las respuestas del bot.</li>
+<li><strong>Exportación de sesión</strong>: Descarga la conversación actual como <strong>HTML</strong> o <strong>PDF</strong> (html2pdf).</li>
+<li><strong>Chatbot descargable</strong>: Genera un archivo HTML único embebido con el texto del PDF (y el segundo PDF si lo hubo), para usarlo sin volver a subir archivos.</li>
+<li><strong>Tema claro / oscuro</strong> y flujo <strong>BYOP</strong> para API Key con <code>enter.pollinations.ai</code>.</li>
+</ul>
+<h3>Chatbot generado (archivo descargado)</h3>
+<p>El HTML exportado con <strong>Descargar Chatbot</strong> incluye, entre otras cosas:</p>
+<ul>
+<li><strong>Alcance del contenido</strong>: Instrucciones para responder solo sobre el documento incrustado y el tema que indiques al generar el clon; preguntas fuera de alcance se marcan con el prefijo <code>[FUERA_DE_ALCANCE]</code> y se muestran como aviso, sin inventar respuestas del PDF.</li>
+<li><strong>Avatares</strong>: Imágenes generadas vía Pollinations (bot y usuario), con sustitutos locales si no hay clave, siguiendo el mismo criterio que en el proyecto de referencia <em>Chatea con PDF (investigación)</em>.</li>
+<li><strong>Preguntas sugeridas</strong>: Selector con al menos 12 preguntas; si hay API Key al descargar, se generan con la API a partir de <strong>extractos repartidos</strong> por el documento (inicio, zonas intermedias y final) para cubrir capítulos o secciones distintas, no solo las primeras páginas. Si falla la generación, se usan preguntas de respaldo alineadas al nombre del PDF y al subtítulo.</li>
+<li><strong>Segundo PDF opcional</strong> en el mismo clon (carga manual o texto ya embebido).</li>
+<li><strong>Exportar sesión</strong>: Botones <strong>Descargar HTML</strong> y <strong>Descargar Word</strong> para guardar todo el hilo (preguntas y respuestas) con formato legible; el Word usa la librería <code>docx</code> como en la app de investigación PDF.</li>
+</ul>
+<h2>Infraestructura Pollinations AI</h2>
+<ol>
+<li><strong>API Key</strong>: Autorización en <code>enter.pollinations.ai</code> y almacenamiento local cómodo para el usuario.</li>
+<li><strong>Modelos</strong>: <code>https://enter.pollinations.ai/api/generate/text/models</code> para poblar el selector según ventana de contexto.</li>
+<li><strong>Chat</strong>: <code>https://gen.pollinations.ai/v1/chat/completions</code> para todas las consultas y, al descargar el chatbot, para la generación opcional de preguntas sugeridas.</li>
+</ol>
+<h2>Instalación y uso</h2>
+<ol>
+<li>Coloca en una carpeta <code>index.html</code>, <code>script.js</code> y <code>style.css</code>.</li>
+<li>Abre <code>index.html</code> en el navegador (aplicación estática; no exige Node ni servidor).</li>
+<li>Obtén o pega tu API Key con <strong>Obtener API Key</strong>.</li>
+<li>Carga el PDF principal (y, si quieres, el segundo PDF).</li>
+<li>Elige modelo y escribe preguntas sobre el documento.</li>
+<li>Opcional: <strong>Descargar Chatbot</strong> para obtener el HTML autónomo; dentro del clon podrás <strong>Descargar HTML</strong> / <strong>Descargar Word</strong> de la sesión cuando lo necesites.</li>
+</ol>
+<hr>
+<p><em>Diseñado por Juan Guillermo Rivera Berrío con tecnología Gemini 3.1 Pro y la IA agéntica Antigravity.</em></p>
+
+    </div>
+    <div class="custom-footer">
+        <p>Diseñado por Juan Guillermo Rivera Berrío con tecnología Gemini 3.1 Pro</p>
+    </div>
+</body>
+</html>
