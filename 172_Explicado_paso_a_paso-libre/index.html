@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicado paso a paso</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicado paso a paso</h1>
+
+            <div id="generationControls">
+                <div class="control-group">
+                    <label for="expertInput">🧑‍🏫 Experto solicitado:</label>
+                    <input type="text" id="expertInput" placeholder="Ej: matemáticas, cálculo, biólogo...">
+                </div>
+                <div class="control-group">
+                    <label for="topicInput">📝 Tema a explicar:</label>
+                    <input type="text" id="topicInput" placeholder="Ej: Fotosíntesis, Álgebra...">
+                </div>
+                <div class="control-group">
+                    <label for="paletteSelect">🎨 Paleta de Colores:</label>
+                    <select id="paletteSelect"></select>
+                </div>
+                <div class="control-group">
+                    <label for="artStyleSelect">🎭 Estilo Visual:</label>
+                    <select id="artStyleSelect"></select>
+                </div>
+                <div class="control-group">
+                    <label for="imageModelSelect">🖼️ Modelo de Imagen:</label>
+                    <select id="imageModelSelect"></select>
+                </div>
+                <div class="control-group">
+                    <label for="textModelSelect">🧠 Modelo de Texto:</label>
+                    <select id="textModelSelect"></select>
+                </div>
+                <div class="control-group checkbox-control">
+                    <input type="checkbox" id="includeMathjaxCheckbox">
+                    <label for="includeMathjaxCheckbox">∑ Incluir MathJax (si aplica)</label>
+                </div>
+                <div class="main-actions">
+                    <button id="generateTutorialBtn">🚀 Generar explicación</button>
+                    <button id="themeToggleBtn">🌙 Modo Oscuro</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div id="tutorialHeaderActions" class="action-buttons" style="display: none; margin-bottom: 15px;">
+                <button id="downloadHtmlBtn">💾 Descargar HTML</button>
+                <button id="downloadWordBtn">📄 Descargar Word</button>
+            </div>
+            <div id="tutorialContainer"></div>
+            <div id="loadingIndicator" style="display: none;">
+                <p>✨ Generando explicación... Esto puede tardar un momento. ✨</p>
+                <div class="spinner"></div>
+            </div>
+            <div id="postGenerationControls" class="action-buttons" style="display: none;">
+                <button id="resetBtn">🔄 Reinicio</button>
+            </div>
+
+
+        </main>
+    </div>
+
+    <footer>
+        <p>Diseñado por Juan Guillermo Rivera Berrío con tecnología DeepSeek V4 y asistencia de Open Code</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
