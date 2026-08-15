@@ -1,0 +1,2806 @@
+<!DOCTYPE html>
+<html lang="es" style="--bg-color-light: #e0f7fa; --text-color-light: #004d40; --primary-color-light: #00796b; --secondary-color-light: #004d40; --card-bg-light: #ffffff; --border-color-light: #b2dfdb; --accent-color-light: #ff6f00; --shadow-color-light: rgba(0, 77, 64, 0.15); --success-color-light: #2e7d32; --error-color-light: #c62828; --bg-color-dark: #00251a; --text-color-dark: #b2dfdb; --primary-color-dark: #4db6ac; --secondary-color-dark: #80cbc4; --card-bg-dark: #003d33; --border-color-dark: #004d40; --accent-color-dark: #ffa000; --shadow-color-dark: rgba(77, 182, 172, 0.2); --success-color-dark: #81c784; --error-color-dark: #ef9a9a; --primary-color-light_alpha: rgba(0, 121, 107, 0.3); --primary-color-dark_alpha: rgba(77, 182, 172, 0.3);"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación Diagnóstica: Productos notables</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <style>
+/* Estilos Generales y Variables CSS (Default Palette - "Oceanic") */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Lexend:wght@300..900&family=Space+Grotesk:wght@300..700&family=Poppins:wght@300..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --bg-color-light: #e0f7fa;
+    --text-color-light: #004d40;
+    --primary-color-light: #00796b;
+    --secondary-color-light: #004d40;
+    --card-bg-light: #ffffff;
+    --border-color-light: #b2dfdb;
+    --accent-color-light: #ff6f00;
+    --shadow-color-light: rgba(0, 77, 64, 0.15);
+
+    --bg-color-dark: #00251a;
+    --text-color-dark: #b2dfdb;
+    --primary-color-dark: #4db6ac;
+    --secondary-color-dark: #80cbc4;
+    --card-bg-dark: #003d33;
+    --border-color-dark: #004d40;
+    --accent-color-dark: #ffa000;
+    --shadow-color-dark: rgba(77, 182, 172, 0.2);
+
+    --font-family-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --success-color-light: #2e7d32;
+    --success-color-dark: #81c784;
+    --error-color-light: #c62828;
+    --error-color-dark: #ef9a9a;
+    --radius-lg: 15px;
+    --radius-md: 10px;
+    --radius-sm: 8px;
+    --card-shadow: 0 8px 25px var(--shadow-color-light);
+}
+
+/* --- Visual Themes --- */
+.theme-default {
+    --radius-lg: 15px; --radius-md: 10px; --radius-sm: 8px;
+    --font-family-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.theme-moderno {
+    --radius-lg: 16px; --radius-md: 12px; --radius-sm: 10px;
+    --font-family-main: 'Poppins', 'Segoe UI', sans-serif;
+}
+.theme-corporativo {
+    --radius-lg: 6px; --radius-md: 4px; --radius-sm: 4px;
+    --font-family-main: 'Georgia', 'Times New Roman', serif;
+}
+.theme-creativo {
+    --radius-lg: 28px; --radius-md: 22px; --radius-sm: 18px;
+    --font-family-main: 'Poppins', 'Segoe UI', sans-serif;
+}
+.theme-minimalista {
+    --radius-lg: 4px; --radius-md: 2px; --radius-sm: 2px;
+    --font-family-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --card-shadow: none;
+}
+.theme-glass {
+    --radius-lg: 20px; --radius-md: 16px; --radius-sm: 14px;
+    --font-family-main: 'Poppins', 'Segoe UI', sans-serif;
+}
+body.theme-glass {
+    background: linear-gradient(135deg, var(--primary-color-light), var(--secondary-color-light));
+    background-attachment: fixed;
+}
+body.dark-mode.theme-glass {
+    background: linear-gradient(135deg, var(--primary-color-dark), var(--secondary-color-dark));
+}
+body.theme-glass .container, body.theme-glass .tutorial-step {
+    backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+    background-color: rgba(255,255,255,0.55) !important;
+}
+body.dark-mode.theme-glass .container, body.dark-mode.theme-glass .tutorial-step {
+    background-color: rgba(0,0,0,0.55) !important;
+}
+.theme-darkneon {
+    --radius-lg: 14px; --radius-md: 10px; --radius-sm: 8px;
+    --font-family-main: 'Poppins', 'Segoe UI', sans-serif;
+}
+body.theme-darkneon {
+    background-color: #0a0e1a !important; color: #e8ecff !important;
+}
+body.theme-darkneon .container { background-color: #11172a !important; border-color: #232c4d; }
+body.theme-darkneon .tutorial-step { background-color: #161d35 !important; border-color: #232c4d; }
+body.theme-darkneon header { border-bottom-color: #232c4d; }
+body.theme-darkneon footer { border-top-color: #232c4d; color: #8b93b8; }
+body.theme-darkneon h1, body.theme-darkneon h3 { color: #818cf8 !important; }
+body.theme-darkneon .control-group label { color: #8b93b8; }
+body.theme-darkneon #topicInput, body.theme-darkneon #expertInput, body.theme-darkneon #paletteSelect, body.theme-darkneon #textModelSelect, body.theme-darkneon #imageModelSelect, body.theme-darkneon #artStyleSelect, body.theme-darkneon #testTypeSelect {
+    background-color: #161d35; color: #e8ecff; border-color: #232c4d;
+}
+.theme-brutalista {
+    --radius-lg: 0px; --radius-md: 0px; --radius-sm: 0px;
+    --font-family-main: 'Poppins', 'Segoe UI', sans-serif;
+}
+body.theme-brutalista .container { border: 3px solid #111; box-shadow: 8px 8px 0 #111; }
+body.theme-brutalista .tutorial-step { border: 2.5px solid #111; box-shadow: 5px 5px 0 #111; }
+body.theme-brutalista button { border: 2px solid #111; box-shadow: 3px 3px 0 #111; }
+.theme-vibrante {
+    --radius-lg: 18px; --radius-md: 14px; --radius-sm: 12px;
+    --font-family-main: 'Poppins', 'Segoe UI', sans-serif;
+}
+body.theme-vibrante {
+    background: linear-gradient(120deg, #f093fb 0%, #f5576c 100%) !important;
+}
+body.dark-mode.theme-vibrante {
+    background: linear-gradient(120deg, #301b3f 0%, #1a0033 100%) !important;
+}
+body.theme-vibrante header h1 { color: #ffffff !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+.theme-editorial {
+    --radius-lg: 0px; --radius-md: 0px; --radius-sm: 6px;
+    --font-family-main: 'Georgia', 'Times New Roman', serif;
+    --card-shadow: none;
+}
+body.theme-editorial header { border-bottom: 3px double var(--primary-color-light); }
+body.theme-editorial .tutorial-step { border: none; border-top: 1px solid var(--primary-color-light); box-shadow: none; }
+body.dark-mode.theme-editorial header { border-bottom-color: var(--primary-color-dark); }
+body.dark-mode.theme-editorial .tutorial-step { border-top-color: var(--primary-color-dark); }
+.theme-terminal {
+    --radius-lg: 0px; --radius-md: 0px; --radius-sm: 0px;
+    --font-family-main: 'Courier New', 'Consolas', monospace;
+}
+body.theme-terminal {
+    background-color: #050505 !important;
+    color: #33ff33 !important;
+}
+body.theme-terminal .container {
+    background-color: #0a0a0a !important;
+    border: 1px solid #33ff33;
+    box-shadow: 0 0 15px rgba(51, 255, 51, 0.2);
+}
+body.theme-terminal .tutorial-step {
+    background-color: #0e0e0e !important;
+    border: 1px dashed #33ff33;
+}
+body.theme-terminal button {
+    background-color: #151515 !important;
+    color: #33ff33 !important;
+    border: 1px solid #33ff33 !important;
+}
+body.theme-terminal input, body.theme-terminal select {
+    background-color: #0f0f0f !important;
+    color: #33ff33 !important;
+    border: 1px solid #33ff33 !important;
+}
+.theme-infografico {
+    --radius-lg: 24px; --radius-md: 18px; --radius-sm: 14px;
+    --font-family-main: 'Poppins', 'Segoe UI', sans-serif;
+}
+body.theme-infografico .tutorial-step { border: 2.5px dashed var(--border-color-light); }
+body.dark-mode.theme-infografico .tutorial-step { border-style: dashed; }
+.theme-retro {
+    --radius-lg: 12px; --radius-md: 8px; --radius-sm: 6px;
+    --font-family-main: 'Georgia', serif;
+}
+body.theme-retro {
+    background-color: #f4edd8 !important;
+    color: #5b4636 !important;
+}
+body.theme-retro .container {
+    background-color: #fdfaf2 !important;
+    border: 2px solid #d3c2a0;
+}
+body.theme-retro .tutorial-step { border: 2px solid var(--border-color-light); }
+body.dark-mode.theme-retro .tutorial-step { border-color: var(--border-color-dark); }
+.theme-neobrutalismo {
+    --radius-lg: 12px; --radius-md: 8px; --radius-sm: 6px;
+    --font-family-main: 'Poppins', 'Segoe UI', sans-serif;
+}
+body.theme-neobrutalismo .container { border: 3px solid #000807; box-shadow: 6px 6px 0 #000807; }
+body.theme-neobrutalismo .tutorial-step { border: 3px solid #000807; box-shadow: 6px 6px 0 #000807; }
+body.theme-neobrutalismo button { border: 2px solid #000807; box-shadow: 4px 4px 0 #000807; }
+.theme-cyberpunk {
+    --radius-lg: 4px; --radius-md: 2px; --radius-sm: 2px;
+    --font-family-main: 'Courier New', monospace;
+}
+body.theme-cyberpunk {
+    background-color: #0d0c1d !important; color: #00f0ff !important;
+}
+body.theme-cyberpunk .container { background-color: #14132b !important; border-color: #ff0055; border-left: 5px solid #ff0055; }
+body.theme-cyberpunk .tutorial-step { background-color: #1d1b3d !important; border-color: #00f0ff; }
+body.theme-cyberpunk header { border-bottom-color: #ff0055; }
+body.theme-cyberpunk footer { border-top-color: #ff0055; color: #757299; }
+body.theme-cyberpunk h1, body.theme-cyberpunk h3 { color: #ff0055 !important; text-shadow: 0 0 8px #ff0055; }
+body.theme-cyberpunk .control-group label { color: #757299; }
+body.theme-cyberpunk #topicInput, body.theme-cyberpunk #expertInput, body.theme-cyberpunk #paletteSelect, body.theme-cyberpunk #textModelSelect, body.theme-cyberpunk #imageModelSelect, body.theme-cyberpunk #artStyleSelect, body.theme-cyberpunk #testTypeSelect {
+    background-color: #1d1b3d; color: #00f0ff; border-color: #ff0055;
+}
+.theme-organico {
+    --radius-lg: 24px; --radius-md: 16px; --radius-sm: 12px;
+    --font-family-main: 'Poppins', 'Segoe UI', sans-serif;
+}
+body.theme-organico .tutorial-step { border-radius: var(--radius-md) 4px var(--radius-md) 4px; }
+.theme-noir {
+    --radius-lg: 14px; --radius-md: 10px; --radius-sm: 8px;
+    --font-family-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body.theme-noir {
+    background-color: #1a1a2e !important; color: #e0e0e0 !important;
+}
+body.theme-noir .container {
+    background-color: #16213e !important; border: 1px solid #0f3460;
+}
+body.theme-noir .tutorial-step {
+    background-color: #1a1a2e !important; border-color: #0f3460;
+}
+body.theme-noir header { border-bottom-color: #0f3460; }
+body.theme-noir footer { border-top-color: #0f3460; color: #8899aa; }
+body.theme-noir #topicInput, body.theme-noir #expertInput, body.theme-noir #paletteSelect, body.theme-noir #textModelSelect, body.theme-noir #imageModelSelect, body.theme-noir #artStyleSelect, body.theme-noir #testTypeSelect {
+    background-color: #0f3460; color: #e0e0e0; border-color: #1a1a2e;
+}
+body.theme-noir h1, body.theme-noir h3 { color: #e94560 !important; }
+body.theme-noir .control-group label { color: #8899aa; }
+body.theme-noir header h1 { color: #e94560; }
+
+.theme-educativo {
+    --radius-lg: 12px; --radius-md: 8px; --radius-sm: 6px;
+    --font-family-main: 'Lexend', sans-serif;
+}
+body.theme-educativo {
+    background-color: #f7f9fc !important;
+    color: #2c3e50 !important;
+}
+body.theme-educativo .container {
+    background-color: #ffffff !important;
+    border: 1px solid #d1d8e0;
+    border-top: 6px solid #3498db;
+    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.08);
+}
+body.theme-educativo .tutorial-step {
+    background-color: #fcfdfe !important;
+    border-left: 4px solid #2ecc71;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+body.theme-educativo header h1 {
+    color: #2980b9 !important;
+}
+
+.theme-infantil {
+    --radius-lg: 32px; --radius-md: 20px; --radius-sm: 14px;
+    --font-family-main: 'Fredoka', sans-serif;
+}
+body.theme-infantil {
+    background-color: #fff9db !important;
+    color: #6d4c41 !important;
+}
+body.theme-infantil .container {
+    background-color: #ffffff !important;
+    border: 4px solid #ffb74d;
+    box-shadow: 0 12px 0 #ffe082;
+}
+body.theme-infantil .tutorial-step {
+    background-color: #f1f8e9 !important;
+    border: 3px solid #aed581;
+    box-shadow: 0 6px 0 #c5e1a5;
+}
+body.theme-infantil button {
+    background-color: #ff8a65 !important;
+    color: white !important;
+    border: 3px solid #ff7043 !important;
+    box-shadow: 0 4px 0 #e64a19 !important;
+    transform: none !important;
+}
+body.theme-infantil button:hover {
+    background-color: #ff7043 !important;
+    transform: translateY(2px) !important;
+    box-shadow: 0 2px 0 #e64a19 !important;
+}
+body.theme-infantil header h1 {
+    color: #ec407a !important;
+    font-size: 3.2em;
+    text-shadow: 2px 2px 0px #f8bbd0;
+}
+
+.theme-cientifico {
+    --radius-lg: 4px; --radius-md: 4px; --radius-sm: 2px;
+    --font-family-main: 'Space Grotesk', 'Courier Prime', monospace;
+}
+body.theme-cientifico {
+    background-color: #0b0f19 !important;
+    color: #8da2fb !important;
+}
+body.theme-cientifico .container {
+    background-color: #121829 !important;
+    border: 1px solid #3b82f6;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+}
+body.theme-cientifico .tutorial-step {
+    background-color: #18223f !important;
+    border: 1px solid #10b981;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.1);
+}
+body.theme-cientifico header h1 {
+    color: #60a5fa !important;
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+body.theme-cientifico button {
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+    border: 1px solid #1d4ed8 !important;
+}
+body.theme-cientifico #topicInput, body.theme-cientifico #expertInput, body.theme-cientifico #paletteSelect, body.theme-cientifico #textModelSelect, body.theme-cientifico #imageModelSelect, body.theme-cientifico #artStyleSelect, body.theme-cientifico #testTypeSelect {
+    background-color: #1e293b; color: #f8fafc; border-color: #475569;
+}
+
+.container {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow);
+}
+.tutorial-step {
+    border-radius: var(--radius-md);
+    box-shadow: var(--card-shadow);
+}
+#topicInput, #expertInput, #paletteSelect, #textModelSelect, #imageModelSelect, #artStyleSelect, #testTypeSelect {
+    border-radius: var(--radius-sm);
+}
+button {
+    border-radius: var(--radius-sm);
+}
+
+body {
+    font-family: var(--font-family-main);
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    transition: background-color 0.5s, color 0.5s, font-family 0.5s;
+    line-height: 1.7;
+}
+
+body.dark-mode {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: var(--card-bg-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow);
+    transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+body.dark-mode .container {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 8px 25px var(--shadow-color-dark);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid var(--primary-color-light);
+}
+
+body.dark-mode header {
+    border-bottom-color: var(--primary-color-dark);
+}
+
+header h1 {
+    color: var(--primary-color-light);
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+body.dark-mode header h1 {
+    color: var(--primary-color-dark);
+}
+
+#generationControls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.control-group label {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--secondary-color-light);
+}
+
+body.dark-mode .control-group label {
+    color: var(--secondary-color-dark);
+}
+
+#topicInput,
+#expertInput,
+#paletteSelect,
+#textModelSelect,
+#imageModelSelect,
+#artStyleSelect,
+#testTypeSelect {
+    padding: 10px 14px;
+    border: 2px solid var(--border-color-light);
+    font-size: 1em;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body.dark-mode #topicInput,
+body.dark-mode #expertInput,
+body.dark-mode #paletteSelect,
+body.dark-mode #textModelSelect,
+body.dark-mode #imageModelSelect,
+body.dark-mode #artStyleSelect,
+body.dark-mode #testTypeSelect {
+    background-color: var(--card-bg-dark);
+    color: var(--text-color-dark);
+    border-color: var(--border-color-dark);
+}
+
+#topicInput:focus,
+#expertInput:focus,
+#paletteSelect:focus,
+#textModelSelect:focus,
+#imageModelSelect:focus,
+#artStyleSelect:focus,
+#testTypeSelect:focus {
+    outline: none;
+    border-color: var(--primary-color-light);
+    box-shadow: 0 0 0 3px var(--primary-color-light_alpha, rgba(0, 121, 107, 0.3));
+}
+
+body.dark-mode #topicInput:focus,
+body.dark-mode #expertInput:focus,
+body.dark-mode #paletteSelect:focus,
+body.dark-mode #textModelSelect:focus,
+body.dark-mode #imageModelSelect:focus,
+body.dark-mode #artStyleSelect:focus,
+body.dark-mode #testTypeSelect:focus {
+    border-color: var(--primary-color-dark);
+    box-shadow: 0 0 0 3px var(--primary-color-dark_alpha, rgba(77, 182, 172, 0.3));
+}
+
+.checkbox-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95em;
+    padding: 8px 0;
+}
+
+.checkbox-control input[type="checkbox"] {
+    transform: scale(1.2);
+    accent-color: var(--primary-color-light);
+}
+
+body.dark-mode .checkbox-control input[type="checkbox"] {
+    accent-color: var(--primary-color-dark);
+}
+
+.main-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 18px;
+    border: none;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.15s, box-shadow 0.2s;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+#generateTutorialBtn,
+#themeToggleBtn {
+    padding: 12px 22px;
+    font-size: 1em;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:disabled {
+    background-color: #ccc !important;
+    color: #666 !important;
+    cursor: not-allowed;
+    transform: translateY(0px);
+    box-shadow: none;
+}
+
+body.dark-mode button:disabled {
+    background-color: #555 !important;
+    color: #888 !important;
+}
+
+#generateTutorialBtn {
+    background-color: var(--primary-color-light);
+    color: white;
+}
+
+body.dark-mode #generateTutorialBtn {
+    background-color: var(--primary-color-dark);
+    color: var(--bg-color-dark);
+}
+
+#themeToggleBtn,
+#resetBtn,
+#downloadHtmlBtn,
+#downloadWordBtn {
+    background-color: var(--secondary-color-light);
+    color: white;
+}
+
+body.dark-mode #themeToggleBtn,
+body.dark-mode #resetBtn,
+body.dark-mode #downloadHtmlBtn,
+body.dark-mode #downloadWordBtn {
+    background-color: var(--secondary-color-dark);
+    color: var(--bg-color-dark);
+}
+
+#resetBtn {
+    background-color: var(--accent-color-light);
+}
+
+body.dark-mode #resetBtn {
+    background-color: var(--accent-color-dark);
+}
+
+#tutorialContainer {
+    margin-top: 30px;
+}
+
+.tutorial-step {
+    background-color: var(--card-bg-light);
+    border: 1px solid var(--border-color-light);
+    border-radius: var(--radius-md);
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: var(--card-shadow);
+    opacity: 0;
+    transform: translateY(25px);
+    animation: fadeInStep 0.6s ease-out forwards;
+    overflow: auto;
+}
+
+body.dark-mode .tutorial-step {
+    background-color: var(--card-bg-dark);
+    border-color: var(--border-color-dark);
+    box-shadow: 0 5px 15px var(--shadow-color-dark);
+}
+
+@keyframes fadeInStep {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tutorial-step h3 {
+    color: var(--accent-color-light);
+    margin-top: 0;
+    font-size: 1.7em;
+    border-bottom: 2px solid var(--accent-color-light);
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+body.dark-mode .tutorial-step h3 {
+    color: var(--accent-color-dark);
+    border-bottom-color: var(--accent-color-dark);
+}
+
+.tutorial-step p {
+    font-size: 1.1em;
+    color: var(--text-color-light);
+}
+
+body.dark-mode .tutorial-step p {
+    color: var(--text-color-dark);
+}
+
+#loadingIndicator {
+    text-align: center;
+    padding: 25px;
+    font-size: 1.3em;
+    color: var(--primary-color-light);
+}
+
+body.dark-mode #loadingIndicator {
+    color: var(--primary-color-dark);
+}
+
+.spinner {
+    border: 5px solid var(--border-color-light);
+    border-top: 5px solid var(--primary-color-light);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 15px auto;
+}
+
+body.dark-mode .spinner {
+    border-color: var(--border-color-dark);
+    border-top-color: var(--primary-color-dark);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 45px;
+    padding: 25px;
+    font-size: 0.95em;
+    color: var(--secondary-color-light);
+    border-top: 1px solid var(--border-color-light);
+}
+
+body.dark-mode footer {
+    color: var(--secondary-color-dark);
+    border-top-color: var(--border-color-dark);
+}
+
+/* Groq API Key Styles */
+.api-key-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: var(--card-bg-light);
+    border: 2px dashed var(--primary-color-light);
+    border-radius: var(--radius-md);
+    align-items: center;
+    box-shadow: 0 4px 15px var(--shadow-color-light);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .api-key-container {
+    background: var(--card-bg-dark);
+    border-color: var(--primary-color-dark);
+    box-shadow: 0 4px 15px var(--shadow-color-dark);
+}
+
+#apiKeyInput {
+    flex-grow: 1;
+    padding: 12px 16px;
+    border: 2px solid var(--border-color-light);
+    border-radius: var(--radius-sm);
+    font-family: 'Courier New', Courier, monospace;
+    background: var(--bg-color-light);
+    color: var(--text-color-light);
+    font-size: 0.95em;
+}
+
+body.dark-mode #apiKeyInput {
+    border-color: var(--border-color-dark);
+    background: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+#getApiKeyBtn {
+    background-color: var(--success-color-light);
+    color: white;
+    white-space: nowrap;
+    padding: 12px 20px;
+}
+
+body.dark-mode #getApiKeyBtn {
+    background-color: var(--success-color-dark);
+    color: var(--bg-color-dark);
+}
+
+.image-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 20px;
+}
+.image-modal-overlay img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    cursor: pointer;
+    object-fit: contain;
+}
+
+/* --- ESTILOS DE ENVÍO DE CORREO --- */
+.envio-correo-container {
+    background: var(--card-bg-light);
+    border: 2px solid var(--border-color-light);
+    border-top: 5px solid var(--primary-color-light);
+    padding: 28px 26px;
+    margin: 30px 0;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow);
+    color: var(--text-color-light);
+    position: relative;
+    overflow: hidden;
+}
+body.dark-mode .envio-correo-container {
+    background: var(--card-bg-dark);
+    border-color: var(--border-color-dark);
+    border-top-color: var(--primary-color-dark);
+    color: var(--text-color-dark);
+    box-shadow: 0 8px 25px var(--shadow-color-dark);
+}
+.envio-correo-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+    border-bottom: 2px dashed var(--border-color-light);
+}
+body.dark-mode .envio-correo-header {
+    border-bottom-color: var(--border-color-dark);
+}
+.envio-correo-icon {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color-light), var(--secondary-color-light));
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7em;
+    box-shadow: 0 4px 12px var(--shadow-color-light);
+}
+body.dark-mode .envio-correo-icon {
+    background: linear-gradient(135deg, var(--primary-color-dark), var(--secondary-color-dark));
+    color: var(--bg-color-dark);
+    box-shadow: 0 4px 12px var(--shadow-color-dark);
+}
+.envio-correo-header h2 {
+    color: var(--primary-color-light);
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    font-family: var(--font-family-main);
+    text-align: left;
+}
+body.dark-mode .envio-correo-header h2 {
+    color: var(--primary-color-dark);
+}
+.envio-correo-subtitle {
+    margin: 0;
+    font-size: 0.9em;
+    opacity: 0.85;
+    color: var(--text-color-light);
+}
+body.dark-mode .envio-correo-subtitle {
+    color: var(--text-color-dark);
+}
+.envio-correo-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+.envio-correo-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+.envio-correo-field label {
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--secondary-color-light);
+}
+body.dark-mode .envio-correo-field label {
+    color: var(--secondary-color-dark);
+}
+.envio-correo-inputs input[type="text"],
+.envio-correo-inputs input[type="email"] {
+    padding: 12px 14px;
+    border: 2px solid var(--border-color-light);
+    border-radius: var(--radius-sm);
+    font-size: 0.98em;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    box-sizing: border-box;
+    width: 100%;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+body.dark-mode .envio-correo-inputs input[type="text"],
+body.dark-mode .envio-correo-inputs input[type="email"] {
+    background-color: var(--card-bg-dark);
+    color: var(--text-color-dark);
+    border-color: var(--border-color-dark);
+}
+.envio-correo-inputs input:focus {
+    outline: none;
+    border-color: var(--primary-color-light);
+    box-shadow: 0 0 0 3px var(--primary-color-light_alpha, rgba(0, 121, 107, 0.3));
+}
+body.dark-mode .envio-correo-inputs input:focus {
+    border-color: var(--primary-color-dark);
+    box-shadow: 0 0 0 3px var(--primary-color-dark_alpha, rgba(77, 182, 172, 0.3));
+}
+#studentNameInput {
+    width: 100%;
+}
+.envio-correo-row2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 12px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+#teacherEmailInput {
+    flex: 1;
+    min-width: 260px;
+}
+#sendEmailBtn {
+    background: linear-gradient(135deg, var(--primary-color-light), var(--secondary-color-light));
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1em;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px var(--shadow-color-light);
+    transition: transform 0.15s, box-shadow 0.2s, filter 0.2s;
+    white-space: nowrap;
+}
+body.dark-mode #sendEmailBtn {
+    background: linear-gradient(135deg, var(--primary-color-dark), var(--secondary-color-dark));
+    color: var(--bg-color-dark);
+    box-shadow: 0 4px 12px var(--shadow-color-dark);
+}
+#sendEmailBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--shadow-color-light);
+    filter: brightness(1.08);
+}
+body.dark-mode #sendEmailBtn:hover {
+    box-shadow: 0 6px 16px var(--shadow-color-dark);
+}
+#sendEmailBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    filter: none;
+}
+
+/* --- ESTILOS INTERACTIVOS DE SEMÁFORO DE DIAGNÓSTICO --- */
+.semaforo-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #1a1e24;
+    padding: 6px 14px;
+    border-radius: 20px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.6);
+}
+.semaforo-light {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    opacity: 0.25;
+    transition: opacity 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+.semaforo-light.red { background-color: #ff4d4d; }
+.semaforo-light.yellow { background-color: #ffcc00; }
+.semaforo-light.green { background-color: #2ecc71; }
+
+.semaforo-light.active.red { opacity: 1; box-shadow: 0 0 12px #ff4d4d; transform: scale(1.25); }
+.semaforo-light.active.yellow { opacity: 1; box-shadow: 0 0 12px #ffcc00; transform: scale(1.25); }
+.semaforo-light.active.green { opacity: 1; box-shadow: 0 0 12px #2ecc71; transform: scale(1.25); }
+
+.interactive-quiz-card {
+    background: var(--card-bg-light);
+    border: 2px solid var(--border-color-light);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: var(--card-shadow);
+}
+body.dark-mode .interactive-quiz-card {
+    background: var(--card-bg-dark);
+    border-color: var(--border-color-dark);
+}
+.option-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin: 8px 0;
+    padding: 12px 16px;
+    background: var(--bg-color-light);
+    color: var(--text-color-light);
+    border: 1.5px solid var(--border-color-light);
+    border-radius: var(--radius-sm);
+    font-size: 0.98em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+body.dark-mode .option-btn {
+    background: var(--card-bg-dark);
+    color: var(--text-color-dark);
+    border-color: var(--border-color-dark);
+}
+.option-btn:hover {
+    border-color: var(--primary-color-light);
+    transform: translateX(5px);
+}
+body.dark-mode .option-btn:hover {
+    border-color: var(--primary-color-dark);
+}
+.feedback-box {
+    margin-top: 14px;
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    font-size: 0.98em;
+    font-weight: 500;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    line-height: 1.5;
+    animation: fadeIn 0.3s ease-in-out;
+}
+.feedback-box.green {
+    background-color: rgba(46, 204, 113, 0.12);
+    border: 1.5px solid #2ecc71;
+    color: #1b7a43;
+}
+body.dark-mode .feedback-box.green {
+    color: #2ecc71;
+}
+.feedback-box.yellow {
+    background-color: rgba(255, 204, 0, 0.12);
+    border: 1.5px solid #f1c40f;
+    color: #9a7d0a;
+}
+body.dark-mode .feedback-box.yellow {
+    color: #f1c40f;
+}
+.feedback-box.red {
+    background-color: rgba(231, 76, 60, 0.12);
+    border: 1.5px solid #e74c3c;
+    color: #922b21;
+}
+body.dark-mode .feedback-box.red {
+    color: #e74c3c;
+}
+
+/* --- ESTILOS DE RESALTADO DE DIAGNÓSTICO GLOBAL --- */
+.autoeval-item.autoeval-highlight {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+.autoeval-item.autoeval-highlight.verde {
+    border-left-width: 10px !important;
+    background-color: rgba(46, 204, 113, 0.18) !important;
+}
+.autoeval-item.autoeval-highlight.amarillo {
+    border-left-width: 10px !important;
+    background-color: rgba(241, 196, 15, 0.18) !important;
+}
+.autoeval-item.autoeval-highlight.rojo {
+    border-left-width: 10px !important;
+    background-color: rgba(231, 76, 60, 0.18) !important;
+}
+.result-badge {
+    display: inline-block;
+    background: var(--primary-color-light);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.82em;
+    font-weight: 600;
+    margin-left: 10px;
+    animation: fadeIn 0.4s ease-in-out;
+}
+body.dark-mode .result-badge {
+    background: var(--primary-color-dark);
+    color: var(--bg-color-dark);
+}
+    </style>
+<script id="mathjax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><style type="text/css">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}
+.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
+.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
+.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
+</style><style type="text/css">.CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
+.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
+.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
+.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
+.CtxtMenu_MenuClose:hover:focus {  outline:none}
+</style><style type="text/css">.CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
+.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
+.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
+.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
+.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
+.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
+.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
+.CtxtMenu_MenuSlider {  left: .1em;}
+.CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}
+.CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}
+.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
+.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
+.CtxtMenu_MenuDisabled {  color:GrayText}
+.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
+.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
+.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
+.CtxtMenu_ContextMenu:focus {  outline:none}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
+.CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }
+.CtxtMenu_SelectionItem {  padding-right: 1em;}
+.CtxtMenu_Selection {  right: 40%; width:50%; }
+.CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}
+.CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
+</style><style id="MJX-CHTML-styles">
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+</style></head>
+
+<body class="theme-infografico" data-test-type="formativa" style="font-family: Nunito, Verdana, Geneva, sans-serif;">
+    <div class="container">
+        <header>
+            <h1>Evaluación diagnóstica</h1><div style="text-align: center; padding: 10px 0px 20px;"><button id="themeToggleBtn">🌙 Modo Oscuro</button></div>
+
+            
+
+            
+        </header>
+
+        <main>
+            
+            <div id="tutorialContainer"><h3>Evaluación Diagnóstica: Productos notables (orientada por Matemáticas)</h3><h4 style="color: var(--accent-color-light); margin-top: 25px; margin-bottom: 15px; font-size: 1.3em;">🎯 1. Saberes previos y conceptos fundamentales</h4><div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 25px;"><div style="flex: 1 1 0%; min-width: 280px; font-size: 1.05em; line-height: 1.8;"><p></p><div class="interactive-quiz-card" id="quiz_tb4oyzxgc" data-qtext="¿Cuál es la forma correcta del &lt;strong&gt;binomio al cuadrado&lt;/strong&gt; $(a+b)^2$?" data-user-answer="verde"><div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:10px;"><div style="font-weight:600; font-size:1.05em; flex:1;">¿Cuál es la forma correcta del <strong>binomio al cuadrado</strong> <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="0" style="font-size: 110.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></math></mjx-assistive-mml></mjx-container>?</div><div class="semaforo-container" id="semaforo_quiz_tb4oyzxgc"><div class="semaforo-light red" title="Retroalimentación Roja / Requiere reforzar"></div><div class="semaforo-light yellow" title="Retroalimentación Amarilla / Parcial"></div><div class="semaforo-light green active" title="Retroalimentación Verde / Correcto"></div></div></div><div class="options-group"><button class="option-btn" data-type="AMARILLO" data-feedback="🟡 Vas por buen camino, pero hace falta precisar algunos detalles clave." data-qid="quiz_tb4oyzxgc" style="border-color: var(--border-color-light); font-weight: normal; background-color: var(--bg-color-light);"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="1" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>=</mo><msup><mi>a</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo>+</mo><msup><mi>b</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup></math></mjx-assistive-mml></mjx-container></button><button class="option-btn" data-type="VERDE" data-feedback="🟢 ¡Excelente! Demuestras un dominio sólido de este concepto previo." data-qid="quiz_tb4oyzxgc" style="border-color: var(--primary-color-light); font-weight: bold; background-color: rgba(0, 121, 107, 0.12);"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="2" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>=</mo><msup><mi>a</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo>+</mo><mn>2</mn><mi>a</mi><mi>b</mi><mo>+</mo><msup><mi>b</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup></math></mjx-assistive-mml></mjx-container></button><button class="option-btn" data-type="ROJO" data-feedback="🔴 Se detecta una brecha conceptual o error frecuente. Es necesario revisar este fundamento." data-qid="quiz_tb4oyzxgc" style="border-color: var(--border-color-light); font-weight: normal; background-color: var(--bg-color-light);"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="3" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>=</mo><msup><mi>a</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo>+</mo><mi>a</mi><mi>b</mi><mo>+</mo><msup><mi>b</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup></math></mjx-assistive-mml></mjx-container></button></div><div class="feedback-box green" id="feedback_quiz_tb4oyzxgc" style="display: flex;"><span style="font-size:1.2em;">🟢</span> <div>🟢 ¡Excelente! Demuestras un dominio sólido de este concepto previo.</div></div></div>  <p></p>
+<p></p><div class="interactive-quiz-card" id="quiz_fkgzfe813" data-qtext="¿Qué condición debe cumplirse para aplicar la &lt;strong&gt;diferencia de cuadrados&lt;/strong&gt; $(a+b)(a-b)$?" data-user-answer="verde"><div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:10px;"><div style="font-weight:600; font-size:1.05em; flex:1;">¿Qué condición debe cumplirse para aplicar la <strong>diferencia de cuadrados</strong> <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="4" style="font-size: 110.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container>?</div><div class="semaforo-container" id="semaforo_quiz_fkgzfe813"><div class="semaforo-light red" title="Retroalimentación Roja / Requiere reforzar"></div><div class="semaforo-light yellow" title="Retroalimentación Amarilla / Parcial"></div><div class="semaforo-light green active" title="Retroalimentación Verde / Correcto"></div></div></div><div class="options-group"><button class="option-btn" data-type="VERDE" data-feedback="🟢 ¡Excelente! Dominas la condición de la diferencia de cuadrados." data-qid="quiz_fkgzfe813" style="border-color: var(--primary-color-light); font-weight: bold; background-color: rgba(0, 121, 107, 0.12);">Los dos factores deben ser binomios conjugados, es decir, uno con “+” y el otro con “–” del mismo término.</button><button class="option-btn" data-type="ROJO" data-feedback="🔴 Concepto erróneo; la diferencia de cuadrados solo se da con binomios conjugados idénticos." data-qid="quiz_fkgzfe813" style="border-color: var(--border-color-light); font-weight: normal; background-color: var(--bg-color-light);">No importa el signo; cualquier binomio multiplicado por otro cualquiera forma una diferencia de cuadrados.</button><button class="option-btn" data-type="AMARILLO" data-feedback="🟡 Casi correcto; falta reconocer que el término constante también debe ser idéntico." data-qid="quiz_fkgzfe813" style="border-color: var(--border-color-light); font-weight: normal; background-color: var(--bg-color-light);">Basta con que los dos binomios tengan el mismo término lineal, aunque los signos sean distintos.</button></div><div class="feedback-box green" id="feedback_quiz_fkgzfe813" style="display: flex;"><span style="font-size:1.2em;">🟢</span> <div>🟢 ¡Excelente! Dominas la condición de la diferencia de cuadrados.</div></div></div>  <p></p>
+<p></p><div class="interactive-quiz-card" id="quiz_b3tfvy9jg" data-qtext="Escribe la forma expandida del &lt;strong&gt;cubo de un binomio&lt;/strong&gt; $(a-b)^3$." data-user-answer="rojo"><div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:10px;"><div style="font-weight:600; font-size:1.05em; flex:1;">Escribe la forma expandida del <strong>cubo de un binomio</strong> <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="5" style="font-size: 110.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>a</mi><mo>−</mo><mi>b</mi><msup><mo stretchy="false">)</mo><mn>3</mn></msup></math></mjx-assistive-mml></mjx-container>.</div><div class="semaforo-container" id="semaforo_quiz_b3tfvy9jg"><div class="semaforo-light red active" title="Retroalimentación Roja / Requiere reforzar"></div><div class="semaforo-light yellow" title="Retroalimentación Amarilla / Parcial"></div><div class="semaforo-light green" title="Retroalimentación Verde / Correcto"></div></div></div><div class="options-group"><button class="option-btn" data-type="AMARILLO" data-feedback="🟡 Parcialmente cierto solo para ciertos valores; falta el término intermedio." data-qid="quiz_b3tfvy9jg" style="border-color: var(--border-color-light); font-weight: normal; background-color: var(--bg-color-light);"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="6" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>a</mi><mo>−</mo><mi>b</mi><msup><mo stretchy="false">)</mo><mn>3</mn></msup><mo>=</mo><msup><mi>a</mi><mrow data-mjx-texclass="ORD"><mn>3</mn></mrow></msup><mo>−</mo><msup><mi>b</mi><mrow data-mjx-texclass="ORD"><mn>3</mn></mrow></msup></math></mjx-assistive-mml></mjx-container></button><button class="option-btn" data-type="VERDE" data-feedback="🟢 ¡Correcto! Has expresado adecuadamente el cubo del binomio." data-qid="quiz_b3tfvy9jg" style="border-color: var(--border-color-light); font-weight: normal; background-color: var(--bg-color-light);"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="7" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>a</mi><mo>−</mo><mi>b</mi><msup><mo stretchy="false">)</mo><mn>3</mn></msup><mo>=</mo><msup><mi>a</mi><mrow data-mjx-texclass="ORD"><mn>3</mn></mrow></msup><mo>−</mo><mn>3</mn><msup><mi>a</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mi>b</mi><mo>+</mo><mn>3</mn><mi>a</mi><msup><mi>b</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo>−</mo><msup><mi>b</mi><mrow data-mjx-texclass="ORD"><mn>3</mn></mrow></msup></math></mjx-assistive-mml></mjx-container></button><button class="option-btn" data-type="ROJO" data-feedback="🔴 Error de signo; la expansión está invertida." data-qid="quiz_b3tfvy9jg" style="border-color: var(--primary-color-light); font-weight: bold; background-color: rgba(0, 121, 107, 0.12);"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="8" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>a</mi><mo>−</mo><mi>b</mi><msup><mo stretchy="false">)</mo><mn>3</mn></msup><mo>=</mo><msup><mi>a</mi><mrow data-mjx-texclass="ORD"><mn>3</mn></mrow></msup><mo>+</mo><mn>3</mn><msup><mi>a</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mi>b</mi><mo>−</mo><mn>3</mn><mi>a</mi><msup><mi>b</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo>+</mo><msup><mi>b</mi><mrow data-mjx-texclass="ORD"><mn>3</mn></mrow></msup></math></mjx-assistive-mml></mjx-container></button></div><div class="feedback-box red" id="feedback_quiz_b3tfvy9jg" style="display: flex;"><span style="font-size:1.2em;">🔴</span> <div>🔴 Error de signo; la expansión está invertida.</div></div></div><p></p>
+</div></div><h4 style="color: var(--accent-color-light); margin-top: 25px; margin-bottom: 15px; font-size: 1.3em;">🧩 2. Comprensión y razonamiento aplicado</h4><div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 25px;"><div style="flex: 1 1 0%; min-width: 280px; font-size: 1.05em; line-height: 1.8;"><p></p><div class="interactive-quiz-card" id="quiz_ml6w1u7wd" data-qtext="Expande el binomio $(3x+2)^2$ y simplifica el resultado." data-user-answer="verde"><div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:10px;"><div style="font-weight:600; font-size:1.05em; flex:1;">Expande el binomio <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="9" style="font-size: 110.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn><msup><mo stretchy="false">)</mo><mn>2</mn></msup></math></mjx-assistive-mml></mjx-container> y simplifica el resultado.</div><div class="semaforo-container" id="semaforo_quiz_ml6w1u7wd"><div class="semaforo-light red" title="Retroalimentación Roja / Requiere reforzar"></div><div class="semaforo-light yellow" title="Retroalimentación Amarilla / Parcial"></div><div class="semaforo-light green active" title="Retroalimentación Verde / Correcto"></div></div></div><div class="options-group"><button class="option-btn" data-type="VERDE" data-feedback="🟢 ¡Correcto! Tu razonamiento aplicativo es adecuado." data-qid="quiz_ml6w1u7wd" style="border-color: var(--primary-color-light); font-weight: bold; background-color: rgba(0, 121, 107, 0.12);"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="10" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c39"></mjx-c></mjx-mn><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>=</mo><mn>9</mn><msup><mi>x</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo>+</mo><mn>12</mn><mi>x</mi><mo>+</mo><mn>4</mn></math></mjx-assistive-mml></mjx-container></button><button class="option-btn" data-type="ROJO" data-feedback="🔴 Error en el razonamiento aplicado; omitiste el término mixto $2ab$." data-qid="quiz_ml6w1u7wd" style="border-color: var(--border-color-light); font-weight: normal; background-color: var(--bg-color-light);"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="11" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c39"></mjx-c></mjx-mn><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>=</mo><mn>9</mn><msup><mi>x</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo>+</mo><mn>4</mn></math></mjx-assistive-mml></mjx-container></button><button class="option-btn" data-type="AMARILLO" data-feedback="🟡 Razonamiento en proceso. Hay una imprecisión en el término lineal (debe ser $12x$)." data-qid="quiz_ml6w1u7wd" style="border-color: var(--border-color-light); font-weight: normal; background-color: var(--bg-color-light);"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="12" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c39"></mjx-c></mjx-mn><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c36"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>=</mo><mn>9</mn><msup><mi>x</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo>+</mo><mn>6</mn><mi>x</mi><mo>+</mo><mn>4</mn></math></mjx-assistive-mml></mjx-container></button></div><div class="feedback-box green" id="feedback_quiz_ml6w1u7wd" style="display: flex;"><span style="font-size:1.2em;">🟢</span> <div>🟢 ¡Correcto! Tu razonamiento aplicativo es adecuado.</div></div></div>  <p></p>
+<p></p><div class="interactive-quiz-card" id="quiz_2nrbniopz" data-qtext="Factoriza la expresión $x^{2}-9$ usando un producto notable." data-user-answer="verde"><div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:10px;"><div style="font-weight:600; font-size:1.05em; flex:1;">Factoriza la expresión <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="13" style="font-size: 110.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c39"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>x</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo>−</mo><mn>9</mn></math></mjx-assistive-mml></mjx-container> usando un producto notable.</div><div class="semaforo-container" id="semaforo_quiz_2nrbniopz"><div class="semaforo-light red" title="Retroalimentación Roja / Requiere reforzar"></div><div class="semaforo-light yellow" title="Retroalimentación Amarilla / Parcial"></div><div class="semaforo-light green active" title="Retroalimentación Verde / Correcto"></div></div></div><div class="options-group"><button class="option-btn" data-type="AMARILLO" data-feedback="🟡 Parcialmente correcto; confundes la diferencia de cuadrados con el cuadrado de un binomio." data-qid="quiz_2nrbniopz" style="border-color: var(--border-color-light); font-weight: normal; background-color: var(--bg-color-light);"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="14" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c39"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>x</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo>−</mo><mn>9</mn><mo>=</mo><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mn>3</mn><msup><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup></math></mjx-assistive-mml></mjx-container></button><button class="option-btn" data-type="VERDE" data-feedback="🟢 ¡Correcto! Has aplicado la diferencia de cuadrados de forma adecuada." data-qid="quiz_2nrbniopz" style="border-color: var(--primary-color-light); font-weight: bold; background-color: rgba(0, 121, 107, 0.12);"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="15" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c39"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>x</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo>−</mo><mn>9</mn><mo>=</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>3</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mn>3</mn><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></button><button class="option-btn" data-type="ROJO" data-feedback="🔴 Concepto erróneo; la factorización no corresponde a la diferencia de cuadrados." data-qid="quiz_2nrbniopz" style="border-color: var(--border-color-light); font-weight: normal; background-color: var(--bg-color-light);"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="16" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c39"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c39"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>x</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo>−</mo><mn>9</mn><mo>=</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>9</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></button></div><div class="feedback-box green" id="feedback_quiz_2nrbniopz" style="display: flex;"><span style="font-size:1.2em;">🟢</span> <div>🟢 ¡Correcto! Has aplicado la diferencia de cuadrados de forma adecuada.</div></div></div>  <p></p>
+<p></p><div class="interactive-quiz-card" id="quiz_qca62qlxr" data-qtext="Resuelve la ecuación $2a^{2}+5a+2=0$ aplicando el producto notable $(2a+1)(a+2)=0$. ¿Cuáles son las soluciones?" data-user-answer="amarillo"><div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:10px;"><div style="font-weight:600; font-size:1.05em; flex:1;">Resuelve la ecuación <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="17" style="font-size: 110.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c35"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn><msup><mi>a</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo>+</mo><mn>5</mn><mi>a</mi><mo>+</mo><mn>2</mn><mo>=</mo><mn>0</mn></math></mjx-assistive-mml></mjx-container> aplicando el producto notable <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="18" style="font-size: 110.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mn>2</mn><mi>a</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mn>2</mn><mo stretchy="false">)</mo><mo>=</mo><mn>0</mn></math></mjx-assistive-mml></mjx-container>. ¿Cuáles son las soluciones?</div><div class="semaforo-container" id="semaforo_quiz_qca62qlxr"><div class="semaforo-light red" title="Retroalimentación Roja / Requiere reforzar"></div><div class="semaforo-light yellow active" title="Retroalimentación Amarilla / Parcial"></div><div class="semaforo-light green" title="Retroalimentación Verde / Correcto"></div></div></div><div class="options-group"><button class="option-btn" data-type="ROJO" data-feedback="🔴 Error en el razonamiento; el primer valor está invertido." data-qid="quiz_qca62qlxr" style="border-color: var(--border-color-light); font-weight: normal; background-color: var(--bg-color-light);"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="19" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mfrac><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-mstyle></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></math></mjx-assistive-mml></mjx-container> ó <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="20" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi><mo>=</mo><mo>−</mo><mn>2</mn></math></mjx-assistive-mml></mjx-container></button><button class="option-btn" data-type="AMARILLO" data-feedback="🟡 Razonamiento en proceso; la segunda raíz tiene signo incorrecto." data-qid="quiz_qca62qlxr" style="border-color: var(--primary-color-light); font-weight: bold; background-color: rgba(0, 121, 107, 0.12);"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="21" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mstyle><mjx-mfrac><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-mstyle></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi><mo>=</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></math></mjx-assistive-mml></mjx-container> ó <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="22" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi><mo>=</mo><mn>2</mn></math></mjx-assistive-mml></mjx-container></button><button class="option-btn" data-type="VERDE" data-feedback="🟢 ¡Correcto! Has identificado correctamente ambas raíces mediante factorización." data-qid="quiz_qca62qlxr" style="border-color: var(--border-color-light); font-weight: normal; background-color: var(--bg-color-light);"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="23" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mstyle><mjx-mfrac><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-mstyle></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi><mo>=</mo><mo>−</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></math></mjx-assistive-mml></mjx-container> ó <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="24" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi><mo>=</mo><mo>−</mo><mn>2</mn></math></mjx-assistive-mml></mjx-container></button></div><div class="feedback-box yellow" id="feedback_quiz_qca62qlxr" style="display: flex;"><span style="font-size:1.2em;">🟡</span> <div>🟡 Razonamiento en proceso; la segunda raíz tiene signo incorrecto.</div></div></div><p></p>
+</div></div><h4 style="color: var(--accent-color-light); margin-top: 25px; margin-bottom: 15px; font-size: 1.3em;">⚠️ 3. Identificación de concepciones erróneas</h4><div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 25px;"><div style="flex: 1 1 0%; min-width: 280px; font-size: 1.05em; line-height: 1.8;"><p></p><div class="interactive-quiz-card" id="quiz_bl0k0kdn2" data-qtext="“&lt;strong&gt;El producto $(a+b)^2$ siempre resulta en $a^{2}+b^{2}$&lt;/strong&gt;”. ¿Qué afirmación es la correcta?" data-user-answer="verde"><div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:10px;"><div style="font-weight:600; font-size:1.05em; flex:1;">“<strong>El producto <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="25" style="font-size: 110.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></math></mjx-assistive-mml></mjx-container> siempre resulta en <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="26" style="font-size: 110.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>a</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo>+</mo><msup><mi>b</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup></math></mjx-assistive-mml></mjx-container></strong>”. ¿Qué afirmación es la correcta?</div><div class="semaforo-container" id="semaforo_quiz_bl0k0kdn2"><div class="semaforo-light red" title="Retroalimentación Roja / Requiere reforzar"></div><div class="semaforo-light yellow" title="Retroalimentación Amarilla / Parcial"></div><div class="semaforo-light green active" title="Retroalimentación Verde / Correcto"></div></div></div><div class="options-group"><button class="option-btn" data-type="AMARILLO" data-feedback="🟡 Cuidado, esa afirmación es solo parcialmente cierta en casos específicos." data-qid="quiz_bl0k0kdn2" style="border-color: var(--border-color-light); font-weight: normal; background-color: var(--bg-color-light);">Es cierta solo cuando <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="27" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi></math></mjx-assistive-mml></mjx-container> o <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="28" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>b</mi></math></mjx-assistive-mml></mjx-container> vale cero.</button><button class="option-btn" data-type="ROJO" data-feedback="🔴 Cuidado: esta es una concepción errónea muy frecuente." data-qid="quiz_bl0k0kdn2" style="border-color: var(--border-color-light); font-weight: normal; background-color: var(--bg-color-light);">Es cierta en todos los casos.</button><button class="option-btn" data-type="VERDE" data-feedback="🟢 ¡Muy bien! Identificas y superas el mito común sobre este tema." data-qid="quiz_bl0k0kdn2" style="border-color: var(--primary-color-light); font-weight: bold; background-color: rgba(0, 121, 107, 0.12);">Es falsa; el término de interacción <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="29" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn><mi>a</mi><mi>b</mi></math></mjx-assistive-mml></mjx-container> también aparece.</button></div><div class="feedback-box green" id="feedback_quiz_bl0k0kdn2" style="display: flex;"><span style="font-size:1.2em;">🟢</span> <div>🟢 ¡Muy bien! Identificas y superas el mito común sobre este tema.</div></div></div>  <p></p>
+<p></p><div class="interactive-quiz-card" id="quiz_6nwajhjpn" data-qtext="“&lt;strong&gt;Para factorizar $x^{2}+6x+9$ se debe usar la diferencia de cuadrados&lt;/strong&gt;”. Señala la respuesta adecuada." data-user-answer="verde"><div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:10px;"><div style="font-weight:600; font-size:1.05em; flex:1;">“<strong>Para factorizar <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="30" style="font-size: 110.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c36"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c39"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>x</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo>+</mo><mn>6</mn><mi>x</mi><mo>+</mo><mn>9</mn></math></mjx-assistive-mml></mjx-container> se debe usar la diferencia de cuadrados</strong>”. Señala la respuesta adecuada.</div><div class="semaforo-container" id="semaforo_quiz_6nwajhjpn"><div class="semaforo-light red" title="Retroalimentación Roja / Requiere reforzar"></div><div class="semaforo-light yellow" title="Retroalimentación Amarilla / Parcial"></div><div class="semaforo-light green active" title="Retroalimentación Verde / Correcto"></div></div></div><div class="options-group"><button class="option-btn" data-type="VERDE" data-feedback="🟢 ¡Muy bien! Reconoces que el producto notable adecuado es el binomio al cuadrado." data-qid="quiz_6nwajhjpn" style="border-color: var(--primary-color-light); font-weight: bold; background-color: rgba(0, 121, 107, 0.12);">Es incorrecto; la expresión es un trinomio perfecto cuadrado: <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="31" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>3</mn><msup><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup></math></mjx-assistive-mml></mjx-container>.</button><button class="option-btn" data-type="AMARILLO" data-feedback="🟡 Cuidado, esa afirmación es solo parcialmente cierta; la forma directa es un cuadrado, no una diferencia." data-qid="quiz_6nwajhjpn" style="border-color: var(--border-color-light); font-weight: normal; background-color: var(--bg-color-light);">Es parcialmente cierto; se puede escribir como <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="32" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>3</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>3</mn><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container> que también es una diferencia de cuadrados.</button><button class="option-btn" data-type="ROJO" data-feedback="🔴 Concepto erróneo; esa factorización no corresponde al trinomio dado." data-qid="quiz_6nwajhjpn" style="border-color: var(--border-color-light); font-weight: normal; background-color: var(--bg-color-light);">Es correcto; se factoriza como <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="33" style="font-size: 117.3%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c39"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>9</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mn>3</mn><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container>.</button></div><div class="feedback-box green" id="feedback_quiz_6nwajhjpn" style="display: flex;"><span style="font-size:1.2em;">🟢</span> <div>🟢 ¡Muy bien! Reconoces que el producto notable adecuado es el binomio al cuadrado.</div></div></div><p></p>
+</div></div><div style="padding: 14px 18px; margin: 25px 0px; border-radius: var(--radius-md); background: rgba(46, 204, 113, 0.12); border: 2px solid rgb(46, 204, 113); color: var(--text-color-light); font-weight: 500; display: flex; align-items: center; gap: 10px;"><span style="font-size:1.3em;">💡</span> <span>Prueba formativa: la retroalimentación, los semáforos y el diagnóstico global se muestran de forma inmediata al responder cada pregunta.</span></div><h4 style="color: var(--accent-color-light); margin-top: 25px; margin-bottom: 15px; font-size: 1.3em;">📊 4. Diagnóstico global y recomendaciones</h4><div id="globalScoreBanner" style="padding: 16px 20px; margin: 15px 0px 20px; border-radius: var(--radius-md); font-weight: 600; transition: 0.3s; box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px; background-color: rgba(46, 204, 113, 0.18); border-width: 2px 2px 2px 8px; border-style: solid; border-color: rgb(46, 204, 113); border-image: none;"><div style="font-size:1.15em; margin-bottom:6px; display:flex; align-items:center; gap:8px;">🟢 <span>Resultado del Diagnóstico: <strong>Semáforo Verde (Nivel Sólido)</strong></span></div><div style="font-size:0.95em; font-weight:500; opacity:0.9;">Progreso: 8 de 8 preguntas respondidas | Promedio: <strong>2.6 / 3.0</strong> (88% de logro)</div></div><div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 25px;"><div style="flex: 1 1 0%; min-width: 280px; font-size: 1.05em; line-height: 1.8;"><div class="autoeval-item autoeval-highlight verde" id="autoeval_nnt6fr5wn" data-color="VERDE" style="display:flex; align-items:center; justify-content:space-between; padding:12px 16px; margin:10px 0; background:var(--bg-color-light); border-radius:var(--radius-sm); border-left:5px solid #2ecc71; gap:10px; transition: all 0.3s ease;"><span style="flex:1; font-weight:500;"><span class="result-badge">🎯 Tu Nivel Obtenido</span></span><button class="autoeval-btn verde" onclick="toggleAutoeval('autoeval_nnt6fr5wn')" style="padding:8px 14px; font-size:0.88em; cursor:pointer;">🟢 Sólido</button></div>Semáforo Verde: Nivel Sólido | Preparado para avanzar a temas más complejos de Productos notables, como factorización de polinomios de grado superior y uso de identidades en problemas de álgebra lineal.  <p></p>
+<div class="autoeval-item" id="autoeval_ts434ql3k" data-color="AMARILLO" style="display:flex; align-items:center; justify-content:space-between; padding:12px 16px; margin:10px 0; background:var(--bg-color-light); border-radius:var(--radius-sm); border-left:5px solid #f1c40f; gap:10px; transition: all 0.3s ease;"><span style="flex:1; font-weight:500;"></span><button class="autoeval-btn amarillo" onclick="toggleAutoeval('autoeval_ts434ql3k')" style="padding:8px 14px; font-size:0.88em; cursor:pointer;">🟡 Intermedio</button></div>Semáforo Amarillo: Nivel Intermedio | Se recomienda repasar los conceptos parciales identificados: reforzar la inclusión del término <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="34" style="font-size: 110.2%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn><mi>a</mi><mi>b</mi></math></mjx-assistive-mml></mjx-container> en el binomio al cuadrado y practicar la diferencia de cuadrados en distintos contextos.  <p></p>
+<div class="autoeval-item" id="autoeval_iye0uuihl" data-color="ROJO" style="display:flex; align-items:center; justify-content:space-between; padding:12px 16px; margin:10px 0; background:var(--bg-color-light); border-radius:var(--radius-sm); border-left:5px solid #e74c3c; gap:10px; transition: all 0.3s ease;"><span style="flex:1; font-weight:500;"></span><button class="autoeval-btn rojo" onclick="toggleAutoeval('autoeval_iye0uuihl')" style="padding:8px 14px; font-size:0.88em; cursor:pointer;">🔴 Inicial / Refuerzo</button></div>Semáforo Rojo: Nivel Inicial / Refuerzo | Se sugiere iniciar con los fundamentos básicos de productos notables: estudiar y memorizar las tres identidades principales (binomio al cuadrado, diferencia de cuadrados y cubo del binomio) mediante ejercicios guiados y visualizaciones antes de pasar a aplicaciones más avanzadas.<p></p>
+</div></div></div>
+            <div id="loadingIndicator" style="display: none;">
+                <p>✨ Generando evaluación diagnóstica con Groq... Esto puede tardar un momento. ✨</p>
+                <div class="spinner"></div>
+            </div>
+            
+        </main>
+    </div>
+
+    <footer>
+        <p>Herramienta creada por Juan Guillermo Rivera Berrío con la API de Groq.</p>
+    </footer>
+
+    <script>
+// FLAG DE CONTROL PARA OCULTAR RESULTADOS HASTA ENVIAR CORREO
+let isEmailSent = false;
+
+// TIPO DE PRUEBA SELECCIONADO (sumativa: envía correo | formativa: retroalimentación inmediata)
+let currentTestType = 'sumativa';
+
+function isFormative() {
+    return currentTestType === 'formativa';
+}
+
+function feedbackAllowed() {
+    return isEmailSent || isFormative();
+}
+
+// FUNCIÓN DE DECODIFICACIÓN DE ENTIDADES HTML
+function decodeHTMLEntities(text) {
+    if (typeof text !== 'string') return '';
+    const textArea = document.createElement('textarea');
+    textArea.innerHTML = text;
+    return textArea.value;
+}
+
+// FUNCIÓN AUXILIAR DE SANITIZACIÓN Y ESCAPE
+function escapeHtml(unsafe) {
+    if (typeof unsafe !== 'string') return '';
+    const decoded = decodeHTMLEntities(unsafe);
+    return decoded
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+let currentTopic = '';
+
+function safeGetElement(id) {
+    const element = document.getElementById(id);
+    if (!element) {
+        console.warn(`Elemento con ID '${id}' no encontrado en el DOM`);
+    }
+    return element;
+}
+
+function safeSetDisplay(element, displayValue) {
+    if (element) {
+        element.style.display = displayValue;
+        return true;
+    }
+    return false;
+}
+
+const topicInput = safeGetElement('topicInput');
+const expertInput = safeGetElement('expertInput');
+const testTypeSelect = safeGetElement('testTypeSelect');
+const paletteSelect = safeGetElement('paletteSelect');
+const artStyleSelect = safeGetElement('artStyleSelect');
+const imageModelSelect = safeGetElement('imageModelSelect');
+const textModelSelect = safeGetElement('textModelSelect');
+const includeMathjaxCheckbox = safeGetElement('includeMathjaxCheckbox');
+const generateTutorialBtn = safeGetElement('generateTutorialBtn');
+const tutorialContainer = safeGetElement('tutorialContainer');
+const themeToggleBtn = safeGetElement('themeToggleBtn');
+const loadingIndicator = safeGetElement('loadingIndicator');
+const tutorialHeaderActions = safeGetElement('tutorialHeaderActions');
+const postGenerationControls = safeGetElement('postGenerationControls');
+const downloadHtmlBtn = safeGetElement('downloadHtmlBtn');
+const downloadWordBtn = safeGetElement('downloadWordBtn');
+const resetBtn = safeGetElement('resetBtn');
+const apiKeyInput = safeGetElement('apiKeyInput');
+const getApiKeyBtn = safeGetElement('getApiKeyBtn');
+
+// Inicializa el tipo de prueba (desde HTML descargado o desde el selector)
+const bodyTestType = document.body.getAttribute('data-test-type');
+if (bodyTestType === 'sumativa' || bodyTestType === 'formativa') {
+    currentTestType = bodyTestType;
+}
+if (testTypeSelect) {
+    currentTestType = testTypeSelect.value || 'sumativa';
+    testTypeSelect.addEventListener('change', () => {
+        currentTestType = testTypeSelect.value || 'sumativa';
+        document.body.setAttribute('data-test-type', currentTestType);
+    });
+}
+
+// --- Integración Groq API Key ---
+function startAuthFlow() {
+    window.open('https://console.groq.com/keys', '_blank');
+}
+
+if (getApiKeyBtn) {
+    getApiKeyBtn.addEventListener('click', startAuthFlow);
+}
+
+// Cargar y guardar API Key en localStorage
+const savedGroqKey = localStorage.getItem('groq_api_key');
+if (savedGroqKey && apiKeyInput) {
+    apiKeyInput.value = savedGroqKey;
+}
+
+if (apiKeyInput) {
+    apiKeyInput.addEventListener('input', () => {
+        localStorage.setItem('groq_api_key', apiKeyInput.value.trim());
+    });
+    apiKeyInput.addEventListener('change', () => {
+        localStorage.setItem('groq_api_key', apiKeyInput.value.trim());
+    });
+}
+
+const designPalettes = [
+    { name: 'Oceanic', light: { bg: '#e0f7fa', text: '#004d40', primary: '#00796b', secondary: '#004d40', card: '#ffffff', border: '#b2dfdb', accent: '#ff6f00', shadow: 'rgba(0, 77, 64, 0.15)', success: '#2e7d32', error: '#c62828' }, dark: { bg: '#00251a', text: '#b2dfdb', primary: '#4db6ac', secondary: '#80cbc4', card: '#003d33', border: '#004d40', accent: '#ffa000', shadow: 'rgba(77, 182, 172, 0.2)', success: '#81c784', error: '#ef9a9a' } },
+    { name: 'Sunset', light: { bg: '#fff3e0', text: '#4e342e', primary: '#ff7043', secondary: '#f4511e', card: '#ffffff', border: '#ffccbc', accent: '#0277bd', shadow: 'rgba(244, 81, 30, 0.15)', success: '#388e3c', error: '#d32f2f' }, dark: { bg: '#261a13', text: '#ffccbc', primary: '#ff8a65', secondary: '#ffab91', card: '#3e2723', border: '#5d4037', accent: '#4fc3f7', shadow: 'rgba(255, 138, 101, 0.2)', success: '#a5d6a7', error: '#ffab91' } },
+    { name: 'Forest', light: { bg: '#e8f5e9', text: '#1b5e20', primary: '#4caf50', secondary: '#2e7d32', card: '#ffffff', border: '#c8e6c9', accent: '#ffc107', shadow: 'rgba(46, 125, 50, 0.15)', success: '#2e7d32', error: '#c62828' }, dark: { bg: '#0c1f0d', text: '#c8e6c9', primary: '#81c784', secondary: '#a5d6a7', card: '#1b3e1d', border: '#2e7d32', accent: '#ffd54f', shadow: 'rgba(129, 199, 132, 0.2)', success: '#81c784', error: '#ef9a9a' } },
+    { name: 'Royal Purple', light: { bg: '#ede7f6', text: '#311b92', primary: '#673ab7', secondary: '#4527a0', card: '#ffffff', border: '#d1c4e9', accent: '#ffc107', shadow: 'rgba(69, 39, 160, 0.15)', success: '#4caf50', error: '#e53935' }, dark: { bg: '#1a0033', text: '#d1c4e9', primary: '#9575cd', secondary: '#b39ddb', card: '#2c1a4c', border: '#4527a0', accent: '#ffd54f', shadow: 'rgba(149, 117, 205, 0.2)', success: '#81c784', error: '#ef9a9a' } },
+    { name: 'Crimson Night', light: { bg: '#ffebee', text: '#b71c1c', primary: '#d32f2f', secondary: '#c62828', card: '#ffffff', border: '#ffcdd2', accent: '#1976d2', shadow: 'rgba(198, 40, 40, 0.15)', success: '#388e3c', error: '#d32f2f' }, dark: { bg: '#3e0000', text: '#ffcdd2', primary: '#ef5350', secondary: '#e57373', card: '#540000', border: '#c62828', accent: '#64b5f6', shadow: 'rgba(239, 83, 80, 0.2)', success: '#a5d6a7', error: '#ef9a9a' } },
+    { name: 'Golden Sands', light: { bg: '#fff8e1', text: '#424242', primary: '#ffab00', secondary: '#ff8f00', card: '#ffffff', border: '#ffecb3', accent: '#006064', shadow: 'rgba(255, 143, 0, 0.15)', success: '#4caf50', error: '#f44336' }, dark: { bg: '#212121', text: '#ffecb3', primary: '#ffd180', secondary: '#ffe0b2', card: '#303030', border: '#ff8f00', accent: '#4dd0e1', shadow: 'rgba(255, 209, 128, 0.2)', success: '#81c784', error: '#ff8a80' } },
+    { name: 'Minty Fresh', light: { bg: '#e0f2f1', text: '#004d40', primary: '#00897b', secondary: '#00695c', card: '#ffffff', border: '#b2dfdb', accent: '#ef6c00', shadow: 'rgba(0, 105, 92, 0.15)', success: '#43a047', error: '#d81b60' }, dark: { bg: '#00251e', text: '#b2dfdb', primary: '#4db6ac', secondary: '#80cbc4', card: '#003d33', border: '#00695c', accent: '#ffa726', shadow: 'rgba(77, 182, 172, 0.2)', success: '#81c784', error: '#f06292' } },
+    { name: 'Graphite Lime', light: { bg: '#f9fbe7', text: '#333333', primary: '#c0ca33', secondary: '#afb42b', card: '#ffffff', border: '#e6ee9c', accent: '#d84315', shadow: 'rgba(175, 180, 43, 0.15)', success: '#558b2f', error: '#c62828' }, dark: { bg: '#1b1b1b', text: '#e6ee9c', primary: '#d4e157', secondary: '#e6ee9c', card: '#2d2d2d', border: '#afb42b', accent: '#ff7043', shadow: 'rgba(212, 225, 87, 0.2)', success: '#aed581', error: '#ef9a9a' } },
+    { name: 'Rose Quartz', light: { bg: '#fce4ec', text: '#560027', primary: '#ec407a', secondary: '#ad1457', card: '#ffffff', border: '#f8bbd0', accent: '#00acc1', shadow: 'rgba(173, 20, 87, 0.15)', success: '#4caf50', error: '#d32f2f' }, dark: { bg: '#310011', text: '#f8bbd0', primary: '#f06292', secondary: '#f48fb1', card: '#420019', border: '#ad1457', accent: '#4dd0e1', shadow: 'rgba(240, 98, 146, 0.2)', success: '#a5d6a7', error: '#ff8a80' } },
+    { name: 'Steel Blue', light: { bg: '#e3f2fd', text: '#0d47a1', primary: '#1976d2', secondary: '#1565c0', card: '#ffffff', border: '#bbdefb', accent: '#f57c00', shadow: 'rgba(21, 101, 192, 0.15)', success: '#2e7d32', error: '#c62828' }, dark: { bg: '#0a1f33', text: '#bbdefb', primary: '#64b5f6', secondary: '#90caf9', card: '#112e4a', border: '#1565c0', accent: '#ffa726', shadow: 'rgba(100, 181, 246, 0.2)', success: '#81c784', error: '#ef9a9a' } }
+];
+const fontFamilies = ["'Roboto', 'Helvetica Neue', Arial, sans-serif", "'Open Sans', 'Segoe UI', Tahoma, sans-serif", "'Lato', 'Lucida Grande', Verdana, sans-serif", "'Montserrat', 'Impact', sans-serif", "'Nunito', 'Verdana', Geneva, sans-serif"];
+
+function applyDesign(palette, font) {
+    if (!palette) {
+        palette = designPalettes[0];
+    }
+    document.documentElement.style.setProperty('--bg-color-light', palette.light.bg);
+    document.documentElement.style.setProperty('--text-color-light', palette.light.text);
+    document.documentElement.style.setProperty('--primary-color-light', palette.light.primary);
+    document.documentElement.style.setProperty('--secondary-color-light', palette.light.secondary);
+    document.documentElement.style.setProperty('--card-bg-light', palette.light.card);
+    document.documentElement.style.setProperty('--border-color-light', palette.light.border);
+    document.documentElement.style.setProperty('--accent-color-light', palette.light.accent);
+    document.documentElement.style.setProperty('--shadow-color-light', palette.light.shadow);
+    document.documentElement.style.setProperty('--success-color-light', palette.light.success);
+    document.documentElement.style.setProperty('--error-color-light', palette.light.error);
+
+    document.documentElement.style.setProperty('--bg-color-dark', palette.dark.bg);
+    document.documentElement.style.setProperty('--text-color-dark', palette.dark.text);
+    document.documentElement.style.setProperty('--primary-color-dark', palette.dark.primary);
+    document.documentElement.style.setProperty('--secondary-color-dark', palette.dark.secondary);
+    document.documentElement.style.setProperty('--card-bg-dark', palette.dark.card);
+    document.documentElement.style.setProperty('--border-color-dark', palette.dark.border);
+    document.documentElement.style.setProperty('--accent-color-dark', palette.dark.accent);
+    document.documentElement.style.setProperty('--shadow-color-dark', palette.dark.shadow);
+    document.documentElement.style.setProperty('--success-color-dark', palette.dark.success);
+    document.documentElement.style.setProperty('--error-color-dark', palette.dark.error);
+
+    document.documentElement.style.setProperty('--primary-color-light_alpha', hexToRgba(palette.light.primary, 0.3));
+    document.documentElement.style.setProperty('--primary-color-dark_alpha', hexToRgba(palette.dark.primary, 0.3));
+    if (document.body) {
+        if (!document.body.className.match(/theme-(educativo|infantil|cientifico)/)) {
+            document.body.style.fontFamily = font;
+        } else {
+            document.body.style.fontFamily = ''; 
+        }
+    }
+}
+
+function hexToRgba(hex, alpha) {
+    if (!hex || typeof hex !== 'string' || hex.length < 6) {
+        return `rgba(0,0,0,${alpha})`;
+    }
+    const r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+function getRandomElement(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+function populatePaletteSelector() {
+    if (paletteSelect && designPalettes) {
+        paletteSelect.innerHTML = '';
+        designPalettes.forEach(palette => {
+            const option = document.createElement('option');
+            option.value = palette.name;
+            option.textContent = palette.name;
+            paletteSelect.appendChild(option);
+        });
+    }
+}
+populatePaletteSelector();
+
+const artStyles = [
+    { value: 'default', label: 'Predeterminado' },
+    { value: 'moderno', label: 'Moderno' },
+    { value: 'corporativo', label: 'Corporativo' },
+    { value: 'creativo', label: 'Creativo' },
+    { value: 'minimalista', label: 'Minimalista' },
+    { value: 'glass', label: 'Glassmorphism' },
+    { value: 'darkneon', label: 'Dark Neón' },
+    { value: 'brutalista', label: 'Brutalista' },
+    { value: 'vibrante', label: 'Gradiente Vibrante' },
+    { value: 'editorial', label: 'Editorial / Revista' },
+    { value: 'terminal', label: 'Terminal / Tech' },
+    { value: 'infografico', label: 'Infográfico Colorido' },
+    { value: 'retro', label: 'Retro / Vintage' },
+    { value: 'neobrutalismo', label: 'Pastel Brutalista' },
+    { value: 'cyberpunk', label: 'Cyberpunk' },
+    { value: 'organico', label: 'Ecológico / Orgánico' },
+    { value: 'noir', label: 'Noir Oscuro' },
+    { value: 'educativo', label: 'Educativo / Académico' },
+    { value: 'infantil', label: 'Infantil / Divertido' },
+    { value: 'cientifico', label: 'Científico / Laboratorio' }
+];
+
+if (artStyleSelect) {
+    artStyles.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s.value;
+        opt.textContent = s.label;
+        artStyleSelect.appendChild(opt);
+    });
+    artStyleSelect.value = 'default';
+    artStyleSelect.addEventListener('change', () => {
+        document.body.className = document.body.className.replace(/theme-\S+/g, '').trim();
+        const theme = artStyleSelect.value;
+        if (theme !== 'default') {
+            document.body.classList.add('theme-' + theme);
+        }
+        const currentPaletteName = paletteSelect ? paletteSelect.value : (localStorage.getItem('paletteName') || designPalettes[0].name);
+        const currentFont = localStorage.getItem('fontFamily') || fontFamilies[0];
+        const activePalette = designPalettes.find(p => p.name === currentPaletteName) || designPalettes[0];
+        applyDesign(activePalette, currentFont);
+    });
+}
+
+const imageModels = [
+    { value: 'none', label: 'Sin imágenes' },
+    { value: 'grok-imagine', label: 'grok-imagine' },
+    { value: 'ideogram-v4-turbo', label: 'ideogram-v4-turbo' },
+    { value: 'qwen-image', label: 'qwen-image' },
+    { value: 'nanobanana-2-lite', label: 'nanobanana-2-lite' },
+    { value: 'gpt-image-2', label: 'gpt-image-2' },
+    { value: 'zimage', label: 'zimage' },
+    { value: 'klein', label: 'klein' },
+    { value: 'gptimage', label: 'gptimage' },
+    { value: 'wan-image', label: 'wan-image' }
+];
+
+if (imageModelSelect) {
+    imageModels.forEach(m => {
+        const opt = document.createElement('option');
+        opt.value = m.value;
+        opt.textContent = m.label;
+        imageModelSelect.appendChild(opt);
+    });
+    imageModelSelect.value = 'none';
+}
+
+// Modelos de texto de Groq (compatibles con Groq API)
+const textModels = [
+    { value: 'llama-3.3-70b-versatile', label: 'Llama 3.3 70B Versatile' },
+    { value: 'llama-3.1-8b-instant', label: 'Llama 3.1 8B Instant' },
+    { value: 'openai/gpt-oss-120b', label: 'GPT OSS 120B' },
+    { value: 'openai/gpt-oss-20b', label: 'GPT OSS 20B' },
+    { value: 'qwen/qwen3-32b', label: 'Qwen3 32B' }
+];
+
+if (textModelSelect) {
+    textModels.forEach(model => {
+        const option = document.createElement('option');
+        option.value = model.value;
+        option.textContent = model.label;
+        textModelSelect.appendChild(option);
+    });
+    textModelSelect.value = 'llama-3.3-70b-versatile';
+}
+
+const mathKeywords = ['matematicas', 'fisica', 'algebra', 'calculo', 'geometria', 'trigonometria', 'estadistica', 'probabilidad', 'ecuaciones', 'vectores', 'termodinamica', 'mecanica', 'optica', 'electromagnetismo', 'derivada', 'integral', 'matriz', 'funcion', 'matemáticas', 'física', 'álgebra', 'cálculo', 'geometría', 'trigonometría', 'estadística', 'probabilidad', 'termodinámica', 'mecánica', 'óptica', 'función', 'conjuntos', 'teoría de conjuntos'];
+
+function ensureMathJax(topic, forceEnable) {
+    const topicLower = topic.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const autoDetectMath = mathKeywords.some(keyword => topicLower.includes(keyword));
+    const shouldEnable = forceEnable || (includeMathjaxCheckbox && includeMathjaxCheckbox.checked && autoDetectMath);
+    let mathjaxScript = document.getElementById('mathjax-script');
+    if (shouldEnable) {
+        if (!mathjaxScript && document.head) {
+            mathjaxScript = document.createElement('script');
+            mathjaxScript.id = 'mathjax-script';
+            mathjaxScript.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+            document.head.appendChild(mathjaxScript);
+        }
+        if (window.MathJax && window.MathJax.typesetPromise) return Promise.resolve();
+        return new Promise((resolve) => {
+            const check = setInterval(() => {
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    clearInterval(check);
+                    resolve();
+                }
+            }, 100);
+            setTimeout(() => { clearInterval(check); resolve(); }, 30000);
+        });
+    } else {
+        if (mathjaxScript && mathjaxScript.parentNode) mathjaxScript.parentNode.removeChild(mathjaxScript);
+        return Promise.resolve();
+    }
+}
+
+if (topicInput) {
+    topicInput.addEventListener('input', () => {
+        const val = topicInput.value.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        if (includeMathjaxCheckbox && mathKeywords.some(keyword => val.includes(keyword))) {
+            includeMathjaxCheckbox.checked = true;
+        }
+    });
+}
+
+const currentThemeStored = localStorage.getItem('theme');
+if (currentThemeStored === 'dark' && document.body) {
+    document.body.classList.add('dark-mode');
+    if (themeToggleBtn) themeToggleBtn.textContent = '☀️ Modo Claro';
+} else {
+    if (themeToggleBtn) themeToggleBtn.textContent = '🌙 Modo Oscuro';
+}
+
+const savedPaletteName = localStorage.getItem('paletteName') || designPalettes[0].name;
+const savedFont = localStorage.getItem('fontFamily') || getRandomElement(fontFamilies);
+let initialPalette = designPalettes.find(p => p.name === savedPaletteName) || designPalettes[0];
+applyDesign(initialPalette, savedFont);
+
+if (paletteSelect) {
+    paletteSelect.value = initialPalette.name;
+    paletteSelect.addEventListener('change', () => {
+        const selectedPaletteName = paletteSelect.value;
+        const selectedPalette = designPalettes.find(p => p.name === selectedPaletteName);
+        const currentFont = document.body.style.fontFamily || localStorage.getItem('fontFamily') || fontFamilies[0];
+        if (selectedPalette) {
+            applyDesign(selectedPalette, currentFont);
+            localStorage.setItem('paletteName', selectedPalette.name);
+        }
+    });
+}
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        if (document.body) {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+            themeToggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Modo Claro' : '🌙 Modo Oscuro';
+
+            const currentPaletteName = paletteSelect ? paletteSelect.value : (localStorage.getItem('paletteName') || designPalettes[0].name);
+            const currentFont = document.body.style.fontFamily || localStorage.getItem('fontFamily') || fontFamilies[0];
+            const activePalette = designPalettes.find(p => p.name === currentPaletteName) || designPalettes[0];
+            applyDesign(activePalette, currentFont);
+        }
+    });
+}
+
+function parseSections(text) {
+    const sections = {
+        fundamentos: '',
+        aplicado: '',
+        mitos: '',
+        diagnosticoGlobal: ''
+    };
+    const lines = text.split('\n');
+    let currentSection = 'fundamentos';
+    let currentContent = [];
+
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        const headingMatch = line.match(/^##\s+(.+)/);
+        if (headingMatch) {
+            if (currentContent.length > 0) {
+                sections[currentSection] = currentContent.join('\n').trim();
+                currentContent = [];
+            }
+            const heading = headingMatch[1].toLowerCase().trim();
+            if (heading.includes('saberes') || heading.includes('fundamentales') || heading.includes('1.')) {
+                currentSection = 'fundamentos';
+            } else if (heading.includes('comprensión') || heading.includes('comprension') || heading.includes('aplicado') || heading.includes('razonamiento') || heading.includes('2.')) {
+                currentSection = 'aplicado';
+            } else if (heading.includes('concepciones') || heading.includes('mitos') || heading.includes('3.')) {
+                currentSection = 'mitos';
+            } else if (heading.includes('global') || heading.includes('recomendacion') || heading.includes('4.')) {
+                currentSection = 'diagnosticoGlobal';
+            } else {
+                currentSection = 'fundamentos';
+            }
+        } else {
+            currentContent.push(line);
+        }
+    }
+    if (currentContent.length > 0) {
+        sections[currentSection] = (sections[currentSection] ? sections[currentSection] + '\n' : '') + currentContent.join('\n').trim();
+    }
+    if (!sections.fundamentos && !sections.aplicado && !sections.mitos && !sections.diagnosticoGlobal) {
+        sections.fundamentos = text;
+    }
+    return sections;
+}
+
+function renderMarkdown(text) {
+    if (typeof marked !== 'undefined') {
+        const mathBlocks = [];
+        let safeText = text;
+        safeText = safeText.replace(/\$\$([\s\S]*?)\$\$/g, (_, m) => { mathBlocks.push('$$' + m + '$$'); return '@@MATH' + (mathBlocks.length - 1) + '@@'; });
+        safeText = safeText.replace(/(?<!\$)\$([^\n$]*?[^\\$])\$(?!\$)/g, (_, m) => { mathBlocks.push('$' + m + '$'); return '@@MATH' + (mathBlocks.length - 1) + '@@'; });
+        safeText = safeText.replace(/\\\[([\s\S]*?)\\\]/g, (_, m) => { mathBlocks.push('\\[' + m + '\\]'); return '@@MATH' + (mathBlocks.length - 1) + '@@'; });
+        safeText = safeText.replace(/\\\(([\s\S]*?)\\\)/g, (_, m) => { mathBlocks.push('\\(' + m + '\\)'); return '@@MATH' + (mathBlocks.length - 1) + '@@'; });
+        let html = marked.parse(safeText, { breaks: true });
+        html = html.replace(/@@MATH(\d+)@@/g, (_, i) => mathBlocks[parseInt(i)] || '');
+        return html || 'No se pudo generar la evaluación.';
+    }
+    return text.replace(/\n/g, '<br>') || 'No se pudo generar la evaluación.';
+}
+
+function renderInteractiveQuestions(htmlText) {
+    return htmlText.replace(/\[PREGUNTA\]([\s\S]*?)\[\/PREGUNTA\]/gi, (match, content) => {
+        const cleanContent = content.replace(/<\/?p>/gi, '\n').replace(/<br\s*\/?>/gi, '\n');
+        const lines = cleanContent.split('\n');
+        let questionText = '';
+        const options = [];
+
+        lines.forEach(line => {
+            const trimmed = line.replace(/&nbsp;/g, ' ').trim();
+            const optionMatch = trimmed.match(/^\[OPCION:(VERDE|AMARILLO|ROJO)\]\s*(.*?)\s*\|\s*(.*)$/i);
+            if (optionMatch) {
+                options.push({
+                    type: optionMatch[1].toUpperCase(),
+                    text: decodeHTMLEntities(optionMatch[2].trim()),
+                    feedback: decodeHTMLEntities(optionMatch[3].trim())
+                });
+            } else if (trimmed && !trimmed.startsWith('[')) {
+                questionText += (questionText ? ' ' : '') + decodeHTMLEntities(trimmed);
+            }
+        });
+
+        if (options.length === 0) return match;
+
+        // Aleatorización Fisher-Yates
+        for (let i = options.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [options[i], options[j]] = [options[j], options[i]];
+        }
+
+        const qId = 'quiz_' + Math.random().toString(36).substr(2, 9);
+
+        const optionsHtml = options.map((opt) => 
+            `<button class="option-btn" data-type="${opt.type}" data-feedback="${escapeHtml(opt.feedback)}" data-qid="${qId}">${escapeHtml(opt.text)}</button>`
+        ).join('');
+
+        return `<div class="interactive-quiz-card" id="${qId}" data-qtext="${escapeHtml(questionText)}">` +
+            `<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:10px;">` +
+                `<div style="font-weight:600; font-size:1.05em; flex:1;">${questionText}</div>` +
+                `<div class="semaforo-container" id="semaforo_${qId}">` +
+                    `<div class="semaforo-light red" title="Retroalimentación Roja / Requiere reforzar"></div>` +
+                    `<div class="semaforo-light yellow" title="Retroalimentación Amarilla / Parcial"></div>` +
+                    `<div class="semaforo-light green" title="Retroalimentación Verde / Correcto"></div>` +
+                `</div>` +
+            `</div>` +
+            `<div class="options-group">${optionsHtml}</div>` +
+            `<div class="feedback-box-container" id="feedback_${qId}" style="display:none;"></div>` +
+        `</div>`;
+    });
+}
+
+function renderInteractiveAutoeval(htmlText) {
+    return htmlText.replace(/(?:<p>)?(?:-\s*)?\[AUTOEVAL:(VERDE|AMARILLO|ROJO)\]\s*(.*?)(?:<\/p>)?/gmi, (match, color, textContent) => {
+        const colorClass = color.toLowerCase();
+        const icon = color === 'VERDE' ? '🟢 Sólido' : (color === 'AMARILLO' ? '🟡 Intermedio' : '🔴 Inicial / Refuerzo');
+        const aId = 'autoeval_' + Math.random().toString(36).substr(2, 9);
+        return `<div class="autoeval-item" id="${aId}" data-color="${color.toUpperCase()}" style="display:flex; align-items:center; justify-content:space-between; padding:12px 16px; margin:10px 0; background:var(--bg-color-light); border-radius:var(--radius-sm); border-left:5px solid ${color === 'VERDE' ? '#2ecc71' : (color === 'AMARILLO' ? '#f1c40f' : '#e74c3c')}; gap:10px; transition: all 0.3s ease;">` +
+            `<span style="flex:1; font-weight:500;">${escapeHtml(decodeHTMLEntities(textContent.trim()))}</span>` +
+            `<button class="autoeval-btn ${colorClass}" onclick="toggleAutoeval('${aId}')" style="padding:8px 14px; font-size:0.88em; cursor:pointer;">` +
+                `${icon}` +
+            `</button>` +
+        `</div>`;
+    });
+}
+
+function processInteractiveContent(rawText) {
+    let html = renderMarkdown(rawText);
+    html = renderInteractiveQuestions(html);
+    html = renderInteractiveAutoeval(html);
+    return html;
+}
+
+// MUESTRA LA RETROALIMENTACIÓN DE UNA OPCIÓN
+function revealOptionFeedback(qId, type, feedback) {
+    const semaforo = document.getElementById(`semaforo_${qId}`);
+    if (semaforo) {
+        const lights = semaforo.querySelectorAll('.semaforo-light');
+        lights.forEach(l => l.classList.remove('active'));
+        const lightMap = { 'rojo': 'red', 'amarillo': 'yellow', 'verde': 'green' };
+        const activeLight = semaforo.querySelector(`.semaforo-light.${lightMap[type]}`);
+        if (activeLight) activeLight.classList.add('active');
+    }
+    
+    const feedbackBox = document.getElementById(`feedback_${qId}`);
+    if (feedbackBox) {
+        feedbackBox.style.display = 'flex';
+        feedbackBox.className = `feedback-box ${type === 'verde' ? 'green' : (type === 'amarillo' ? 'yellow' : 'red')}`;
+        const iconMap = { 'verde': '🟢', 'amarillo': '🟡', 'rojo': '🔴' };
+        feedbackBox.innerHTML = `<span style="font-size:1.2em;">${iconMap[type]}</span> <div>${feedback}</div>`;
+        if (window.MathJax && window.MathJax.typesetPromise) {
+            window.MathJax.typesetPromise([feedbackBox]);
+        }
+    }
+}
+
+// REVELA TODA LA RETROALIMENTACIÓN Y DIAGNÓSTICO TRAS EL ENVÍO DEL CORREO
+function revealAllFeedbackAndDiagnosis() {
+    isEmailSent = true;
+    const cards = document.querySelectorAll('.interactive-quiz-card');
+    cards.forEach(card => {
+        const qId = card.id;
+        const selectedType = card.getAttribute('data-user-answer');
+        if (selectedType) {
+            const selectedBtn = card.querySelector(`.option-btn[data-type="${selectedType.toUpperCase()}"]`);
+            const feedback = selectedBtn ? selectedBtn.getAttribute('data-feedback') : '';
+            revealOptionFeedback(qId, selectedType, feedback);
+        }
+    });
+    updateGlobalDiagnosis();
+}
+
+// CALCULA Y MUESTRA EL DIAGNÓSTICO GLOBAL SOLO SI LA RETROALIMENTACIÓN ESTÁ PERMITIDA
+function updateGlobalDiagnosis() {
+    if (!feedbackAllowed()) return;
+
+    const cards = document.querySelectorAll('.interactive-quiz-card');
+    if (!cards || cards.length === 0) return;
+
+    let totalQuestions = cards.length;
+    let answeredQuestions = 0;
+    let totalPoints = 0;
+
+    cards.forEach(card => {
+        const selectedType = card.getAttribute('data-user-answer');
+        if (selectedType) {
+            answeredQuestions++;
+            if (selectedType === 'verde') totalPoints += 3;
+            else if (selectedType === 'amarillo') totalPoints += 2;
+            else if (selectedType === 'rojo') totalPoints += 1;
+        }
+    });
+
+    if (answeredQuestions === 0) return;
+
+    const avg = totalPoints / answeredQuestions;
+    let globalResult = 'ROJO';
+    if (avg >= 2.5) {
+        globalResult = 'VERDE';
+    } else if (avg >= 1.7) {
+        globalResult = 'AMARILLO';
+    }
+
+    const autoevalItems = document.querySelectorAll('.autoeval-item');
+    autoevalItems.forEach(item => {
+        item.classList.remove('autoeval-highlight', 'verde', 'amarillo', 'rojo');
+        const existingBadge = item.querySelector('.result-badge');
+        if (existingBadge) existingBadge.remove();
+
+        const itemColor = item.getAttribute('data-color');
+        if (itemColor === globalResult) {
+            item.classList.add('autoeval-highlight', globalResult.toLowerCase());
+            const newBadge = document.createElement('span');
+            newBadge.className = 'result-badge';
+            newBadge.innerHTML = '🎯 Tu Nivel Obtenido';
+            const spanText = item.querySelector('span');
+            if (spanText) spanText.appendChild(newBadge);
+        }
+    });
+
+    let banner = document.getElementById('globalScoreBanner');
+    if (!banner) {
+        const section4Heading = Array.from(document.querySelectorAll('h4')).find(h => h.textContent.includes('4.') || h.textContent.includes('Diagnóstico global'));
+        if (section4Heading && section4Heading.parentNode) {
+            banner = document.createElement('div');
+            banner.id = 'globalScoreBanner';
+            banner.style.cssText = 'padding:16px 20px; margin:15px 0 20px 0; border-radius:var(--radius-md); font-weight:600; transition: all 0.3s ease; box-shadow:0 4px 12px rgba(0,0,0,0.08);';
+            section4Heading.parentNode.insertBefore(banner, section4Heading.nextSibling);
+        }
+    }
+
+    if (banner) {
+        const percent = Math.round((totalPoints / (totalQuestions * 3)) * 100);
+        const iconMap = { 'VERDE': '🟢', 'AMARILLO': '🟡', 'ROJO': '🔴' };
+        const labelMap = { 'VERDE': 'Semáforo Verde (Nivel Sólido)', 'AMARILLO': 'Semáforo Amarillo (Nivel Intermedio)', 'ROJO': 'Semáforo Rojo (Nivel Inicial / Refuerzo)' };
+        
+        let bgColor = globalResult === 'VERDE' ? 'rgba(46, 204, 113, 0.18)' : (globalResult === 'AMARILLO' ? 'rgba(241, 196, 15, 0.18)' : 'rgba(231, 76, 60, 0.18)');
+        let borderColor = globalResult === 'VERDE' ? '#2ecc71' : (globalResult === 'AMARILLO' ? '#f1c40f' : '#e74c3c');
+
+        banner.style.backgroundColor = bgColor;
+        banner.style.border = '2px solid ' + borderColor;
+        banner.style.borderLeftWidth = '8px';
+
+        banner.innerHTML = `<div style="font-size:1.15em; margin-bottom:6px; display:flex; align-items:center; gap:8px;">${iconMap[globalResult]} <span>Resultado del Diagnóstico: <strong>${labelMap[globalResult]}</strong></span></div>` +
+            `<div style="font-size:0.95em; font-weight:500; opacity:0.9;">` +
+            `Progreso: ${answeredQuestions} de ${totalQuestions} preguntas respondidas | Promedio: <strong>${avg.toFixed(1)} / 3.0</strong> (${percent}% de logro)` +
+            `</div>`;
+    }
+}
+
+const PLACEHOLDER_SVG = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><rect width="512" height="512" fill="%23e2e8f0"/><text x="50%" y="48%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="22" fill="%2364748b">Imagen de la sección</text><text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="16" fill="%2394a3b8">Haz clic en 📤 Subir o 🔄 Regenerar</text></svg>';
+
+function getPromptForIndex(idx, topic) {
+    const expert = expertInput ? expertInput.value.trim() : 'docente';
+    const imagePrompts = [
+        `Portada educativa sobre evaluación diagnóstica de ${topic}, diseñada por un docente experto en ${expert}`,
+        `Esquema diagnóstico conceptual sobre ${topic}`,
+        `Diagrama de evaluación de razonamiento y resolución de problemas sobre ${topic}`,
+        `Infografía resumen de diagnóstico con icono semáforo sobre ${topic}`
+    ];
+    return imagePrompts[idx] || `Ilustración educativa diagnóstica sobre ${topic}`;
+}
+
+function createImgElement(url, topic, imagePromptIndex) {
+    const imgWrapper = document.createElement('div');
+    imgWrapper.className = 'img-control-wrapper';
+    imgWrapper.style.cssText = 'flex:0 0 auto; width:280px; max-width:100%; display:flex; flex-direction:column; gap:8px; align-items:center; margin-bottom:15px;';
+    
+    const imgEl = document.createElement('img');
+    imgEl.alt = 'Ilustración sobre ' + topic;
+    imgEl.style.cssText = 'width:100%; height:auto; border-radius:var(--radius-md); box-shadow:0 4px 12px rgba(0,0,0,0.1); cursor:pointer; object-fit:cover;';
+    imgEl.src = url || PLACEHOLDER_SVG;
+    imgEl.onerror = () => { imgEl.src = PLACEHOLDER_SVG; };
+    imgWrapper.appendChild(imgEl);
+
+    const btnContainer = document.createElement('div');
+    btnContainer.style.cssText = 'display:flex; gap:8px; width:100%; justify-content:center; flex-wrap:wrap;';
+
+    const regenBtn = document.createElement('button');
+    regenBtn.innerHTML = '🔄 Regenerar';
+    regenBtn.style.cssText = 'padding:6px 10px; font-size:0.8em; border-radius:var(--radius-sm); border:1px solid var(--border-color-light); background:var(--primary-color-light); color:white; cursor:pointer; flex:1;';
+    
+    regenBtn.addEventListener('click', async () => {
+        let selectedModel = imageModelSelect ? imageModelSelect.value : 'grok-imagine';
+        if (selectedModel === 'none') {
+            selectedModel = 'grok-imagine';
+        }
+        regenBtn.disabled = true;
+        regenBtn.textContent = '⚙️ Generando...';
+        
+        try {
+            const promptText = getPromptForIndex(imagePromptIndex, topic);
+            const ts = Date.now();
+            const semilla = Math.floor(Math.random() * 4001) + 1000;
+            const newUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(promptText + ' #img' + ts)}?model=${selectedModel}&seed=${semilla}&width=512&height=512&nologo=true&_=${ts}`;
+            
+            imgEl.src = newUrl;
+        } catch (err) {
+            alert('Error al regenerar la imagen: ' + err.message);
+        } finally {
+            regenBtn.disabled = false;
+            regenBtn.innerHTML = '🔄 Regenerar';
+        }
+    });
+
+    const uploadBtn = document.createElement('button');
+    uploadBtn.innerHTML = '📤 Subir';
+    uploadBtn.style.cssText = 'padding:6px 10px; font-size:0.8em; border-radius:var(--radius-sm); border:1px solid var(--border-color-light); background:var(--secondary-color-light); color:white; cursor:pointer; flex:1;';
+    
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = 'image/*';
+    fileInput.style.display = 'none';
+
+    uploadBtn.addEventListener('click', () => fileInput.click());
+
+    fileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                imgEl.src = event.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    btnContainer.appendChild(regenBtn);
+    btnContainer.appendChild(uploadBtn);
+    btnContainer.appendChild(fileInput);
+    imgWrapper.appendChild(btnContainer);
+
+    return imgWrapper;
+}
+
+// CONTROL DE INTERACCIÓN Y SELECCIÓN DE RESPUESTAS
+if (tutorialContainer) {
+    tutorialContainer.addEventListener('click', (e) => {
+        const btn = e.target.closest('.option-btn');
+        if (btn) {
+            const qId = btn.getAttribute('data-qid');
+            const type = btn.getAttribute('data-type').toLowerCase();
+            const feedback = btn.getAttribute('data-feedback');
+            
+            const card = document.getElementById(qId);
+            if (card) {
+                card.setAttribute('data-user-answer', type);
+
+                const allOptionBtns = card.querySelectorAll('.option-btn');
+                allOptionBtns.forEach(b => {
+                    b.style.borderColor = 'var(--border-color-light)';
+                    b.style.fontWeight = 'normal';
+                    b.style.backgroundColor = 'var(--bg-color-light)';
+                });
+                btn.style.fontWeight = 'bold';
+                btn.style.borderColor = 'var(--primary-color-light)';
+                btn.style.backgroundColor = 'rgba(0, 121, 107, 0.12)';
+                
+                // SI LA RETROALIMENTACIÓN ESTÁ PERMITIDA (correo enviado o prueba formativa), MUÉSTRALA INMEDIATAMENTE
+                if (feedbackAllowed()) {
+                    revealOptionFeedback(qId, type, feedback);
+                    updateGlobalDiagnosis();
+                } else {
+                    // SI AÚN NO SE HA ENVIADO, MANTIENE OCULTOS LOS SEMÁFOROS Y FEEDBACK
+                    const feedbackBox = document.getElementById(`feedback_${qId}`);
+                    if (feedbackBox) feedbackBox.style.display = 'none';
+                    const semaforo = document.getElementById(`semaforo_${qId}`);
+                    if (semaforo) {
+                        semaforo.querySelectorAll('.semaforo-light').forEach(l => l.classList.remove('active'));
+                    }
+                }
+            }
+            return;
+        }
+
+        const img = e.target.closest('img');
+        if (img && !e.target.closest('.semaforo-container')) {
+            const existing = document.querySelector('.image-modal-overlay');
+            if (existing) existing.remove();
+            const overlay = document.createElement('div');
+            overlay.className = 'image-modal-overlay';
+            const clone = document.createElement('img');
+            clone.src = img.src;
+            clone.alt = img.alt;
+            overlay.appendChild(clone);
+            overlay.addEventListener('click', () => overlay.remove());
+            document.body.appendChild(overlay);
+        }
+    });
+}
+
+// FUNCIÓN DE ENVÍO DE CORREO POR FORMSUBMIT
+async function enviarResultadosPorCorreo() {
+    const studentNameInput = document.getElementById('studentNameInput');
+    const teacherEmailInput = document.getElementById('teacherEmailInput');
+    
+    const studentName = studentNameInput ? studentNameInput.value.trim() : '';
+    const teacherEmail = teacherEmailInput ? teacherEmailInput.value.trim() : '';
+
+    if (!studentName) {
+        alert('Por favor, escribe tu nombre y apellidos.');
+        return;
+    }
+
+    if (!teacherEmail || !teacherEmail.includes('@')) {
+        alert('Por favor, escribe una dirección de correo electrónico válida para tu profesor o profesora.');
+        return;
+    }
+
+    const cards = document.querySelectorAll('.interactive-quiz-card');
+    let totalQuestions = cards.length;
+    let answeredCount = 0;
+    let scoreSum = 0;
+    let reportDetails = "";
+
+    cards.forEach((card, idx) => {
+        const userAnswer = card.getAttribute('data-user-answer');
+        if (userAnswer) {
+            answeredCount++;
+            const qText = card.getAttribute('data-qtext') || `Pregunta ${idx + 1}`;
+            const selectedBtn = card.querySelector(`.option-btn[data-type="${userAnswer.toUpperCase()}"]`);
+            const ansText = selectedBtn ? selectedBtn.textContent : userAnswer;
+            let pts = 1;
+            if (userAnswer === 'verde') pts = 3;
+            else if (userAnswer === 'amarillo') pts = 2;
+            scoreSum += pts;
+            
+            reportDetails += `\n- Pregunta ${idx + 1}: ${qText}\n  Respuesta: "${ansText}" [${userAnswer.toUpperCase()}]\n`;
+        }
+    });
+
+    if (answeredCount === 0) {
+        alert('Por favor, responde al menos una pregunta antes de enviar los resultados.');
+        return;
+    }
+
+    const avg = scoreSum / answeredCount;
+    let nivel = 'ROJO (Inicial / Refuerzo)';
+    if (avg >= 2.5) nivel = 'VERDE (Sólido)';
+    else if (avg >= 1.7) nivel = 'AMARILLO (Intermedio)';
+
+    const sendBtn = document.getElementById('sendEmailBtn');
+    if (sendBtn) {
+        sendBtn.disabled = true;
+        sendBtn.textContent = 'Enviando...';
+    }
+
+    const emailBodyText = `RESULTADOS DE EVALUACIÓN DIAGNÓSTICA\n\n` +
+        `Estudiante: ${studentName}\n` +
+        `Tema: ${currentTopic}\n` +
+        `Preguntas respondidas: ${answeredCount} de ${totalQuestions}\n` +
+        `Diagnóstico Obtenido: ${nivel} (Promedio: ${avg.toFixed(1)} / 3.0)\n\n` +
+        `DETALLE DE RESPUESTAS:${reportDetails}`;
+
+    try {
+        const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(teacherEmail)}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                _subject: `Resultados Evaluación Diagnóstica (${currentTopic}) - ${studentName}`,
+                _captcha: "false",
+                Estudiante: studentName,
+                Tema: currentTopic,
+                "Diagnóstico Obtenido": nivel,
+                Detalle: emailBodyText
+            })
+        });
+
+        const resultData = await response.json().catch(() => null);
+
+        if (response.ok && resultData && (resultData.success === "true" || resultData.success === true)) {
+            alert('¡Resultados enviados con éxito a tu profesor/a! Ahora puedes consultar tu retroalimentación en pantalla.');
+            isEmailSent = true;
+            const formContainer = document.getElementById('envioCorreoBlock');
+            if (formContainer) {
+                formContainer.innerHTML = `<div style="text-align:center; padding:14px; color:var(--success-color-light); background:rgba(46,204,113,0.12); border:2px solid #2ecc71; border-radius:var(--radius-md); font-weight:600; font-size:1.05em;">` +
+                    `✅ ¡Evaluación enviada con éxito a ${escapeHtml(teacherEmail)}! A continuación puedes ver tus resultados y retroalimentación.` +
+                `</div>`;
+            }
+            revealAllFeedbackAndDiagnosis();
+        } 
+        else if (resultData && resultData.message && (resultData.message.includes('Activation') || resultData.message.includes('actived') || resultData.message.includes('active'))) {
+            alert(`✉️ ACTIVACIÓN REQUERIDA (PRIMER USO DE ESTE CORREO):\n\nFormSubmit ha enviado un mensaje de confirmación a "${teacherEmail}".\n\nEl profesor debe revisar su Bandeja de Entrada o la carpeta de SPAM/Correo no deseado y hacer clic en "Activate Form".\n\nUna vez hecho esto, recibirá automáticamente todas las evaluaciones enviadas a ese correo.`);
+            
+            isEmailSent = true;
+            const formContainer = document.getElementById('envioCorreoBlock');
+            if (formContainer) {
+                formContainer.innerHTML = `<div style="text-align:center; padding:14px; color:var(--error-color-light); background:rgba(231,76,60,0.10); border:2px solid #e74c3c; border-radius:var(--radius-md); font-weight:600; font-size:0.98em; line-height:1.5;">` +
+                    `⚠️ Se ha enviado una solicitud de activación a <strong>${escapeHtml(teacherEmail)}</strong>.<br>` +
+                    `El docente debe pulsar "Activate Form" en su correo (o carpeta Spam) para recibir los informes. Tus resultados ya están visibles abajo.` +
+                `</div>`;
+            }
+            revealAllFeedbackAndDiagnosis();
+        } 
+        else {
+            throw new Error(resultData?.message || 'No se pudo confirmar la entrega');
+        }
+    } catch (err) {
+        console.error("Error en servicio de correo:", err);
+        const fallback = confirm(`No se pudo enviar el correo a través del servidor (${err.message}).\n\n¿Deseas abrir tu programa de correo (Gmail/Outlook/Mail) para enviarlo directamente?`);
+        if (fallback) {
+            const mailtoUrl = `mailto:${encodeURIComponent(teacherEmail)}?subject=${encodeURIComponent(`Resultados Evaluación Diagnóstica (${currentTopic}) - ${studentName}`)}&body=${encodeURIComponent(emailBodyText)}`;
+            window.location.href = mailtoUrl;
+            isEmailSent = true;
+            revealAllFeedbackAndDiagnosis();
+        } else {
+            if (sendBtn) {
+                sendBtn.disabled = false;
+                sendBtn.textContent = 'Enviar';
+            }
+        }
+    }
+}
+
+window.toggleAutoeval = function(aId) {
+    const item = document.getElementById(aId);
+    if (!item) return;
+    item.style.transition = 'transform 0.2s';
+    item.style.transform = 'scale(1.03)';
+    setTimeout(() => item.style.transform = 'none', 200);
+};
+
+function parseGroqError(errorText, status) {
+    try {
+        const parsed = JSON.parse(errorText);
+        if (parsed.error) {
+            const message = parsed.error.message || JSON.stringify(parsed.error);
+            return `${message} (Código ${parsed.error.code || status})`;
+        }
+    } catch (e) {}
+    return `La solicitud a la API de Groq falló con estado ${status}. Detalles: ${errorText}`;
+}
+
+async function callGroqApi(prompt, model, apiKey) {
+    const apiUrl = `https://api.groq.com/openai/v1/chat/completions`;
+    const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+    };
+
+    const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({
+            model: model,
+            messages: [
+                { role: "user", content: prompt }
+            ]
+        })
+    });
+
+    if (!response.ok) {
+        const errorText = await response.text();
+        const cleanMessage = parseGroqError(errorText, response.status);
+        throw new Error(cleanMessage);
+    }
+    
+    const data = await response.json();
+    return data.choices[0].message.content;
+}
+
+if (generateTutorialBtn) {
+    generateTutorialBtn.addEventListener('click', async () => {
+        if (!topicInput || !expertInput) return;
+
+        currentTopic = topicInput.value.trim();
+        const expert = expertInput.value.trim();
+        const apiKey = apiKeyInput ? apiKeyInput.value.trim() : '';
+
+        if (!apiKey) {
+            alert('Por favor ingresa tu API Key de Groq en el campo correspondiente.');
+            if (apiKeyInput) apiKeyInput.focus();
+            return;
+        }
+
+        if (!currentTopic) { alert('Por favor, ingresa un tema.'); return; }
+        if (!expert) { alert('Por favor, ingresa el experto evaluador.'); return; }
+
+        isEmailSent = false;
+        currentTestType = testTypeSelect ? testTypeSelect.value : 'sumativa';
+        document.body.setAttribute('data-test-type', currentTestType);
+
+        const selectedPaletteName = paletteSelect.value;
+        const newPalette = designPalettes.find(p => p.name === selectedPaletteName) || designPalettes[0];
+        const newFont = getRandomElement(fontFamilies);
+        applyDesign(newPalette, newFont);
+        localStorage.setItem('paletteName', newPalette.name);
+        localStorage.setItem('fontFamily', newFont);
+
+        const loaderText = loadingIndicator ? loadingIndicator.querySelector('p') : null;
+        if (loaderText) loaderText.textContent = '✨ Generando evaluación diagnóstica con Groq... Esto puede tardar un momento. ✨';
+
+        if (tutorialContainer) tutorialContainer.innerHTML = '';
+        safeSetDisplay(loadingIndicator, 'block');
+        safeSetDisplay(tutorialHeaderActions, 'none');
+        safeSetDisplay(postGenerationControls, 'none');
+
+        const elementsToDisable = [generateTutorialBtn, topicInput, expertInput, paletteSelect, artStyleSelect, imageModelSelect, textModelSelect];
+        elementsToDisable.forEach(el => { if (el) el.disabled = true; });
+
+        const model = textModelSelect ? textModelSelect.value : 'llama-3.3-70b-versatile';
+        const imageModel = imageModelSelect ? imageModelSelect.value : 'none';
+        const shouldGenerateImage = imageModel !== 'none';
+        
+        const prompt = `Actúa como un docente evaluador y experto en ${expert}. Diseña una EVALUACIÓN DIAGNÓSTICA completa e interactiva sobre "${currentTopic}" utilizando un Semáforo de Retroalimentación (🔴 Rojo = Necesita reforzar / Concepción errónea, 🟡 Amarillo = Conocimiento parcial / Casi correcto, 🟢 Verde = Dominio correcto / Saberes previos sólidos).
+        
+IMPORTANTE PARA NOTACIÓN MATEMÁTICA Y CARACTERES:
+- Utiliza la sintaxis estándar de LaTeX con un solo signo pesos ($...$) para fórmulas en línea y doble signo pesos ($$...$$) para fórmulas destacadas.
+- NO uses entidades HTML codificadas como &quot; en el texto de las opciones. Usa comillas normales o texto directo.
+
+Estructura la evaluación exactamente con estos 4 encabezados Markdown y el formato especial de preguntas interactivas:
+
+## 1. Saberes previos y conceptos fundamentales
+Plantea 2 a 3 preguntas diagnósticas con el siguiente formato exacto para cada una:
+
+[PREGUNTA]
+Texto de la pregunta diagnóstica sobre conceptos fundamentales aquí
+[OPCION:VERDE] Respuesta correcta y precisa | 🟢 ¡Excelente! Demuestras un dominio sólido de este concepto previo.
+[OPCION:AMARILLO] Respuesta parcial o incompleta | 🟡 Vas por buen camino, pero hace falta precisar algunos detalles clave.
+[OPCION:ROJO] Respuesta incorrecta o error común | 🔴 Se detecta una brecha conceptual o error frecuente. Es necesario revisar este fundamento.
+[/PREGUNTA]
+
+## 2. Comprensión y razonamiento aplicado
+Plantea 2 a 3 preguntas diagnósticas sobre aplicación situacional o razonamiento con el siguiente formato exacto:
+
+[PREGUNTA]
+Texto del problema o caso diagnóstico aquí
+[OPCION:VERDE] Solución correcta razonada | 🟢 ¡Correcto! Tu razonamiento aplicativo es adecuado.
+[OPCION:AMARILLO] Solución casi correcta | 🟡 Razonamiento en proceso. Hay una imprecisión en el procedimiento o análisis.
+[OPCION:ROJO] Solución incorrecta | 🔴 Error en el razonamiento aplicado. Se requiere reforzar este paso.
+[/PREGUNTA]
+
+## 3. Identificación de concepciones erróneas
+Plantea 2 preguntas diagnósticas enfocadas en detectar mitos o ideas erróneas habituales sobre ${currentTopic}:
+
+[PREGUNTA]
+Texto del ítem para detectar mitos o falsas creencias aquí
+[OPCION:VERDE] Opción que desmitifica correctamente | 🟢 ¡Muy bien! Identificas y superas el mito común sobre este tema.
+[OPCION:AMARILLO] Opción dudosa o tibia | 🟡 Cuidado, esa afirmación es solo parcialmente cierta en casos específicos.
+[OPCION:ROJO] Opción que cae en el mito común | 🔴 Cuidado: esta es una concepción errónea muy frecuente.
+[/PREGUNTA]
+
+## 4. Diagnóstico global y recomendaciones
+Proporciona una escala de autodiagnóstico con el semáforo y recomendaciones claras de estudio según los resultados:
+- [AUTOEVAL:VERDE] Semáforo Verde: Nivel Sólido | Preparado para avanzar a temas más complejos de ${currentTopic}.
+- [AUTOEVAL:AMARILLO] Semáforo Amarillo: Nivel Intermedio | Se recomienda repasar los conceptos parciales identificados.
+- [AUTOEVAL:ROJO] Semáforo Rojo: Nivel Inicial / Refuerzo | Se sugiere empezar por los fundamentos básicos antes de profundizar.`;
+
+        const mathJaxReady = ensureMathJax(currentTopic, includeMathjaxCheckbox && includeMathjaxCheckbox.checked);
+
+        if (!tutorialContainer) { console.error("No se encontró el contenedor del tutorial"); return; }
+
+        try {
+            const [generatedRawText] = await Promise.all([
+                callGroqApi(prompt, model, apiKey),
+                mathJaxReady
+            ]);
+
+            let generatedText = generatedRawText.replace(/^prompt:.*?\n/i, '').trim();
+            generatedText = generatedText.replace(/^claro(?:,|:)?\s*/i, '').trim();
+
+            const sections = parseSections(generatedText);
+
+            let imageUrls = [];
+            if (shouldGenerateImage) {
+                if (loaderText) loaderText.textContent = '✨ Generando e integrando imágenes de apoyo diagnóstico... Esto puede tardar un momento. ✨';
+                const ts = Date.now();
+                const imagePrompts = [
+                    getPromptForIndex(0, currentTopic),
+                    getPromptForIndex(1, currentTopic),
+                    getPromptForIndex(2, currentTopic),
+                    getPromptForIndex(3, currentTopic)
+                ];
+                
+                imageUrls = imagePrompts.map((p, i) => {
+                    const tag = `#img${ts}${i}`;
+                    const semilla = Math.floor(Math.random() * 4001) + 1000;
+                    return `https://image.pollinations.ai/prompt/${encodeURIComponent(p + ' ' + tag)}?model=${imageModel}&seed=${semilla}&width=512&height=512&nologo=true&_=${ts}${i}`;
+                });
+            }
+
+            tutorialContainer.innerHTML = '';
+
+            const titleEl = document.createElement('h3');
+            titleEl.textContent = `Evaluación Diagnóstica: ${currentTopic} (orientada por ${expert})`;
+            tutorialContainer.appendChild(titleEl);
+
+            if (sections.fundamentos) {
+                const heading = document.createElement('h4');
+                heading.textContent = '🎯 1. Saberes previos y conceptos fundamentales';
+                heading.style.cssText = 'color:var(--accent-color-light); margin-top:25px; margin-bottom:15px; font-size:1.3em;';
+                tutorialContainer.appendChild(heading);
+
+                const row = document.createElement('div');
+                row.style.cssText = 'display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap; margin-bottom:25px;';
+                const textDiv = document.createElement('div');
+                textDiv.style.cssText = 'flex:1; min-width:280px; font-size:1.05em; line-height:1.8;';
+                textDiv.innerHTML = processInteractiveContent(sections.fundamentos);
+                row.appendChild(textDiv);
+                if (shouldGenerateImage && imageUrls.length > 0) row.appendChild(createImgElement(imageUrls[0] || '', currentTopic, 0));
+                tutorialContainer.appendChild(row);
+            }
+
+            if (sections.aplicado) {
+                const heading = document.createElement('h4');
+                heading.textContent = '🧩 2. Comprensión y razonamiento aplicado';
+                heading.style.cssText = 'color:var(--accent-color-light); margin-top:25px; margin-bottom:15px; font-size:1.3em;';
+                tutorialContainer.appendChild(heading);
+
+                const row = document.createElement('div');
+                row.style.cssText = 'display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap; margin-bottom:25px;';
+                const textDiv = document.createElement('div');
+                textDiv.style.cssText = 'flex:1; min-width:280px; font-size:1.05em; line-height:1.8;';
+                textDiv.innerHTML = processInteractiveContent(sections.aplicado);
+                row.appendChild(textDiv);
+                if (shouldGenerateImage && imageUrls.length > 1) row.appendChild(createImgElement(imageUrls[1] || '', currentTopic, 1));
+                tutorialContainer.appendChild(row);
+            }
+
+            if (sections.mitos) {
+                const heading = document.createElement('h4');
+                heading.textContent = '⚠️ 3. Identificación de concepciones erróneas';
+                heading.style.cssText = 'color:var(--accent-color-light); margin-top:25px; margin-bottom:15px; font-size:1.3em;';
+                tutorialContainer.appendChild(heading);
+
+                const row = document.createElement('div');
+                row.style.cssText = 'display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap; margin-bottom:25px;';
+                const textDiv = document.createElement('div');
+                textDiv.style.cssText = 'flex:1; min-width:280px; font-size:1.05em; line-height:1.8;';
+                textDiv.innerHTML = processInteractiveContent(sections.mitos);
+                row.appendChild(textDiv);
+                if (shouldGenerateImage && imageUrls.length > 2) row.appendChild(createImgElement(imageUrls[2] || '', currentTopic, 2));
+                tutorialContainer.appendChild(row);
+            }
+
+            // INSERTAR BLOQUE DE ENVÍO POR CORREO (SOLO EN MODO SUMATIVA) ANTES DEL MÓDULO 4
+            if (currentTestType === 'sumativa') {
+                const emailContainer = document.createElement('div');
+                emailContainer.className = 'envio-correo-container';
+                emailContainer.id = 'envioCorreoBlock';
+                emailContainer.innerHTML = `
+                    <div class="envio-correo-header">
+                        <div class="envio-correo-icon"><i class="fas fa-envelope-open-text"></i></div>
+                        <div>
+                            <h2>Rellena los siguientes datos para su envío</h2>
+                            <p class="envio-correo-subtitle">Al finalizar, tus resultados se enviarán de forma segura a tu profesor o profesora.</p>
+                        </div>
+                    </div>
+                    <div class="envio-correo-inputs">
+                        <div class="envio-correo-field">
+                            <label for="studentNameInput">👤 Nombre y apellidos</label>
+                            <input type="text" id="studentNameInput" placeholder="Escribe tu nombre y apellidos">
+                        </div>
+                        <div class="envio-correo-row2">
+                            <div class="envio-correo-field" style="flex:1; min-width:260px;">
+                                <label for="teacherEmailInput">📧 Correo del profesor o profesora</label>
+                                <input type="email" id="teacherEmailInput" placeholder="nombre@ejemplo.com">
+                            </div>
+                            <button type="button" id="sendEmailBtn" onclick="enviarResultadosPorCorreo()"><i class="fas fa-paper-plane"></i> Enviar</button>
+                        </div>
+                    </div>
+                `;
+                tutorialContainer.appendChild(emailContainer);
+            } else {
+                const formativoNotice = document.createElement('div');
+                formativoNotice.style.cssText = 'padding:14px 18px; margin:25px 0; border-radius:var(--radius-md); background:rgba(46,204,113,0.12); border:2px solid #2ecc71; color:var(--text-color-light); font-weight:500; display:flex; align-items:center; gap:10px;';
+                formativoNotice.innerHTML = `<span style="font-size:1.3em;">💡</span> <span>Prueba formativa: la retroalimentación, los semáforos y el diagnóstico global se muestran de forma inmediata al responder cada pregunta.</span>`;
+                tutorialContainer.appendChild(formativoNotice);
+            }
+
+            if (sections.diagnosticoGlobal) {
+                const heading = document.createElement('h4');
+                heading.textContent = '📊 4. Diagnóstico global y recomendaciones';
+                heading.style.cssText = 'color:var(--accent-color-light); margin-top:25px; margin-bottom:15px; font-size:1.3em;';
+                tutorialContainer.appendChild(heading);
+
+                const row = document.createElement('div');
+                row.style.cssText = 'display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap; margin-bottom:25px;';
+                const textDiv = document.createElement('div');
+                textDiv.style.cssText = 'flex:1; min-width:280px; font-size:1.05em; line-height:1.8;';
+                textDiv.innerHTML = processInteractiveContent(sections.diagnosticoGlobal);
+                row.appendChild(textDiv);
+                if (shouldGenerateImage && imageUrls.length > 3) row.appendChild(createImgElement(imageUrls[3] || '', currentTopic, 3));
+                tutorialContainer.appendChild(row);
+            }
+
+            if (window.MathJax && window.MathJax.typesetPromise) {
+                try { await window.MathJax.typesetPromise(); } catch (err) { console.error("Error MathJax:", err); }
+            }
+
+            if (shouldGenerateImage && imageUrls.length > 0) {
+                const images = tutorialContainer.querySelectorAll('img');
+                const imagePromises = Array.from(images).map(img => {
+                    return new Promise((resolve) => {
+                        if (img.complete) {
+                            resolve();
+                        } else {
+                            img.addEventListener('load', resolve);
+                            img.addEventListener('error', resolve);
+                        }
+                    });
+                });
+                const timeoutPromise = new Promise(resolve => setTimeout(resolve, 15000));
+                await Promise.race([Promise.all(imagePromises), timeoutPromise]);
+            }
+        } catch (error) {
+            const errorDiv = document.createElement('div');
+            errorDiv.classList.add('tutorial-step');
+            errorDiv.innerHTML = `<h3>Error</h3><p style="color:red;">Error al generar la evaluación diagnóstica: ${error.message}.</p>`;
+            tutorialContainer.appendChild(errorDiv);
+        }
+
+        safeSetDisplay(loadingIndicator, 'none');
+        safeSetDisplay(tutorialHeaderActions, 'flex');
+        safeSetDisplay(postGenerationControls, 'flex');
+        elementsToDisable.forEach(el => { if (el) el.disabled = false; });
+    });
+}
+
+async function getPageHtmlForDownload() {
+    const clonedHtmlElement = document.documentElement.cloneNode(true);
+    let themeToggleButtonCloneForDownload = null;
+
+    const originalLiveThemeToggleBtn = document.getElementById('themeToggleBtn');
+    if (originalLiveThemeToggleBtn) {
+        themeToggleButtonCloneForDownload = originalLiveThemeToggleBtn.cloneNode(true);
+    }
+
+    const elementsToRemoveIds = ['generationControls', 'postGenerationControls', 'tutorialHeaderActions', 'api-key-container'];
+    elementsToRemoveIds.forEach(id => {
+        const elToRemove = clonedHtmlElement.querySelector('#' + id);
+        if (elToRemove && elToRemove.parentNode) elToRemove.parentNode.removeChild(elToRemove);
+    });
+
+    const apiKeyContainer = clonedHtmlElement.querySelector('.api-key-container');
+    if (apiKeyContainer && apiKeyContainer.parentNode) apiKeyContainer.parentNode.removeChild(apiKeyContainer);
+
+    clonedHtmlElement.querySelectorAll('.img-control-wrapper div').forEach(div => div.remove());
+
+    if (themeToggleButtonCloneForDownload) {
+        const headerClone = clonedHtmlElement.querySelector('header');
+        if (headerClone) {
+            const themeToggleWrapper = document.createElement('div');
+            themeToggleWrapper.style.textAlign = 'center';
+            themeToggleWrapper.style.padding = '10px 0 20px 0';
+            themeToggleButtonCloneForDownload.id = 'themeToggleBtn';
+            themeToggleWrapper.appendChild(themeToggleButtonCloneForDownload);
+            const h1Clone = headerClone.querySelector('h1');
+            if (h1Clone && h1Clone.nextSibling) {
+                headerClone.insertBefore(themeToggleWrapper, h1Clone.nextSibling);
+            } else {
+                headerClone.appendChild(themeToggleWrapper);
+            }
+        }
+    }
+
+    const pageTitle = clonedHtmlElement.querySelector('title');
+    if (pageTitle) {
+        pageTitle.textContent = `Evaluación Diagnóstica: ${currentTopic || 'Tema Generado'}`;
+    }
+
+    const headClone = clonedHtmlElement.querySelector('head');
+    if (headClone && !headClone.querySelector('#mathjax-script')) {
+        const mathjaxScriptEl = document.createElement('script');
+        mathjaxScriptEl.id = 'mathjax-script';
+        mathjaxScriptEl.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+        headClone.appendChild(mathjaxScriptEl);
+    }
+
+    const bodyClone = clonedHtmlElement.querySelector('body');
+    if (bodyClone) {
+        bodyClone.setAttribute('data-test-type', currentTestType);
+    }
+
+    return `<!DOCTYPE html>\n${clonedHtmlElement.outerHTML}`;
+}
+
+if (downloadHtmlBtn) {
+    downloadHtmlBtn.addEventListener('click', async () => {
+        const originalBtnText = downloadHtmlBtn.textContent;
+        downloadHtmlBtn.textContent = "⚙️ Generando...";
+        downloadHtmlBtn.disabled = true;
+
+        try {
+            const htmlContent = await getPageHtmlForDownload();
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `evaluacion_diagnostica_${(currentTopic || 'tema').replace(/[^a-z0-9]/gi, '_').toLowerCase()}.html`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
+        } catch (error) {
+            console.error("Error al generar descarga HTML:", error);
+            alert("Hubo un error al generar el archivo HTML.");
+        } finally {
+            downloadHtmlBtn.textContent = originalBtnText;
+            downloadHtmlBtn.disabled = false;
+        }
+    });
+}
+
+if (downloadWordBtn) {
+    downloadWordBtn.addEventListener('click', async () => {
+        const originalBtnText = downloadWordBtn.textContent;
+        downloadWordBtn.textContent = "⚙️ Generando...";
+        downloadWordBtn.disabled = true;
+
+        try {
+            const wordContent = `
+                <html xmlns:o='urn:schemas-microsoft-com:office:office'
+                      xmlns:w='urn:schemas-microsoft-com:office:word'
+                      xmlns='http://www.w3.org/TR/REC-html40'>
+                <head>
+                    <meta charset="UTF-8">
+                    <title>${currentTopic || 'Evaluación Diagnóstica'}</title>
+                    <style>
+                        body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12pt; line-height: 1.6; margin: 40px; }
+                        h1 { color: #00796b; font-size: 22pt; }
+                        h3 { color: #ff6f00; font-size: 16pt; }
+                        p { margin-bottom: 10px; }
+                    </style>
+                </head>
+                <body>
+                    ${document.querySelector('#tutorialContainer') ? document.querySelector('#tutorialContainer').innerHTML : ''}
+                </body>
+                </html>
+            `;
+            const blob = new Blob([wordContent], { type: 'application/msword' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `evaluacion_diagnostica_${(currentTopic || 'tema').replace(/[^a-z0-9]/gi, '_').toLowerCase()}.doc`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
+        } catch (error) {
+            console.error("Error al generar descarga Word:", error);
+            alert("Hubo un error al generar el archivo Word.");
+        } finally {
+            downloadWordBtn.textContent = originalBtnText;
+            downloadWordBtn.disabled = false;
+        }
+    });
+}
+
+if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+        isEmailSent = false;
+        if (tutorialContainer) tutorialContainer.innerHTML = '';
+        if (topicInput) {
+            topicInput.value = '';
+            currentTopic = '';
+            topicInput.focus();
+        }
+        if (expertInput) expertInput.value = '';
+        if (artStyleSelect) {
+            artStyleSelect.value = 'default';
+            document.body.className = document.body.className.replace(/theme-\S+/g, '').trim();
+        }
+        if (imageModelSelect) imageModelSelect.value = 'none';
+        if (textModelSelect) textModelSelect.value = 'llama-3.3-70b-versatile';
+        if (testTypeSelect) testTypeSelect.value = 'sumativa';
+        currentTestType = 'sumativa';
+        document.body.removeAttribute('data-test-type');
+        if (includeMathjaxCheckbox) includeMathjaxCheckbox.checked = false;
+        const oldMathjaxScript = document.getElementById('mathjax-script');
+        if (oldMathjaxScript && oldMathjaxScript.parentNode) oldMathjaxScript.parentNode.removeChild(oldMathjaxScript);
+        safeSetDisplay(tutorialHeaderActions, 'none');
+        safeSetDisplay(postGenerationControls, 'none');
+        if (paletteSelect) {
+            paletteSelect.value = designPalettes[0].name;
+            const defaultPalette = designPalettes[0];
+            const currentFont = document.body.style.fontFamily || localStorage.getItem('fontFamily') || fontFamilies[0];
+            applyDesign(defaultPalette, currentFont);
+            localStorage.setItem('paletteName', defaultPalette.name);
+        }
+    });
+}
+    </script>
+
+
+</body></html>
