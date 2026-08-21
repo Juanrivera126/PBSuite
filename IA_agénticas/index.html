@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=yes,minimal-ui">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<title>Libro digital interactivo</title>
+
+	<!-- se precarga la imagen utilizada para el cargador del libro, en caso de que se utilice -->
+	<link rel="preload" as="image" href="images/general/icartesilibri_logo.svg">
+
+	<!-- configuración del libro -->
+	<script>
+	window.book_config = {
+		// parámetro que indica si los capítulos, secciones y figura se auto numeran
+		// para que los capítulos se auto numeren deben utilizar la etiqueta <h1>
+		// para que las secciones se auto numeren deben utilizar la etiqueta <h2>
+		auto_numerate_sections_and_figures: true,
+		// parámetro para que los interactivos se muestren a pantalla completa al presionar el botón de la esquina superior derecha
+		open_interactives_fullscreen: true,
+		// parámetro para usar el id de las referencias bibliográficas en lugar de la autonumeración
+		bibitem_ref_id: false,
+	}
+	</script>
+
+  <!-- núcleo del libro interactivo -->
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <script type="text/javascript" src="js/book.js" charset="utf-8"></script>
+  
+  <!-- personalización del usuario -->
+  <link rel="stylesheet" href="extra/fonts.css" type="text/css">
+  <link rel="stylesheet" href="extra/style.css" type="text/css">
+  <link rel="stylesheet" href="extra/mis-estilos.css" type="text/css">
+
+  <!-- inclusión de la biblioteca KaTex -->
+  <link rel="stylesheet" type="text/css" href="extra/katex/katex.min.css"/>
+  <script src="extra/katex/katex.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="extra/katex/copy-tex.min.css"/>
+  <script src="extra/katex/copy-tex.min.js"></script>
+  <script src="extra/katex/auto-render.min.js" ></script>
+
+  <!-- Opcional en caso de requerir formulas químicas -->
+  <script src="extra/katex/mhchem.min.js"></script>
+  
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [ {left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}, {left: "\\[", right: "\\]", display: true}, {left: "\\(", right: "\\)", display: false} ]
+    });
+  });
+  </script>
+  
+  <style>
+        .flotad {
+            float: right;
+			margin-top:10px;
+            margin-left: 20px; /* Espacio entre imagen y texto */
+            margin-bottom: 8px;
+            max-width: 50%; /* Tamaño máximo de la imagen */
+        }
+		
+		.flotai {
+            float: left;
+			margin-top:10px;
+			margin-right: 20px; /* Espacio entre imagen y texto */
+            margin-bottom: 8px;
+            max-width: 50%; /* Tamaño máximo de la imagen */
+        }
+        
+    </style>
+</head>
+
+<body>
+	<div id="book_loader_container">
+		<!-- se utiliza un elemento para que funcione como cargador del libro -->
+		<div id="book_loader"></div>
+		<!-- y se indica la imagen a utilizar para personalizar el libro -->
+		<img src="images/general/icartesilibri_logo.svg" width="20%" style="padding-left:1em;">
+	</div>
+	
+	<div id="book_container">
+		<div id="btn_back_page"></div>
+		<div id="btn_next_page"></div>
+		<button id="go_to_table_of_content"></button>
+		
+		<button id="btn_config"></button>
+		<div id="config_options">
+			<div id="dark_light_mode"></div>
+		</div>
+
+		<!-- si este elemento no esta presente, el botón de la tabla de contenido lleva a la primera página con un elemento class="toc_link" -->
+	<div id="table_of_content"></div>
+
+	<div id="pages_container">
+	<!--  -->
+	<div class="page" style="background-color:transparent;"></div>
+
+	<!-- Portada -->
+	<div class="page invertcolor" style="margin:0; padding:0; background-size:contain; background-image:url(images/general/portada.svg);">
+				
+		<div class="invertcolor" style="position: absolute; width: 640px; height: 1025px; left: 0px; top: 0px; background-size:contain; background-image: url('images/portada1.png');"></div>
+					
+		<!-- Nombre del autor del libro -->
+		<div style="position: absolute; bottom: 15px; left:35px; width:640px; font-size:17px; color:#77a3e9; text-shadow: 2px 1px black; text-shadow: 2px 1px black">Juan Guillermo Rivera Berrío<br></div>
+		
+		<!-- Logo de la editorial o institución -->
+		<div style="position: absolute; top: 
+		30px; left:35px; width:640px;"> <a  target="_blank" href="https://pascualbravo.edu.co/"> <img src="images/general/logo_pascual_bravo.png" width="290px"/></a> </div>
+	</div>
+
+	<!--  -->
+	<div class="page" style="display:flex; align-items:center; justify-content:center;">
+		<a style="width:50%" target="_blank" href="https://proyectodescartes.org/iCartesiLibri/"><img src="images/general/icartesilibri_logo.svg" width="100%"></a>
+	</div>
+
+	<!--  -->
+	<!-- init-page-num="true" es un parámetro que indica que a partir de esta página comienza la numeración -->
+	<!-- inicialmente los números de las páginas se numeran con numerales romanos -->
+	<!-- num="" es un parámetro que indica que esta página no lleva numeración visible -->
+	<!--  -->
+	<div class="page" style="text-align:center; font-size:120%;" init-page-num="true" num="">
+		<h1>¿Cómo funcionan las IA agénticas?</h1>
+		<br>
+		<div style="margin-top: 110px; color: var(--h1-color); font-size:30px"><b>Juan Guillermo Rivera Berrío</b>
+		<br><br>
+		<a class="invertcolor" target="_blank" href="https://pascualbravo.edu.co/"> <img src="images/general/logo_pascual_bravo2.png" width="70%"/></a>
+		</div>
+		<div align="center" style="position: absolute; bottom: 105px; left:0; right:0;"> Fondo Editorial RED Descartes<br><br>
+		<a  target="_blank" href="https://proyectodescartes.org"> <img src="images/general/logo_descartes3.png" width="300px"/></a></div>
+
+		<div align="center" style="position: absolute; bottom: 50px; left:0; right:0;">Córdoba (España)<br/>
+		2026</div>
+	</div>
+
+	<!--  -->
+    <div class="page" num="">
+		<p>¿Cómo funcionan las IA agénticas?</p>
+		<br>
+		<p>Autor: <br>
+		Juan Guillermo Rivera Berrío
+		</p><br>
+      	  
+		<p>
+        Código JavaScript para el libro: <a href="https://github.com/jlongi/libro_interactivo" target="_blank">Joel Espinosa Longi</a>, <a href="https://www.matem.unam.mx/" target="_blank">IMATE</a>, UNAM. <br>
+        Recursos interactivos: <a href="http://descartes.matem.unam.mx/" target="_blank">DescartesJS</a>, <a href="https://proyectodescartes.org/descartescms/herramientas-ia" target="_blank">Herramientas de IA</a>, ChatGPT y Gemini. <br>
+        Fuentes: <a href="https://fonts.google.com/specimen/Lato" target="_blank">Lato</a> y <a href="https://fonts.google.com/specimen/Ubuntu+Mono" target="_blank">UbuntuMono</a><br>
+		Imagen de portada: ilustración generada por GPT Image 2</p><br><br>
+		<p>Red Educativa Digital Descartes<br>
+        Córdoba (España)<br>
+        <a href="mailto:descartes@proyectodescartes.org?Subject=Fondo editorial"> descartes@proyectodescartes.org</a><br>
+        <a href="https://proyectodescartes.org/descartescms/" target="_blank">https://proyectodescartes.org</a><br>
+        <br>
+        Proyecto iCartesiLibri<br>
+        <a href="https://proyectodescartes.org/iCartesiLibri/index.htm" target="_blank">https://proyectodescartes.org/iCartesiLibri/index.htm</a> <br>
+        <br>
+        ISBN:<br>
+		</p>
+		<p style="font-size:10px; position: absolute; bottom: 30px; left: 50px; right:0;"><a href="http://creativecommons.org/licenses/by-nc-sa/4.0" target="_blank"><img src="images/general/88x31.png" style="height:36px; width:99px" /></a><br>
+        Esta obra está bajo una licencia Creative Commons 4.0 internacional: Reconocimiento-No Comercial-Compartir Igual.</p>
+    
+	</div>
+
+	<!--  -->
+	<div class="page">
+		<h2>Tabla de contenido</h2>
+		<div class="toc_link" href="#prefacio"></div>
+		<div class="toc_link" href="#c11"></div>
+		<div class="toc_link" href="#c12"></div>
+		<div class="toc_link" href="#c13"></div>
+		<div class="toc_link" href="#c14"></div>
+		<div class="toc_link" href="#c15"></div>
+		<div class="toc_link" href="#c16"></div>
+		
+						
+	</div>
+
+	
+
+	<!--  -->
+	<!-- num-type-arabic="true" es un parámetro que indica que a partir de esta página la numeración utilizara numerales arábigos -->
+	<!--  -->
+	<div class="page" num-type-arabic="true">
+		<h1 id="prefacio">Introducción</h1>
+		<p>La inteligencia artificial está experimentando una transformación profunda: hemos pasado de sistemas que simplemente responden preguntas a sistemas capaces de planificar, tomar decisiones, utilizar herramientas y ejecutar acciones para alcanzar objetivos. En este nuevo escenario surgen las IA agénticas, una evolución de los modelos de lenguaje que abre nuevas posibilidades para el desarrollo de aplicaciones, la automatización de procesos y, especialmente, la educación.</p>
+		<figure>
+            <div class="interactive" poster="posters/p31.png" width="540" height="360" scale="100%" src="presentaciones/Donde_estamos.html"></div>
+            <p style="margin-top: -15px">Presentación "¿Dónde estamos con IA?".</p>
+        </figure> 
+		<p style="text-align-last: justify">Este libro, ¿Cómo funcionan las IA agénticas?, propone acercarse a esta tecnología desde una perspectiva esencialmente práctica. No se</p>			
+						
+	</div>
+	
+	<div class="page">
+		<p> trata únicamente de comprender qué es un agente de inteligencia artificial, sino de descubrir cómo piensa, cómo recuerda, cómo actúa, cómo utiliza herramientas y cómo puede colaborar con otros agentes para resolver problemas que requieren múltiples pasos. Para ello, se abordan conceptos fundamentales como la memoria, el razonamiento, la acción y el ciclo ReAct (Reasoning, Acting, Observation), elementos que permiten comprender la anatomía y el comportamiento de estos sistemas.</p>
+		<div class="caja5" style="width: 100%; background-color: rgba(0,180,255,0.5)">
+        <h5 class="modo5" style="font-size: 24px; margin-left:auto; margin-right: auto; background-color: blue">Vídeo</h5>
+		<div class="content" style="text-align: center; padding: 5px; padding-bottom: 5px; padding-left: 7px; background-color: rgba(255,180,0,0.0)">
+          <figure>
+            <div class="interactive" poster="posters/p5.png" width="1280" height="720" scale="90%" src="videos/index1.html"></div>
+            <figcaption style="margin-top:-1em" prefix="Video">Guia del curso.</figcaption>
+          </figure>
+        </div>
+		</div>
+
+	
+	</div>
+
+	<!--  -->
+	<!-- Una página en blanco y sin numeración visible -->
+	<!--  -->
+	<div class="page" num="">
+		<div class="image_expand" style="position: absolute; width: 640px; height: 825px; left: 0px; top: 0px; background-image: url('images/intro/intro.jpeg'); background-size:640px 825px; background-repeat: no-repeat" onclick="openImage(this)"></div>
+	</div>
+
+	<!-- pag 7 -->
+	<div class="page">
+		<h1 id="c11">Fundamentos de los agentes de IA</h1>
+		
+		<p>Un agente de IA es un sistema que <b>no solo responde</b>, sino que también <b>planifica, decide y ejecuta acciones</b> para alcanzar un objetivo concreto de forma relativamente autónoma.A diferencia de un chat tradicional, que suele limitarse a contestar dentro de un menú, reglas fijas o respuestas predefinidas, un agente puede entender instrucciones en lenguaje natural, mantener el contexto y adaptarse mejor a tareas cambiantes.</p>
+		<p>Su funcionamiento suele apoyarse en varios componentes principales: un <b>LLM</b> como “cerebro” para razonar y generar decisiones, <b>memoria</b> para conservar contexto, <b>herramientas</b> para interactuar con sistemas externos y un <b>bucle de orquestación</b> que coordina la secuencia de pensar, actuar y volver a evaluar. En la práctica, este principio de funcionamiento permite que el agente descomponga un objetivo amplio en pasos pequeños, use herramientas como APIs, bases de datos, correo o navegador, y continúe hasta completar la tarea.</p>
+		<figure style="text-align: center">
+        <img loading="lazy" src="images/intro/intro2.jpeg" style="border-radius:15px;cursor:pointer;width:90%;" onclick="openImage(this)">
+        <figcaption>Las IA agénticas convierten objetivos complejos en resultados autónomos.</figcaption></figure>
+					
+	</div>
+
+	<!-- pag 8 -->
+	<div class="page">
+		<p>Desde el punto de vista de los procesos internos, el agente interpreta la petición, evalúa qué necesita consultar o hacer, ejecuta una acción y revisa el resultado antes de seguir. Esa cadena de razonamiento y acción explica por qué los agentes resultan más flexibles que un chatbot clásico: no dependen solo de frases programadas, sino que pueden resolver flujos de varios pasos y trabajar con información conectada a sistemas reales.</p>
+		<p>Los beneficios y ventajas más claros son la <b>automatización de tareas repetitivas</b>, la reducción de tiempo en procesos administrativos y la capacidad de ofrecer respuestas y acciones más útiles en contextos laborales. Entre sus desafíos o limitaciones destacan la necesidad de supervisión, el riesgo de errores si la información de entrada es incompleta y la importancia de configurar bien las herramientas y permisos para evitar acciones no deseadas.</p>
+		<p>En cuanto a casos reales o ejemplos, un agente puede ayudar en el día a día a resumir correos, buscar información, redactar respuestas o organizar tareas; en el trabajo, puede consultar una base de conocimiento, actualizar un documento y enviar un informe por email en una sola secuencia.También se usan en atención al cliente, soporte interno, análisis de datos y automatización de flujos empresariales, donde aportan valor al integrar conversación natural con ejecución concreta.</p>
+		<p>En el ámbito educativo, un agente permite generar herramientas como la mostrada en la siguiente página.</p>
+						
+	</div>
+	
+	<!-- pag 9 -->
+	<div class="page">
+		<div class="interactive" poster="posters/p9.png" width="540" height="700" src="https://proyectodescartes.org/IATools/182_Prueba_Diagn%c3%b3stica-libre/"></div>
+		<h1 style="font-size: 16px; text-align: center">Evaluación diagnóstica inteligente (herramienta diseñada con Open Code).</p>
+	
+	</div>
+	
+	<!-- pag 10 -->
+	<div class="page" num="">
+		<div class="image_expand" style="position: absolute; width: 640px; height: 825px; left: 0px; top: 0px; background-image: url('images/contenido/c21.jpeg'); background-size:640px 825px; background-repeat: no-repeat" onclick="openImage(this)"></div>
+	</div>
+	
+	<!-- pag 11 -->
+	<div class="page">
+		<h1 id="c12">Anatomía de un Agente</h1>
+		<figure class="flotad">
+        <img loading="lazy" src="images/contenido/c22.jpeg" style="border-radius:15px;cursor:pointer;width:80%; margin-left: 30px" onclick="openImage(this)">
+        <figcaption>Pensar, recordar, actuar y lograr</figcaption></figure>
+		<p>Un agente de IA puede entenderse como un sistema que combina <strong>memoria</strong>, <strong>razonamiento</strong> y <strong>acción</strong> para perseguir una meta de forma más autónoma que un modelo aislado. Su <strong>memoria a corto plazo</strong> funciona como un espacio de trabajo: allí se guarda el contexto reciente, los mensajes de la conversación y los resultados inmediatos de herramientas o acciones; esta memoria desaparece cuando termina la sesión o se agota el contexto disponible. En cambio, la <strong>memoria a largo plazo</strong> conserva información útil entre sesiones, como preferencias del usuario, hechos relevantes, procedimientos aprendidos o episodios pasados, lo que permite continuidad y personalización.</p><p>Desde el punto de vista interno, la arquitectura suele organizarse en varios <strong>componentes principales</strong>: un modelo base que genera texto, un módulo de memoria para almacenar y recuperar información, un planificador o controlador que decide el siguiente paso, y, en muchos casos, conectores a herramientas externas. El principio de funcionamiento es sencillo pero potente: el agente recibe un objetivo, recupera memoria relevante, la inserta en su contexto actual y luego decide qué hacer con esa información. Cuando la memoria larga se implementa con recuperación selectiva, el agente no “carga todo” en cada interacción, sino solo lo que resulta útil para la tarea concreta.</p></div>
+
+	<!-- pag 12 -->
+	<div class="page">
+		<p>El ciclo de razonamiento más conocido en estos sistemas es el bucle <strong>ReAct</strong> —<strong>Reasoning, Acting, Observation</strong>—, donde el agente alterna entre pensar, actuar y observar. Primero produce una intención o hipótesis sobre cómo resolver el problema; después ejecuta una acción, como consultar una base de datos, llamar a una herramienta o buscar un dato; finalmente observa el resultado y usa esa nueva evidencia para decidir el siguiente paso. Este patrón mejora la capacidad del agente para descomponer problemas complejos, corregir errores sobre la marcha y basar sus decisiones en señales externas en lugar de depender solo de su predicción inicial.</p>
+		<p>En la práctica, esta anatomía permite aplicaciones muy útiles: asistentes que recuerdan preferencias del cliente, agentes de soporte que mantienen el historial de incidencias, sistemas de análisis que consultan fuentes y refinan respuestas paso a paso, o asistentes de productividad que retoman proyectos largos sin empezar desde cero. Un ejemplo claro es un agente que ayuda a redactar informes: usa memoria corta para seguir el tema de la conversación, memoria larga para recordar el estilo preferido del usuario, y ReAct para buscar datos, contrastarlos y ajustar el informe según lo observado en cada consulta.</p><p>Las <strong>ventajas</strong> son evidentes: más continuidad, mayor personalización, mejor manejo de tareas extensas y una capacidad superior para interactuar con herramientas externas]. Sin embargo, también hay <strong>desafíos y limitaciones</strong>: la memoria corta está restringida por el tamaño del contexto, la memoria larga puede acumular información irrelevante o desactualizada, y el bucle ReAct depende de que las observaciones sean correctas y de que el agente elija bien sus acciones. En otras palabras, un buen agente no solo “recuerda”, sino que también <strong>selecciona, prioriza y verifica</strong>; ahí está la diferencia entre una respuesta aislada y un comportamiento verdaderamente agentivo.</p>
+		
+	</div>
+	
+	<!-- pag 13 -->
+	<div class="page">
+		<div class="interactive" poster="posters/p13.png" width="540" height="700" src="https://proyectodescartes.org/IATools/172_Explicado_paso_a_paso-libre/"></div>
+		<h1 style="font-size: 16px; text-align: center">Explicado paso a paso (herramienta diseñada con Open Code).</p>
+	
+	</div>
+	
+	<!-- pag 14 -->
+	<div class="page">
+		<h1>Obtén tu API</h1>
+		<p><b>¿Por qué vale la pena invertir, al menos 5 dólares, en una API de IA durante este curso?</b></p>
+		<p>Una de las mejores inversiones que pueden realizar durante este curso es disponer de acceso a una <b>API de modelos de inteligencia artificial</b>, como <b>OpenRouter, Pollinations AI</b> o <b>DeepSeek</b>. Aunque muchas herramientas ofrecen versiones gratuitas, estas suelen tener limitaciones en velocidad, disponibilidad, número de solicitudes o acceso a modelos avanzados, lo que dificulta el desarrollo de proyectos de IA agéntica.</p>
+		<p>En este curso no aprenderemos únicamente a conversar con un chatbot; construiremos <b>agentes inteligentes</b> capaces de tomar decisiones, colaborar entre sí, utilizar herramientas externas, generar código, crear imágenes y automatizar procesos. Para lograrlo, es fundamental contar con un servicio que permita realizar cientos o incluso miles de llamadas a modelos de IA de forma estable y programática.</p>
+		<p>Disponer de una API ofrece varias ventajas:</p>
+		<ul><li>Permite experimentar con diferentes modelos de lenguaje y comparar sus resultados.</li>
+		<li>Facilita la creación de aplicaciones reales que interactúan automáticamente con la IA.</li>
+		<li>Reduce los tiempos de espera y evita muchas de las restricciones de las versiones gratuitas.</li>
+		<li>Hace posible desarrollar sistemas multiagente, donde varios agentes cooperan para resolver un problema complejo.</li>
+		<li>Acerca la experiencia del curso a la forma en que las empresas desarrollan actualmente soluciones basadas en IA.</li></ul>
+			
+	
+	</div>
+	
+	<!-- pag 15 -->
+	<div class="page">
+		<p>Además, el costo suele ser bajo en comparación con el aprendizaje obtenido. En muchos casos, <b>5 dólares en créditos</b> son suficientes para completar la mayoría de las prácticas del curso, y esos créditos se consumen únicamente cuando se utiliza la API. Es una inversión similar a comprar un libro técnico o una licencia de software para una asignatura, pero con el beneficio adicional de adquirir experiencia práctica con herramientas utilizadas en la industria.</p>
+		<p>El objetivo del curso es que, al finalizar, cada estudiante sea capaz de desarrollar agentes de IA que puedan integrarse en aplicaciones reales. Contar con acceso a una API permitirá aprovechar al máximo todas las actividades, experimentar con mayor libertad y construir proyectos con un nivel de calidad mucho más cercano al entorno profesional.</p>
+		<p>He aquí el acceso a las API:</p>
+		<ul><li><b>OpenRouter:</b> Ofrece cerca de 500 modelos (<a target="_blank" href="https://openrouter.ai/workspaces/default/keys">API Keys</a>).</li>
+		<li><b>Pollinations AI: </b>Además de ofrecer los modelos más recientes, incluye una comunidad en Discord en la que se comparten novedades y app creadas por los usuarios (<a target="_blank" href="https://enter.pollinations.ai/keys">API Keys</a>, requiere registro previo en GitHub).</li>
+		<li><b>DeepSeek: </b>IA china de código abierto y la m+as económica, aceptando un mínimo de 2 dólares (<a target="_blank" href="https://platform.deepseek.com/usage">API Keys</a>).</li>
+		<li><b>Groq: </b>Ofrece una API gratuita (<a target="_blank" href="https://console.groq.com/keys">API Keys</a>).</li></ul>
+	
+	
+	</div>
+	
+	<!-- pag 16 -->
+	<div class="page" num="">
+		<div class="image_expand" style="position: absolute; width: 640px; height: 825px; left: 0px; top: 0px; background-image: url('images/contenido/c31.jpeg'); background-size:640px 825px; background-repeat: no-repeat" onclick="openImage(this)"></div>
+	</div>
+
+	<!-- pag 17 -->
+	<div class="page">
+		<h1 id="c13">Arquitectura de Aplicaciones Web Client-Side y APIs</h1>
+		<p>Un aplicativo web <strong>standalone</strong> para agentes de IA se construye como una interfaz ejecutada casi por completo en el navegador, apoyada en una estructura <strong>HTML5</strong> limpia, estilos <strong>CSS</strong> modulares y lógica <strong>JavaScript</strong> para orquestar eventos, estado y llamadas a servicios externos. Su concepto fundamental es separar presentación, interacción y consumo de datos para que el usuario vea una experiencia fluida sin depender de recargas constantes. En la práctica, esto permite organizar la interfaz en componentes como barra lateral, panel de conversación, visor de imágenes, área de resultados y zona de exportación, todos coordinados desde el cliente. Entre sus beneficios destacan la rapidez percibida, la facilidad de despliegue y la capacidad de integrar flujos de texto e imagen desde una sola capa visual.</p>
+		<figure style="text-align: center">
+        <img loading="lazy" src="images/contenido/c32.jpg" style="border-radius:15px;cursor:pointer;width:100%;" onclick="openImage(this)">
+        <figcaption>Las IA agénticas observan y deciden.</figcaption></figure>		
+		
+	</div>
+
+	<!-- pag 18 -->
+	<div class="page">
+		<p>La estructura interna suele seguir un principio de funcionamiento modular: el HTML define la jerarquía de contenido, el CSS controla la apariencia responsiva y el JavaScript maneja la lógica de negocio en el navegador. Un patrón útil consiste en desacoplar la vista de la interacción, por ejemplo con módulos para <strong>estado de sesión</strong>, <strong>gestión de prompts</strong>, <strong>renderizado de respuestas</strong> y <strong>descarga de archivos</strong>. También es común consumir librerías externas mediante <strong>CDNs</strong> para acelerar la carga inicial y reducir el peso del proyecto, especialmente cuando se usan componentes de interfaz, editores, gráficos o utilidades de formato.</p>
+		<p>El ecosistema <strong>Bring Your Own Key (BYOK)</strong> refuerza este modelo porque permite que cada usuario conecte su propia clave para interactuar con modelos de texto e imagen desde el navegador o desde una capa intermedia mínima. Esto tiene aplicaciones prácticas muy claras en agentes de IA: generación de copys, síntesis de documentos, creación de imágenes, clasificación de contenidos y asistentes especializados por dominio. Entre los beneficios están el control de costos, la flexibilidad para cambiar de proveedor y la posibilidad de usar varios modelos según la tarea.</p>
+		<p>En casos reales, la interfaz debe adaptarse al tipo de salida que el usuario espera. Si el agente produce <strong>texto</strong>, conviene mostrar un panel principal con streaming, historial y acciones rápidas como copiar, resumir o regenerar; si produce <strong>imágenes</strong>, el diseño necesita una galería con miniaturas, estados de carga y opciones de descarga o variación; si el resultado son <strong>cuestionarios descargables</strong>, es útil incluir vista previa, selector de formato y botón para exportar en HTML, PDF o DOCX. En todos los casos, el principio clave es que la interfaz no solo muestre resultados, sino que también guíe el flujo de trabajo. Por eso, una buena arquitectura client-side para agentes de IA combina: <strong>interacción inmediata</strong>, <strong>módulos reutilizables</strong>, <strong>integración con APIs abiertas</strong> y <strong>seguridad en claves</strong>.</p>
+		
+	</div>
+	
+	<!-- pag 19 -->
+	<div class="page">
+		<div class="interactive" poster="posters/p19.png" width="540" height="700" src="https://proyectodescartes.org/IATools/155_Chatbot_IA-Crea_tu_tutor_IA_con_PDF-libre/"></div>
+		<h1 style="font-size: 16px; text-align: center">Crea tu tutor con PDF (herramienta diseñada con Antigravity).</p>
+	
+	</div>
+	
+	<!-- pag 20 -->
+	<div class="page">
+		<h1>Instala tus IA agénticas</h1>
+		<p>Antes de desarrollar aplicaciones basadas en agentes inteligentes, es necesario disponer de un entorno de trabajo adecuado. En la actualidad existen diversos IDE y plataformas con capacidades de IA agéntica que facilitan tareas como la generación de código, la planificación de proyectos, la depuración, la automatización de procesos y la colaboración entre múltiples agentes de inteligencia artificial.</p>
+		<p>En este apartado se instalarán y configurarán al menos tres herramientas de IA agéntica, con el propósito de comparar sus capacidades, identificar sus fortalezas y comprender en qué situaciones resulta más conveniente utilizar cada una. Entre las opciones que pueden emplearse se encuentran Antigravity IDE, Visual Studio Code (VS Code), Kiro, Windsurf, OpenCode, Cursor y DeepSeek Harness, todas ellas orientadas a mejorar la productividad mediante asistentes inteligentes o arquitecturas basadas en agentes.</p>
+		<p>Aunque muchas de estas herramientas comparten funciones similares, cada una presenta características particulares, como distintos niveles de automatización, compatibilidad con modelos de IA, integración con APIs externas, soporte para flujos multiagente o herramientas de planificación y revisión del código. Por ello, conocer varias alternativas permitirá seleccionar la más adecuada según el tipo de proyecto que se desee desarrollar.</p>
+		<p>Al finalizar esta sección, el estudiante contará con un entorno de desarrollo moderno preparado para construir aplicaciones de IA agéntica, integrar modelos de lenguaje mediante APIs y experimentar con diferentes estrategias de colaboración entre agentes inteligentes, adquiriendo una visión práctica de las tecnologías que actualmente impulsan el desarrollo de software asistido por inteligencia artificial.</p>	
+	
+	</div>
+
+	<!-- pag 21 -->
+	<div class="page">
+		<div class="interactive" poster="posters/p21.png" width="540" height="700" src="interactivos/IDEs/index.html"></div>
+		<h1 style="font-size: 16px; text-align: center">IA agénticas (haz clic sobre el logo para instalación).</p>
+	
+	</div>
+	
+	<!-- pag 22 -->
+	<div class="page" num="">
+		<div class="image_expand" style="position: absolute; width: 640px; height: 825px; left: 0px; top: 0px; background-image: url('images/contenido/c51.jpeg'); background-size:640px 825px; background-repeat: no-repeat" onclick="openImage(this)"></div>
+	</div>
+
+	<!-- pag 23 -->
+	<div class="page">
+		<h1 id="c14">Orquestación del Agente de Terminal con OpenCode</h1>
+		<p>La <strong>orquestación del Agente de Terminal con OpenCode</strong> consiste en convertir un conjunto de instrucciones de alto nivel en una secuencia automática de acciones sobre archivos, recursos y lógica frontend. En modo <strong>Build</strong>, el agente no solo genera HTML, sino que también <strong>ensambla</strong> el proyecto, resuelve dependencias, reescribe rutas y prepara la entrega final para que funcione como una herramienta autónoma. Este enfoque se apoya en varios elementos clave: <strong>la interpretación del objetivo</strong>, <strong>la manipulación de archivos locales</strong>, <strong>la transformación de recursos multimedia</strong> y <strong>la inyección de comportamiento interactivo</strong>. En la práctica, esto permite que un libro educativo, una simulación o un módulo didáctico nazca como un prototipo y termine convertido en un paquete listo para ejecutarse sin intervención manual continua.</p>
+		<p>El <strong>principio de funcionamiento</strong> se basa en una cadena de decisiones automatizadas. Primero, OpenCode analiza la estructura del proyecto y detecta qué archivos deben crearse, modificarse o consolidarse. Después, el agente aplica <strong>ganchos de empaquetamiento</strong> para interceptar recursos como imágenes, audios o videos y convertirlos a <strong>Base64</strong> cuando conviene incrustarlos dentro del HTML final. Esta técnica garantiza que la herramienta sea <strong>100% offline</strong>, porque elimina la dependencia de servidores externos y reduce fallos por falta de conexión. Un flujo típico incluye: <strong>detección del asset</strong>, <strong>codificación del recurso</strong>, <strong>sustitución de la referencia externa</strong> y <strong>validación del resultado final</strong>.</p>
+		<p style="text-align-last: justify">La <strong>gestión de rutas relativas</strong> es especialmente importante cuando el proyecto está dividido en carpetas o módulos separados. En una estructura multipartita, el agente debe resolver correctamente</p>
+		
+	</div>
+	
+	<!-- pag 24 -->
+	<div class="page">
+		<p> referencias como imágenes, estilos y scripts para que cada página encuentre sus dependencias sin romper la navegación. Los <strong>componentes principales</strong> aquí son: <strong>un resolvedor de rutas</strong>, <strong>un normalizador de directorios</strong>, <strong>un empaquetador de recursos</strong> y <strong>un verificador de consistencia</strong>. Por ejemplo, si un HTML vive en una subcarpeta y un archivo multimedia está en otra, el agente puede reescribir la ruta o incrustar el contenido directamente para evitar errores de carga. Esto mejora la robustez del producto y simplifica la distribución en entornos educativos con conectividad limitada.</p>
+		<p>La <strong>integración de lógica interactiva</strong> permite que el contenido deje de ser estático y pase a comportarse como una experiencia guiada. OpenCode puede insertar funciones JavaScript para mecánicas como <strong>arrastrar y soltar</strong>, validaciones automáticas de cuestionarios, retroalimentación inmediata o control de progreso. Entre las <strong>aplicaciones prácticas</strong> más comunes están las fichas de aprendizaje autocorregibles y las actividades donde el usuario organiza elementos visuales en una secuencia correcta. Un ejemplo realista sería un módulo donde el agente genera la interfaz, añade eventos de drag-and-drop y conecta una función que verifique respuestas.</p>
+		<p>Entre los <strong>beneficios y ventajas</strong> destacan la velocidad de producción, la coherencia del empaquetado y la posibilidad de distribuir materiales que funcionan sin internet. Además, el uso de hooks reduce errores repetitivos y permite que el agente mantenga una lógica de salida consistente entre versiones. Sin embargo, también existen <strong>desafíos o limitaciones</strong>: los recursos muy pesados pueden inflar el tamaño final, algunas rutas complejas requieren pruebas cuidadosas y las interacciones avanzadas necesitan validación para evitar inconsistencias visuales o lógicas. En conjunto, este enfoque convierte a OpenCode en un orquestador práctico para crear experiencias educativas completas, donde el agente no solo escribe código, sino que <strong>construye, adapta y prepara</strong> el material para su uso real.</p>
+		
+	</div>
+
+	<!-- pag 25 -->
+	<div class="page" num="">			
+		<div class="interactive" poster="posters/p25.png" width="540" height="700" src="https://proyectodescartes.org/IATools/cuestionarios-sm2/"></div>
+		<h1 style="font-size: 16px; text-align: center">Generador de cuestionarios de IA (herramienta diseñada con OpenCode).</p>
+	
+	</div>
+	
+	<!-- pag 26 -->
+	<div class="page">
+		<h1>Tus primeras app</h1>
+		<h2>Método GET</h2>
+		<p>Crea una carpeta para tu app, abre opencode, selecciona la carpeta y escribe la siguiente petición:</p>
+		<code>Crea una app en HTML5 con 12 mariposas, las cuales se muestran en tarjetas didácticas, con la imagen en el anverso y la descripción en el reverso. Al hacer clic sobre una tarjeta, esta gira para mostrar el reverso y veceversa. El título debe ser dinámico y atractivo.<br><br>
+		Los nombres de los animales salvajes los generas con esta función https://enter.pollinations.ai/api/generate/text/{prompt}?key=[API] &model=openai, donde {prompt} es "Dame el nombre de 12 animales salvajes", la IA debe tener memoria, de tal forma que no repita el nombre de un animal.<br><br>
+		Por cada animal salvaje, generas una imagen con la función https://enter.pollinations.ai/api/generate/image/{prompt}?key=[API] ?model=zimage, donde {prompt} es el nombre del animal salvaje.<br><br>
+		La app debe ser responsive y tener formato 3:4</code>
+		<br><br><p>En la siguiente página se muestra el resultado obtenido con el modelo <b>Muse Spark 1.2</b></p>	
+	
+	</div>
+	
+	<!-- pag 27 -->
+	<div class="page">
+		<div class="interactive" poster="posters/p27.png" width="540" height="700" src="interactivos/opencode_animales/index.html"></div>
+		<h1 style="font-size: 16px; text-align: center">Trajetas didácticas creadas con OpenCode (ingresa la API).</p>		
+	
+	</div>
+	
+	<!-- pag 28 -->
+	<div class="page">	
+		<h2>Método POST</h2>
+		<p>Crea una carpeta para tu app, abre opencode, selecciona la carpeta y escribe la siguiente petición:</p>
+		<code>Genera una app en HTML5, para generar cuestionarios de selección múltiple, así:<br>
+		1. Un cuadro de texto que pida la API de OpenRouter (o Pollinations)<br>
+		2. Un cuadro de texto que pida el [Tema] del cuestionario<br>
+		3. Un selector de modelos de texto con las siguientes opciones: deepseek/deepseek-v4-flash-0731, google/gemini-3.5-flash-lite y tencent/hy3 (para Pollinations: qwen3.7-flash, gemma-4-31b, gpt-5.6-luna y gemini-fast)<br>
+		4. Un selector de número de preguntas, entre 4 y 10<br>
+		5. Para las funciones generadoras de texto, debe usar este formato:<br>
+		curl https://openrouter.ai/api/v1/chat/completions \
+		-H "Content-Type: application/json" \
+		-H "Authorization: Bearer $OPENROUTER_API_KEY" \
+		-d '{
+		"model": "~openai/gpt-latest",
+		"messages": [
+		{
+		"role": "user",
+		"content": ""
+		}
+		]
+		}'</code><br><br>
+		<p>Para Pollinations</p>
+		<code>fetch('https://gen.pollinations.ai/v1/chat/completions', {
+		method: 'POST',
+		headers: { 'Authorization': `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
+		body: JSON.stringify({ model: 'openai', messages: [{ role: 'user', content: 'yo' }] })
+		});</code>
+		
+	
+	</div>
+	
+	<!-- pag 29 -->
+	<div class="page">
+		<div class="interactive" poster="posters/p29.png" width="540" height="700" src="interactivos/opencode_cuestionario-openrouter/index.html"></div>
+		<h1 style="font-size: 16px; text-align: center">Cuestionario con OpenCode y modelo chino Hy3 (ingresa la API).</p>
+	
+	</div>
+	
+	<!-- pag 30 -->
+	<div class="page">
+		<p>Los métodos GET y POST son los comandos principales que utiliza tu navegador para comunicarse con un servidor web.</p>
+		<h2>🌐 Método GET</h2>
+		<p>Se utiliza para solicitar o pedir información de un servidor.</p>
+		<ul><li><b>Visibilidad:</b> Los datos se envían dentro de la URL.</li>
+		<li><b>Seguridad:</b> No es seguro para datos sensibles (contraseñas o tarjetas de crédito quedan expuestas en la barra de direcciones).</li>
+		<li><b>Límite:</b> Tiene restricciones en la cantidad de datos que puede enviar.</li>
+		<li><b>Historial:</b> Las búsquedas se pueden guardar en favoritos (bookmarks) y quedan en el historial del navegador.</li>
+		<li><b>Ejemplo:</b> Cuando buscas algo en Google o entras a ver un artículo de noticias.</li></ul>
+		<h2>✉️ Método POST</h2>
+		<p>Se utiliza para enviar o crear información en el servidor.</p>
+		<ul><li><b>Visibilidad:</b> Los datos viajan ocultos dentro del cuerpo (body) de la petición HTTP.</li>
+		<li><b>Seguridad:</b> Es más seguro porque los datos no se ven a simple vista en la URL (aunque requiere HTTPS para estar totalmente encriptado).</li>
+		<li><b>Límite:</b> No tiene restricciones de tamaño; permite subir archivos grandes.</li>
+		<li><b>Historial:</b> No se guarda en el historial ni permite agregarse a favoritos.</li></ul>	
+	
+	</div>
+
+	<!-- pag 31 -->
+	<div class="page">
+		<ul><li><b>Ejemplo:</b> Cuando inicias sesión con tu usuario y contraseña, o subes una foto a una red social.</li></ul>
+		<p>Observa la siguiente presentación, preferiblemente en pantalla ampliada:</p>
+		<figure>
+            <div class="interactive" poster="posters/p31.png" width="540" height="360" scale="100%" src="presentaciones/Metodo_post.html"></div>
+            <p style="margin-top: -15px">Presentación Métodos Get y Post.</p>
+          </figure>  
+	
+	
+	</div>
+	
+	
+	<!-- pag 32 -->
+	<div class="page" num="">
+		<div class="image_expand" style="position: absolute; width: 640px; height: 825px; left: 0px; top: 0px; background-image: url('images/contenido/c41.jpeg'); background-size:640px 825px; background-repeat: no-repeat" onclick="openImage(this)"></div>
+	</div>
+
+	<!-- pag 33 -->
+	<div class="page">
+		<h1 id="c15">Diseño dirigido por especificaciones con DeepSeek Harness</h1>
+		<p>Diseñar agentes de IA con <strong>especificaciones claras</strong> en DeepSeek Harness permite transformar una idea difusa en un sistema de generación mucho más confiable, especialmente cuando el objetivo es producir código limpio, consistente y sin errores. En este enfoque, los <em>Steering Docs</em> actúan como una guía de comportamiento del agente: definen <strong>qué debe hacer</strong>, <strong>qué no debe hacer</strong>, <strong>cómo debe estructurar la salida</strong> y <strong>qué estándares de calidad debe respetar</strong>. Su lógica combina varios elementos clave: <strong>concepto fundamental</strong>, porque fija la intención del agente; <strong>componentes principales</strong>, porque separa reglas, plantillas y restricciones; <strong>principio de funcionamiento</strong>, porque convierte instrucciones en decisiones de generación; <strong>procesos internos</strong>, porque ordena validación, corrección y refinamiento; y <strong>aplicaciones prácticas</strong>, porque sirve para construir interfaces, componentes y flujos de trabajo reproducibles.</p>
+		<p>DeepSeek Harness actúa exactamente como su nombre indica: un arnés. Es la estructura de soporte que permite a los desarrolladores atar la inmensa fuerza bruta de los modelos de billones de parámetros y canalizarla hacia aplicaciones útiles, predecibles y seguras. DeepSeek Harness incorporó lo que ellos llaman <b>Flujos de Trabajo Agénticos Deterministas</b>. Esto significa que el marco de trabajo proporciona "barandillas" (<i>guardrails</i>) matemáticas que garantizan que un agente no se desvíe de su tarea o sufra de alucinaciones destructivas en procesos críticos.</p>
+		<p style="text-align-last: justify">En la planificación del flujo, DeepSeek Harness permite coordinar y orquestar múltiples agentes de inteligencia artificial para generar plantillas visuales interactivas de manera incremental, en lugar de producir una interfaz completa en una única ejecución. Este enfoque</p>
+		
+	</div>
+
+	<!-- pag 34 -->
+	<div class="page">
+		<p> aprovecha la colaboración entre agentes especializados, donde cada uno asume una función específica dentro del proceso de desarrollo, reduciendo errores, mejorando la calidad del resultado y facilitando la comprensión y el mantenimiento del código. En una secuencia típica, un agente define la estructura base, otro incorpora los componentes visuales, un tercero implementa las interacciones y un cuarto valida y optimiza el resultado final.</p>
+		<p>Cuando la interfaz debe manejar contenido especializado, la arquitectura de DeepSeek Harness puede asignar agentes específicos para cada tipo de información. Por ejemplo, un agente puede encargarse exclusivamente del procesamiento de expresiones matemáticas utilizando <b>MathJax</b> o <b>KaTeX</b>, mientras otro interpreta documentación escrita en <b>Markdown</b>, preservando correctamente títulos, listas, bloques de código, tablas y otros elementos de formato. Este enfoque evita conflictos entre distintos motores de renderizado.</p>
+		<p>La simulación en DeepSeek Harness permite probar cómo trabajan los distintos agentes de IA antes de incorporarlos a una aplicación real. Gracias a estas pruebas es posible verificar si cada agente cumple correctamente su función, respeta las especificaciones definidas y colabora adecuadamente con los demás para generar una interfaz consistente. Por ejemplo, se puede solicitar la creación de una plantilla educativa con fórmulas matemáticas, secciones desplegables y texto en Markdown. Después, se revisa si los agentes generan correctamente cada elemento y si el resultado final cumple los requisitos establecidos. Si es necesario, se ajustan las instrucciones o la distribución de tareas hasta obtener una salida estable y de buena calidad.</p>
+		<p>En conjunto, DeepSeek Harness no solo permite generar aplicaciones con IA, sino también diseñar, probar y optimizar flujos de trabajo colaborativos entre múltiples agentes, obteniendo soluciones más robustas, organizadas y fáciles de mantener.</p>
+		
+	</div>
+	
+	<!-- pag 36 -->
+	<div class="page" num="">
+		<div class="interactive" poster="posters/p35.png" width="540" height="700" src="interactivos/QuizMasterIA/index.html"></div>
+		<h1 style="font-size: 16px; text-align: center">QuizMasterIA (herramienta diseñada con DeepSeek Harness).</p>
+	
+	</div>
+	
+	<!-- pag 36 -->
+	<div class="page" num="">
+		<div class="interactive" poster="posters/p35.png" width="540" height="700" src="interactivos/deepseek.html"></div>
+		<h1 style="font-size: 16px; text-align: center">Artículo sobre DeepSeek Harness en Medium.</p>
+	
+	</div>
+
+	<!-- pagina 37 -->
+	<div class="page">
+		<h1 id="c16">Taller Práctico – Desarrollo e Integración con Antigravity</h1>
+		<p>Antes de escribir el taller, conviene <strong>desplegar Antigravity como un entorno de trabajo colaborativo</strong> donde docentes y estudiantes puedan iterar sobre una misma interfaz HTML sin fricción: una persona define la estructura pedagógica, otra ajusta la lógica interactiva y otra valida la experiencia final en el navegador. En este flujo, el <strong>concepto fundamental</strong> es entender Antigravity como un espacio para coordinar agentes de IA y personas en torno a una meta concreta; sus <strong>componentes principales</strong> incluyen el editor, la vista previa en vivo, el control de versiones y el canal de tareas; su <strong>principio de funcionamiento</strong> se basa en dividir la construcción en microtareas verificables; y sus <strong>procesos internos</strong> permiten que cada cambio se integre, pruebe y vuelva a revisar rápidamente. Las <strong>aplicaciones prácticas</strong> se ven cuando el equipo decide programar un <strong>Generador de Evaluaciones Visuales</strong> o un <strong>Asistente Temático Multimodal</strong>.</p>
+		<p>En el <strong>ejercicio guiado en vivo</strong>, el primer paso consiste en crear la base del proyecto y definir la estructura de la página: encabezado, zona de interacción, área de resultados y botones de acción. El grupo puede usar Antigravity para repartir tareas como si fueran roles de producción: un agente propone la maqueta, otro redacta las preguntas o rutas temáticas, y un tercero implementa la lógica de evaluación o recomendación. Aquí aparecen claramente los <strong>beneficios y ventajas</strong> del enfoque: rapidez para prototipar, mejor organización del trabajo y mayor claridad para detectar errores antes de la entrega. También surgen <strong>desafíos o limitaciones</strong>, como mantener consistencia entre lo que propone el contenido educativo y lo que realmente ejecuta el código, o evitar que la interfaz crezca sin control si no se establecen criterios simples desde el inicio.</p>
+		
+		
+	</div>
+
+	<!-- pag 38 -->
+	<div class="page">
+		<p>A partir de ahí, la construcción puede avanzar con una lógica progresiva: primero la <strong>interfaz mínima</strong>, luego la interacción, después la personalización visual y finalmente las comprobaciones. En el caso del <strong>Generador de Evaluaciones Visuales</strong>, el sistema puede mostrar tarjetas con preguntas, opciones y retroalimentación inmediata; en el caso del <strong>Asistente Temático Multimodal</strong>, puede aceptar una selección de tema, mostrar sugerencias, integrar imágenes de referencia o bloques de texto y ofrecer respuestas guiadas. Los <strong>procesos internos</strong> se vuelven visibles cuando cada acción del usuario dispara una función concreta: seleccionar, comparar, mostrar resultado, reiniciar o exportar. Como <strong>caso real o ejemplo</strong>, un docente puede pedir que el asistente adapte el contenido de historia, ciencias o ciudadanía a distintos niveles de dificultad, mientras el estudiante ve cómo el mismo archivo responde de manera distinta según su elección.</p>
+		<p>La <strong>prueba de fuego</strong> llega al exportar el archivo final <strong>.html</strong> y ejecutarlo localmente en el navegador de los estudiantes, sin depender de instalaciones complejas ni servidores externos. En esta etapa, el equipo valida que el proyecto cargue correctamente, que los estilos se mantengan, que los botones funcionen y que la retroalimentación aparezca sin errores. El criterio de éxito no es solo técnico, sino también pedagógico: la herramienta debe ser comprensible, útil y fácil de usar en clase. Entre los <strong>beneficios y ventajas</strong> de esta validación directa destacan la portabilidad, la facilidad de distribución y la posibilidad de repetir la actividad en distintos contextos educativos; entre los <strong>desafíos o limitaciones</strong>, la compatibilidad con navegadores, el peso de los recursos gráficos y la necesidad de evitar dependencias que rompan el funcionamiento offline.</p>
+		
+	</div>
+
+	<!-- pag 39 -->
+	<div class="page">
+		<p>Para cerrar el taller, conviene revisar el resultado como si fuera una entrega profesional: comprobar accesibilidad, corregir textos, simplificar la navegación y verificar que cada interacción tenga sentido didáctico. Una buena práctica es pedir al grupo que responda tres preguntas finales: <strong>qué aprende el estudiante</strong>, <strong>qué hace la herramienta por sí sola</strong> y <strong>qué parte sigue requiriendo guía humana</strong>. Con esa reflexión, el proyecto deja de ser solo una página web y se convierte en un ejemplo claro de <strong>agentes de IA aplicados a la educación</strong>, donde la colaboración, la prueba rápida y la exportación final a HTML hacen posible llevar una idea desde el diseño hasta el aula con precisión y autonomía.</p>
+		
+	</div>
+	
+	<!--  -->
+	<div class="page invertcolor" num="" style="background-image: radial-gradient(white, #ecf0f1, #e3e5e7); display:flex; align-items:center; justify-content:center;">
+			<a style="width:50%" target="_blank" href="https://descartes.matem.unam.mx/"><img loading="lazy" src="images/general/logo_descartes.svg" width="100%"></a>
+	</div>
+	
+	<!-- [cierra] pages_container -->
+	</div>
+
+	<!-- [cierra] book_container -->
+	</div>
+
+</body>
+</html>
