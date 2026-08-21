@@ -1,0 +1,334 @@
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+}
+
+.page h1 {
+  color: var(--h1-color);
+}
+.page h2 {
+  color: var(--h2-color);
+  font-size: 140%;
+}
+a {
+  color: var(--link-text-color);
+}
+
+.note {
+  border-left: 4px solid var(--note-color);
+  color: var(--note-text-color);
+}
+
+.num_block {
+  border-left: 4px solid #16a085;
+}
+.num_block[prefix="Teorema"] {
+  border-left: 4px solid #2ecc71;
+}
+.num_block[prefix="Lema"] {
+  border-left: 4px solid #f39c12;
+}
+
+.image_expand {
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+  box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+}
+
+.interactive {
+  text-align: center;
+  border: 1px solid var(--interactive-border-color);
+  border-radius: 2px;
+  background: var(--interactive-color);
+}
+.image_link {
+  border: 2px solid var(--image-border-color);
+}
+
+li {
+  padding: 0 0 0.4em 0;
+}
+
+code, code_math {
+  display: inline;
+}
+code, pre, code_math {
+  font-family: 'UbuntuMono', monospace;
+  font-size: 107%;
+  color: #27ae60;
+}
+xmp {
+  font-family: 'UbuntuMono', monospace;
+  font-size: 107%;
+  color: #e67e22;
+  border: 1px solid #e67e22;
+}
+
+.katex {
+  font-size: 110% !important;
+}
+
+.cover_title {
+  position: absolute;
+  top: 595px;
+  left: 57px;
+  right: 0px;
+  color: var(--h5-color);
+  font-size: 350%;
+  text-align: center;
+  text-shadow: 1px 2px rgba(0,0,0,0.15);
+}
+.cover_subtitle {
+  position: absolute;
+  left: 0;
+  right: 0px;
+  bottom: 15px;
+  text-align: center;
+  color: #F5F5DC;
+  font-size: 220%;
+  text-shadow: 1px 2px rgba(0,0,0,0.15);
+}
+
+.chap_text {
+  position: absolute;
+  width: 560px;
+  left:120px;
+  top: 200px;
+  color: #F5F5DC;
+  font-size: 500%;
+  text-shadow: 1px 2px rgba(0,0,0,0.15);
+}
+
+body.dark .chap_text {
+	color: black;
+}
+
+body.dark .cover_title {
+	color: black;
+	text-shadow: 1px 2px rgba(0,0,0,0);
+}
+
+.chap_name {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  left: 0;
+  width: 640px;
+  top: 670px;
+  height: 170px;
+  color: #F5F5DC;
+  font-size: 250%;
+  text-shadow: 1px 2px rgba(0,0,0,0.15);
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid var(--text-color);
+}
+table td {
+  border: 1px solid var(--text-color);
+}
+
+body.dark .invertcolor {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.sin_boton {
+border: 0px; 
+background-color: rgba(1,1,1,0);
+}
+
+.sin_boton .btn_expand {
+border: 0px solid red;
+background-color: rgba(1,1,1, 0);
+opacity: 0.1;
+
+}
+
+.page:nth-child(odd) {
+	background:-webkit-gradient(linear, left top, right top, color-stop(0.95, #fff), color-stop(1, #eaeada));
+	background-image:-webkit-linear-gradient(left, #fff 94%, #eaeaea 100%);
+	background-image:-moz-linear-gradient(left, #fff 94%, #eaeaea 100%);
+	background-image:-ms-linear-gradient(left, #fff 94%, #eaeaea 100%);
+	background-image:-o-linear-gradient(left, #fff 94%, #eaeaea 100%);
+	background-image:linear-gradient(left, #fff 94%, #eaeaea 100%)
+	
+}
+
+.page:nth-child(even) {
+background:-webkit-gradient(linear, right top, left top, color-stop(0.96, #fff), color-stop(1, #dadada));
+	background-image:-webkit-linear-gradient(right, #fff 94%, #dadada 100%);
+	background-image:-moz-linear-gradient(right, #fff 94%, #dadada 100%);
+	background-image:-ms-linear-gradient(right, #fff 94%, #dadada 100%);
+	background-image:-o-linear-gradient(right, #fff 94%, #dadada 100%);
+	background-image:linear-gradient(right, #fff 94%, #dadada 100%);
+}
+
+.page:nth-child(1) {
+	background-size:contain; background-image:none;
+}
+
+body.dark {
+  --text-color: #e0e0e0;
+  --h1-color: #81caff;
+  --h2-color: #a3d3ff;
+  --link-text-color: #66ccff;
+  --note-color: #3498db;
+  --note-text-color: #e0e0e0;
+  background-color: #121212;
+  color: var(--text-color);
+}
+
+/* Fondo degradado oscuro */
+body.dark .page:nth-child(odd) {
+  background: linear-gradient(to right, #1e1e1e 94%, #2a2a2a 100%);
+}
+
+body.dark .page:nth-child(even) {
+  background: linear-gradient(to left, #1e1e1e 94%, #2a2a2a 100%);
+}
+
+/* Colores de texto dentro de las páginas */
+body.dark p,
+body.dark figcaption,
+body.dark table,
+body.dark td {
+  color: var(--text-color);
+}
+
+.titulo {
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+	
+    background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #47ff00, #00eaff, #0047ff, #a200ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+    letter-spacing: 4px;
+    position: relative;
+	top: -15px;
+	margin-bottom: -40px;
+	}
+
+.titulo::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.3);
+    transform: scaleY(-1);
+    opacity: 0.5;
+    filter: blur(5px);
+	
+	}
+
+.titulo2 {
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    background: linear-gradient(45deg, #00ff00, #ff7300, #ffeb00, #47ff00, #00eaff, #0047ff, #a200ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+    letter-spacing: 4px;
+    position: relative;
+	top: -30px;
+	margin-bottom: -40px;
+}
+
+.titulo2::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.3);
+    transform: scaleY(-1);
+    opacity: 0.5;
+    filter: blur(5px);
+}
+
+.titulo3 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    background: linear-gradient(45deg, #0000ff, #ff7300, #ffeb00, #47ff00, #00eaff, #0047ff, #a200ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+    letter-spacing: 4px;
+    position: relative;
+	top: -22px;
+	margin-bottom: -40px;
+}
+
+.titulo3::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.3);
+    transform: scaleY(-1);
+    opacity: 0.5;
+    filter: blur(5px);
+}
+
+/* Incorporación de imagen flotando a la izquierda o derecha, se diseñó para ocupar un ancho del 50%, con ancho de imagen del 100% (para valores menores, hay que poner un estilo que modifique las márgenes */
+.flota_i {
+	float: left;
+    margin: 0px 10px -15px -5px;
+	padding: 5px;
+	border: 1px solid rgba(1,1,1,0);
+	width: 50%;
+	margin-top:-10px;
+}
+
+.flota_i .figcaption {
+	text-align: center;
+	margin-bottom:0px;
+	color: var(--text-color);
+}
+
+.flota_d {
+	float: right;
+    margin: 0px -10px 0px 15px;
+	padding: 5px;
+	border: 1px solid rgba(1,1,1,0);
+	width: 50%;
+	margin-top:10px;
+	
+}
+
+.flota_d .figcaption {
+	text-align: center;
+	color: var(--text-color);
+}
+
+p, figcaption {
+	color:black;
+}
+
+.destaca {
+	color: var(--h1-color);
+	font-size: 19px;
+	text-align: center;
+}
