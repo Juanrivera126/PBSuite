@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safari Salvaje — 12 Tarjetas Didácticas</title>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--green:#0a3d2e;--lime:#a8ff53;--orange:#ff7a18;--cream:#fff8ec}
+body{font-family:'Nunito',sans-serif;background:#061a14;color:var(--cream);min-height:100vh;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background:
+ radial-gradient(800px 600px at 20% 10%, rgba(168,255,83,.15), transparent 60%),
+ radial-gradient(700px 500px at 90% 30%, rgba(255,122,24,.18), transparent 60%),
+ linear-gradient(180deg,#0b2e22 0%,#061a14 100%);z-index:-2}
+.leaves{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:-1}
+.leaves span{position:absolute;font-size:28px;opacity:.07;animation:fall linear infinite}
+@keyframes fall{0%{transform:translateY(-10vh) rotate(0deg)}100%{transform:translateY(110vh) rotate(360deg)}}
+header{text-align:center;padding:28px 16px 10px}
+.title-wrap{display:inline-block;position:relative}
+h1{font-family:'Bungee',cursive;font-size:clamp(28px,6vw,54px);line-height:.9;
+ background:linear-gradient(90deg,#a8ff53,#ffe53b,#ff7a18,#a8ff53);
+ background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+ animation:gradient 4s linear infinite, float 3s ease-in-out infinite; filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))}
+@keyframes gradient{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.subtitle{margin-top:8px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:clamp(11px,2vw,14px);color:#c8e6c9;opacity:.9}
+.subtitle span{color:var(--lime)}
+.controls{max-width:780px;margin:18px auto;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding:0 16px}
+.controls input{flex:1;min-width:220px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:11px 16px;color:#fff;outline:none;backdrop-filter:blur(6px)}
+.controls input::placeholder{color:rgba(255,255,255,.6)}
+.btn{border:none;border-radius:999px;padding:11px 22px;font-weight:800;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:linear-gradient(90deg,var(--lime),#ffe53b);color:#0a3d2e;box-shadow:0 8px 20px rgba(168,255,83,.35)}
+.btn-primary:hover{transform:translateY(-2px) scale(1.02)}
+.btn-ghost{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(6px)}
+.btn-ghost:hover{background:rgba(255,255,255,.18)}
+.status{text-align:center;min-height:22px;font-size:13px;color:#a8ff53;margin:4px 0 10px;font-weight:700}
+.grid{max-width:1240px;margin:0 auto;padding:12px 16px 40px;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+@media(min-width:1100px){.grid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:700px) and (max-width:1099px){.grid{grid-template-columns:repeat(3,1fr)}}
+.card{background:transparent;perspective:1000px;cursor:pointer;aspect-ratio:3/4}
+.card-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.4,.2,.2,1)}
+.card.flipped .card-inner{transform:rotateY(180deg)}
+.card-face{position:absolute;inset:0;border-radius:22px;overflow:hidden;backface-visibility:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.08)}
+.card-front{background:#12291f;display:flex;flex-direction:column}
+.card-front img{width:100%;height:78%;object-fit:cover;display:block;background:#0e2118}
+.card-front .label{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border-top:1px solid rgba(255,255,255,.08);padding:10px;font-weight:800;font-size:clamp(14px,1.8vw,17px);text-align:center;color:#fff;text-transform:capitalize}
+.badge{position:absolute;top:12px;left:12px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.2);color:#a8ff53;font-weight:800;font-size:11px;padding:5px 10px;border-radius:999px;letter-spacing:.06em}
+.hint{position:absolute;bottom:58px;right:10px;background:rgba(168,255,83,.95);color:#0a3d2e;font-size:10px;font-weight:800;padding:4px 8px;border-radius:999px}
+.card-back{transform:rotateY(180deg);background:linear-gradient(160deg,#fff8ec 0%,#fff 55%,#e8f5d8 100%);color:#1a2e1a;padding:18px;display:flex;flex-direction:column;justify-content:space-between}
+.card-back h3{font-family:'Bungee',cursive;font-size:18px;color:#0a3d2e;line-height:1;margin-bottom:6px}
+.card-back .sci{font-style:italic;font-size:11px;color:#6b8a6b;letter-spacing:.04em;margin-bottom:10px}
+.card-back p{font-size:13px;line-height:1.5;color:#2d3d2d;flex:1}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.meta span{font-size:11px;font-weight:800;background:#0a3d2e;color:#a8ff53;padding:6px 9px;border-radius:999px}
+.flip-icon{position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.95);display:grid;place-items:center;font-size:14px}
+.loader{width:40px;height:40px;border:3px solid rgba(255,255,255,.2);border-top-color:var(--lime);border-radius:50%;animation:spin .8s linear infinite;margin:20px auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+.empty{grid-column:1/-1;text-align:center;padding:40px;color:rgba(255,255,255,.7)}
+footer{text-align:center;padding:10px 16px 24px;font-size:11px;opacity:.6;letter-spacing:.04em}
+</style>
+</head>
+<body>
+<div class="leaves" id="leaves"></div>
+<header>
+<div class="title-wrap"><h1 id="title">🌿 SAFARI SALVAJE 🦁</h1></div>
+<p class="subtitle"><span>12</span> animales salvajes • toca la tarjeta para girar • <span>3:4</span> responsivo</p>
+</header>
+<div class="controls">
+<input id="apiKey" type="password" placeholder="API Key Pollinations (opcional) — deja vacío para modo demo">
+<button class="btn btn-primary" id="btnGen">✨ Generar Safari</button>
+<button class="btn btn-ghost" id="btnShuffle">🔀 Mezclar</button>
+</div>
+<div class="status" id="status">Listo — genera tu safari salvaje</div>
+<div class="grid" id="grid"></div>
+<footer>Hecho con HTML5 • Tarjetas 3:4 con giro 3D • Imágenes vía Pollinations zimage • Memoria anti-repetición activa</footer>
+<script>
+const FALLBACK_ANIMALES=[
+ {nombre:"Tigre de Bengala",cientifico:"Panthera tigris tigris",habitat:"Selva",estado:"En peligro",desc:"El felino más grande del mundo. Puede pesar 260 kg y saltar 6 m. Caza solo de noche y es un símbolo de fuerza en Asia."},
+ {nombre:"Elefante Africano",cientifico:"Loxodonta africana",habitat:"Sabana",estado:"Vulnerable",desc:"El mamífero terrestre más grande. Su trompa tiene 40 000 músculos y usa sus orejas gigantes para refrigerarse."},
+ {nombre:"Lobo Gris",cientifico:"Canis lupus",habitat:"Bosque boreal",estado:"Preocupación menor",desc:"Vive en manadas lideradas por una pareja alfa. Aúlla para comunicarse a más de 10 km de distancia."},
+ {nombre:"Leopardo de las Nieves",cientifico:"Panthera uncia",habitat:"Montaña",estado:"Vulnerable",desc:"Fantasma del Himalaya. Su cola es tan larga como su cuerpo y la usa como bufanda en el frío extremo."},
+ {nombre:"Oso Polar",cientifico:"Ursus maritimus",habitat:"Ártico",estado:"Vulnerable",desc:"Su pelaje no es blanco sino transparente y hueco. Puede oler una foca a 30 km y nadar 100 km sin parar."},
+ {nombre:"Guepardo",cientifico:"Acinonyx jubatus",habitat:"Sabana",estado:"Vulnerable",desc:"El animal terrestre más rápido: 0-100 km/h en 3 segundos. Sus lágrimas negras le protegen del sol al cazar."},
+ {nombre:"Gorila de Montaña",cientifico:"Gorilla beringei",habitat:"Selva montana",estado:"En peligro",desc:"Comparte el 98% de ADN con humanos. Vive en familias lideradas por un espalda plateada y es muy tierno con sus crías."},
+ {nombre:"Jaguar",cientifico:"Panthera onca",habitat:"Selva amazónica",estado:"Casi amenazado",desc:"El felino más fuerte de América. Su mordida atraviesa caparazones de tortuga y caza caimanes en el agua."},
+ {nombre:"Lince Ibérico",cientifico:"Lynx pardinus",habitat:"Mediterráneo",estado:"En peligro",desc:"El felino más amenazado de Europa. Sus orejas con pinceles y barba lo hacen inconfundible. Quedan menos de 1500."},
+ {nombre:"Rinoceronte Negro",cientifico:"Diceros bicornis",habitat:"Sabana",estado:"En peligro crítico",desc:"Tiene dos cuernos de queratina y piel acorazada. Puede correr a 55 km/h a pesar de pesar 1400 kg."},
+ {nombre:"Cocodrilo del Nilo",cientifico:"Crocodylus niloticus",habitat:"Río",estado:"Preocupación menor",desc:"Depredador de 6 m que lleva 200 millones de años en la Tierra. Su mordida es la más fuerte del reino animal."},
+ {nombre:"Águila Real",cientifico:"Aquila chrysaetos",habitat:"Montaña",estado:"Preocupación menor",desc:"Reina del cielo con 2,3 m de envergadura. Ve una liebre a 3 km y se lanza en picada a 240 km/h."}
+];
+
+const TITLES=["🌿 SAFARI SALVAJE 🦁","🌍 ¡RUGIDOS DEL MUNDO! 🐯","✨ CRIATURAS ASOMBROSAS 🐾","🔥 REINO SALVAJE 🌿","💚 12 BESTIAS LEGENDARIAS 🦁"];
+let titleIdx=0;
+setInterval(()=>{titleIdx=(titleIdx+1)%TITLES.length;document.getElementById('title').textContent=TITLES[titleIdx]},2800);
+
+for(let i=0;i<14;i++){const s=document.createElement('span');s.textContent=["🌿","🍃","🌴","🦁","🐾"][Math.floor(Math.random()*5)];s.style.left=Math.random()*100+'%';s.style.animationDuration= (8+Math.random()*12)+'s';s.style.animationDelay=Math.random()*5+'s';document.getElementById('leaves').appendChild(s)}
+
+const grid=document.getElementById('grid'), statusEl=document.getElementById('status');
+const memoria=new Set();
+
+function imageUrl(nombre, apiKey){
+ const prompt=encodeURIComponent(`foto realista ultra detallada de ${nombre}, animal salvaje en su hábitat natural, iluminación cinematográfica, 8k`);
+ if(apiKey){
+  return `https://enter.pollinations.ai/api/generate/image/${prompt}?key=${encodeURIComponent(apiKey)}&model=zimage`;
+ }
+ return `https://image.pollinations.ai/p/${prompt}?width=600&height=800&model=zimage&enhance=true&nologo=true&seed=${Math.floor(Math.random()*99999)}`;
+}
+
+async function obtenerNombres(apiKey){
+ if(!apiKey){
+  statusEl.textContent="Modo demo — usando 12 animales con memoria anti-repetición";
+  return FALLBACK_ANIMALES;
+ }
+ statusEl.textContent="🦁 Consultando IA Pollinations...";
+ try{
+  const prompt=encodeURIComponent("Dame el nombre de 12 animales salvajes");
+  const url=`https://enter.pollinations.ai/api/generate/text/${prompt}?key=${encodeURIComponent(apiKey)}&model=openai`;
+  const res=await fetch(url);
+  if(!res.ok) throw new Error("API "+res.status);
+  const txt=await res.text();
+  let nombres=txt.split(/[\n,\-\d\.]+/).map(s=>s.trim()).filter(s=>s.length>2 && s.length<30).slice(0,12);
+  nombres=nombres.filter(n=>{const k=n.toLowerCase();if(memoria.has(k)) return false; memoria.add(k); return true});
+  if(nombres.length<12){
+   const faltan=FALLBACK_ANIMALES.filter(a=>!nombres.some(n=>a.nombre.toLowerCase().includes(n.toLowerCase().split(' ')[0]))).slice(0,12-nombres.length);
+   nombres=nombres.concat(faltan.map(f=>f.nombre));
+  }
+  return nombres.map(n=>{
+   const found=FALLBACK_ANIMALES.find(f=>f.nombre.toLowerCase().includes(n.toLowerCase().split(' ')[0]) || n.toLowerCase().includes(f.nombre.toLowerCase().split(' ')[0]));
+   return found? {...found,nombre:n}: {nombre:n,cientifico:"Panthera sp.",habitat:"Salvaje",estado:"Único",desc:`El increíble ${n}, una criatura salvaje fascinante que habita ecosistemas únicos y juega un rol vital en la naturaleza.`}
+  });
+ }catch(e){
+  console.warn(e);
+  statusEl.textContent="⚠️ API no disponible — usando lista local con memoria";
+  return FALLBACK_ANIMALES;
+ }
+}
+
+function render(animales, apiKey){
+ grid.innerHTML="";
+ animales.forEach((a,i)=>{
+  if(memoria.has(a.nombre.toLowerCase())===false) memoria.add(a.nombre.toLowerCase());
+  const card=document.createElement('div');
+  card.className="card";
+  card.innerHTML=`
+  <div class="card-inner">
+   <div class="card-face card-front">
+    <span class="badge">#${String(i+1).padStart(2,'0')} • SALVAJE</span>
+    <span class="hint">↻ girar</span>
+    <img loading="lazy" src="${imageUrl(a.nombre, apiKey)}" alt="${a.nombre}" onerror="this.src='https://image.pollinations.ai/p/${encodeURIComponent(a.nombre)}%20wild%20animal%20photography?width=600&height=800&nologo=true'">
+    <div class="label">🐾 ${a.nombre}</div>
+   </div>
+   <div class="card-face card-back">
+    <div class="flip-icon">↩</div>
+    <div>
+     <h3>${a.nombre}</h3>
+     <div class="sci">${a.cientifico}</div>
+     <p>${a.desc}</p>
+    </div>
+    <div class="meta"><span>📍 ${a.habitat}</span><span>🛡️ ${a.estado}</span></div>
+   </div>
+  </div>`;
+  card.addEventListener('click',()=> card.classList.toggle('flipped'));
+  grid.appendChild(card);
+ });
+ statusEl.textContent=`✅ ${animales.length} tarjetas listas — ¡haz clic para girar! (memoria: ${memoria.size} únicos)`;
+}
+
+async function generar(){
+ const key=document.getElementById('apiKey').value.trim();
+ grid.innerHTML='<div class="empty"><div class="loader"></div>Generando safari...</div>';
+ const animales=await obtenerNombres(key);
+ render(animales,key);
+}
+function mezclar(){
+ const cards=[...grid.children];
+ for(let i=cards.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));grid.appendChild(cards[j]); cards.splice(j,1)}
+ cards.forEach((c,i)=>c.querySelector('.badge').textContent=`#${String(i+1).padStart(2,'0')} • SALVAJE`);
+ statusEl.textContent="🔀 ¡Mezcladas!";
+}
+document.getElementById('btnGen').addEventListener('click',generar);
+document.getElementById('btnShuffle').addEventListener('click',mezclar);
+generar();
+</script>
+</body>
+</html>

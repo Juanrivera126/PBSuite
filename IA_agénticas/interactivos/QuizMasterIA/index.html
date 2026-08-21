@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizMaster IA — Repaso escolar con IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="app-header">
+    <div class="brand">
+        <div class="logo">🧠</div>
+        <div>
+            <h1>QuizMaster <span class="grad">IA</span></h1>
+            <p class="tagline">Tu repaso escolar con inteligencia artificial e ilustraciones generadas</p>
+        </div>
+    </div>
+    <div class="header-badge" title="Bring Your Own Key: tus claves nunca salen de tu navegador">🔑 BYOK</div>
+</header>
+
+<main class="container">
+
+    <!-- ==================== PANTALLA 1: CONFIGURACIÓN ==================== -->
+    <section id="screen-config" class="screen">
+        <div class="card config-card">
+            <h2 class="card-title">⚙️ Configura tu cuestionario</h2>
+            <p class="hint">Escribe el tema de estudio, elige cuántas preguntas quieres y añade tus propias
+                claves de API (BYOK). Las claves se guardan únicamente en tu navegador.</p>
+
+            <div class="field">
+                <label for="temaInput">📚 Tema de estudio</label>
+                <input type="text" id="temaInput" placeholder="Ej.: Revolución Francesa, Fotosíntesis, Los planetas..." autocomplete="off">
+            </div>
+
+            <div class="field">
+                <label for="numQuestions">🔢 Número de preguntas <span class="req">(máximo 15)</span></label>
+                <input type="number" id="numQuestions" min="1" max="15" value="5">
+            </div>
+
+            <div class="divider">🔑 <span>Claves de API (BYOK)</span></div>
+
+            <div class="field key-field">
+                <label for="groqKey">Groq API Key <span class="req">(obligatoria)</span></label>
+                <div class="key-row">
+                    <input type="password" id="groqKey" placeholder="gsk_..." autocomplete="off">
+                    <button class="key-btn" id="groqKeyHelp" title="Obtener clave en Groq">🔑 Obtener</button>
+                </div>
+                <small>Genera las preguntas con el modelo de texto. Consíguela gratis en
+                    <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys</a></small>
+            </div>
+
+            <div class="field">
+                <label for="groqModel">🤖 Modelo de texto (Groq)</label>
+                <select id="groqModel"></select>
+            </div>
+
+            <div class="field key-field">
+                <label for="pollKey">Pollinations API Key <span class="req">(obligatoria)</span></label>
+                <div class="key-row">
+                    <input type="password" id="pollKey" placeholder="plln_sk_..." autocomplete="off">
+                    <button class="key-btn" id="pollKeyHelp" title="Obtener clave en Pollinations">🔑 Obtener</button>
+                </div>
+                <small>Genera la ilustración de cada pregunta. También disponible en
+                    <a href="https://pollinations.ai" target="_blank" rel="noopener">pollinations.ai</a></small>
+            </div>
+
+            <div class="divider">🖼️ <span>Selector de imágenes (Pollinations)</span></div>
+
+            <div class="field">
+                <label for="imgModel">Modelo de imagen</label>
+                <select id="imgModel"></select>
+                <div id="model-status" class="status-msg" style="display:none;"></div>
+            </div>
+
+            <div class="field">
+                <label for="imgStyle">🎨 Estilo de ilustración</label>
+                <select id="imgStyle"></select>
+            </div>
+
+            <div class="field">
+                <label for="imgRatio">📐 Proporción de la ilustración</label>
+                <select id="imgRatio" disabled>
+                    <option value="3:4">3:4 vertical (768 × 1024)</option>
+                </select>
+            </div>
+
+            <button class="main-btn" id="btnGenerate">✨ Generar cuestionario</button>
+            <div id="genStatus" class="status-msg" style="display:none;"></div>
+        </div>
+    </section>
+
+    <!-- ==================== PANTALLA 2: CUESTIONARIO ==================== -->
+    <section id="screen-quiz" class="screen" hidden>
+        <div class="quiz-topbar">
+            <div class="progress-info">
+                <span id="progressText">Pregunta 1 de 5</span>
+                <span id="imgCount" class="img-count">🖼️ Imágenes: 0/5</span>
+            </div>
+            <div class="progress-bar"><div id="progressFill"></div></div>
+            <button class="ghost-btn" id="btnExit" title="Salir del cuestionario">✖ Salir</button>
+        </div>
+
+        <div class="quiz-card">
+            <!-- Panel lateral izquierdo: ilustración 3:4 -->
+            <div class="image-panel loading" id="imagePanel">
+                <div class="img-spinner">🎨<span>Generando ilustración…</span></div>
+                <img id="qImage" alt="Ilustración de la pregunta">
+            </div>
+
+            <!-- Panel derecho: pregunta + opciones -->
+            <div class="question-panel">
+                <div class="q-topic" id="qTopic">📚 Tema</div>
+                <h2 id="qText"></h2>
+                <div id="optionsBox" class="options"></div>
+
+                <div class="exp-wrap" id="explanationBox">
+                    <button class="exp-toggle" id="expToggle">💡 Ver explicación</button>
+                    <div class="exp-content"><p id="expText"></p></div>
+                </div>
+
+                <button class="next-btn" id="nextBtn" style="display:none;">Siguiente ➜</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PANTALLA 3: RESULTADOS ==================== -->
+    <section id="screen-results" class="screen" hidden>
+        <div class="card results-card">
+            <div class="ring" id="scoreRing">
+                <div class="ring-in">
+                    <span id="scoreNum">0</span>
+                    <span id="scoreTotal">/ 0</span>
+                </div>
+            </div>
+            <div class="emoji" id="scoreEmoji">🏆</div>
+            <h2 id="motivationText"></h2>
+            <p id="scorePct" class="score-pct"></p>
+
+            <div class="results-actions">
+                <button class="main-btn" id="downloadBtn">⬇️ Descargar cuestionario</button>
+                <button class="ghost-btn" id="retryBtn">🔄 Nuevo cuestionario</button>
+            </div>
+
+            <p class="hint">El archivo descargado es un <strong>clon 100% funcional</strong> con las ilustraciones
+                incrustadas en <strong>Base64</strong>: no necesita claves de API ni conexión a internet.
+                Ideal para compartir con tus estudiantes.</p>
+        </div>
+    </section>
+</main>
+
+<footer class="app-footer">
+    QuizMaster IA · Repaso escolar con IA · Groq + Pollinations · BYOK
+</footer>
+
+<div id="toast" class="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
