@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14231d">
+  <title>Fauna | Expedición salvaje</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="." aria-label="Fauna, inicio"><span class="brand-mark">✦</span><span>FAUNA<span class="brand-dot">.</span></span></a>
+    <div class="session-badge"><span class="status-dot"></span><span id="memoryStatus">Memoria activa</span></div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="pageTitle">
+      <p class="eyebrow"><span></span> Atlas interactivo · 01 / <span id="heroTotal">12</span> <span></span></p>
+      <h1 id="pageTitle">La naturaleza<br><em>no tiene límites.</em></h1>
+      <p class="intro">Descubre las criaturas que habitan los rincones más indómitos del planeta. Gira cada tarjeta y deja que comience la expedición.</p>
+      <div class="hero-actions">
+        <button class="primary-button" id="startButton" type="button">Explorar colección <span>↘</span></button>
+        <p class="collection-note"><strong id="collectionTotal">12</strong> especies · Una colección<br>generada para ti</p>
+      </div>
+    </section>
+
+    <section class="controls" aria-label="Controles de la colección">
+      <div class="section-label"><span class="line"></span><span id="collectionHeading">Colección salvaje</span></div>
+      <div class="controls-right">
+        <span class="progress-label" id="progressLabel">0 / 12 exploradas</span>
+        <button class="text-button" id="downloadButton" type="button" disabled>↓ Descargar colección</button>
+        <button class="text-button" id="shuffleButton" type="button" disabled>↻ Nueva expedición</button>
+      </div>
+    </section>
+
+    <section class="cards-grid" id="cardsGrid" aria-live="polite" aria-label="Tarjetas de animales salvajes"></section>
+
+    <section class="api-panel" id="apiPanel">
+      <div>
+        <p class="api-kicker">PERSONALIZA TU ATLAS</p>
+        <h2>Genera una nueva expedición</h2>
+        <p>Define el tema y el tamaño de tu colección. La clave se usa solo para pedir contenido a la IA.</p>
+      </div>
+      <form id="apiForm" class="api-form">
+        <div class="config-grid">
+          <div class="field field-topic"><label for="topic">Tema de la colección</label><input id="topic" type="text" value="Animales salvajes" required></div>
+          <div class="field"><label for="imageCount">Imágenes</label><input id="imageCount" type="number" min="1" max="24" value="12" required></div>
+          <div class="field field-model"><label for="imageModel">Modelo de imagen</label><select id="imageModel"><option value="openai/gpt-image-1-mini">openai/gpt-image-1-mini</option><option value="microsoft/mai-image-2.5-flash">microsoft/mai-image-2.5-flash</option><option value="openai/gpt-image-2.5-flare" selected>openai/gpt-image-2.5-flare</option><option value="black-forest-labs/flux.2-klein-4b">black-forest-labs/flux.2-klein-4b</option></select></div>
+        </div>
+        <label for="apiKey">Clave API</label>
+        <div class="input-row"><input id="apiKey" type="password" autocomplete="off" placeholder="Pega aquí tu clave" required><button type="submit">Generar <span>→</span></button></div>
+        <small>La clave solo se guarda en esta sesión del navegador.</small>
+      </form>
+    </section>
+  </main>
+  <footer><span>FAUNA / ARCHIVO 2026</span><span>Gira. Descubre. Recuerda.</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
